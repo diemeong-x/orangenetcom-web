@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange-Netcom | Mitra Solusi IT & Keamanan Terpercaya</title>
+    
+    <!-- Ikon Tab Browser (Favicon) -->
+    <link rel="icon" type="image/png" href="5353.png">
+    
+    <!-- Tailwind CSS untuk Desain -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: { 500: '#f97316', 600: '#ea580c' },
+                        darkblue: '#2c3e50',
+                    }
+                }
+            }
+        }
+        html { scroll-behavior: smooth; }
+        
+        /* Kustomisasi Dropdown */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23f97316%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem top 50%;
+            background-size: 0.65rem auto;
+        }
+
+        /* Animasi Gambar Bergerak (Slow Zoom / Ken Burns) */
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .animate-zoom {
+            animation: slowZoom 20s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased relative">
+
+    <!-- Navigasi (Header) -->
+    <nav class="bg-white shadow-md fixed w-full z-40 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 md:h-28 items-center transition-all duration-300">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#beranda">
+                        <img src="5353.png" alt="Logo Orange-Netcom" class="h-14 md:h-20 lg:h-24 w-auto object-contain transition-all duration-300">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#beranda" class="text-gray-700 hover:text-orange-500 font-medium transition duration-300">Beranda</a>
+                    <a href="#layanan" class="text-gray-700 hover:text-orange-500 font-medium transition duration-300">Layanan</a>
+                    <a href="#simulasi" class="text-orange-500 font-bold transition duration-300">Simulasi Rakit</a>
+                    <a href="#tentang" class="text-gray-700 hover:text-orange-500 font-medium transition duration-300">Tentang Kami</a>
+                    <a href="#kontak" class="text-gray-700 hover:text-orange-500 font-medium transition duration-300">Kontak</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-700 hover:text-orange-500 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bagian Hero (Beranda) -->
+    <section id="beranda" class="pt-28 pb-16 md:pt-44 md:pb-24 bg-gray-900 text-white relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800 opacity-90 z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Mitra Solusi Teknologi dan Keamanan Terpercaya</h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+                Orange-Netcom menghadirkan layanan integrasi IT komprehensif. Mulai dari pengadaan infrastruktur jaringan, sistem keamanan, hingga solusi komputasi yang dirancang khusus untuk bisnis Anda.
+            </p>
+            <a href="#simulasi" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:-translate-y-1 mr-4">
+                Mulai Rakit PC
+            </a>
+            <a href="https://wa.me/6285711779993?text=Halo%20Orange%20Netcom,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20IT." target="_blank" class="inline-block bg-white text-gray-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:-translate-y-1 mt-4 sm:mt-0">
+                Konsultasi Gratis
+            </a>
+        </div>
+    </section>
+
+    <!-- Bagian Layanan -->
+    <section id="layanan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Layanan Profesional Kami</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group">
+                    <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-desktop"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Perakitan Komputer</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Penyediaan workstation spesifikasi kustom untuk operasional kantor, desain profesional, hingga gaming.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group">
+                    <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-video"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Sistem Keamanan CCTV</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Instalasi sistem pemantauan (CCTV) terintegrasi presisi 24/7 dengan akses kendali jarak jauh aman.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group">
+                    <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-fingerprint"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Kontrol Akses & Absensi</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Implementasi akses pintu pintar dan mesin absensi biometrik untuk manajemen kehadiran akurat.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group">
+                    <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-server"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Infrastruktur Jaringan</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Desain, instalasi, dan pemeliharaan infrastruktur jaringan serta konfigurasi router terpusat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Simulasi Rakit PC -->
+    <section id="simulasi" class="py-20 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Simulasi Rakitan PC</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mt-4"></div>
+                <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Pilih komponen sesuai kebutuhan Anda. Sistem kami akan otomatis mendeteksi kecocokan antar komponen dengan instan.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Form Pilihan -->
+                <div class="w-full lg:w-2/3 bg-white p-8 rounded-2xl shadow-xl">
+                    <div class="flex items-center justify-between mb-6 border-b pb-4">
+                        <h3 class="text-xl font-bold text-gray-800"><i class="fa-solid fa-microchip text-orange-500 mr-2"></i>Pilih Komponen PC</h3>
+                    </div>
+                    
+                    <form id="pc-builder-form" class="space-y-6">
+                        <!-- Processor -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Processor (CPU)</label>
+                            <select id="part-cpu" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                <option value="0" data-name="-" data-socket="">-- Pilih Processor --</option>
+                                <option value="1500000" data-name="Intel Core i3 12100F" data-socket="LGA1700">Intel Core i3 12100F (LGA1700) - Rp 1.500.000</option>
+                                <option value="2500000" data-name="Intel Core i5 12400F" data-socket="LGA1700">Intel Core i5 12400F (LGA1700) - Rp 2.500.000</option>
+                                <option value="3200000" data-name="AMD Ryzen 5 5600X" data-socket="AM4">AMD Ryzen 5 5600X (AM4) - Rp 3.200.000</option>
+                                <option value="5500000" data-name="Intel Core i7 13700K" data-socket="LGA1700">Intel Core i7 13700K (LGA1700) - Rp 5.500.000</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Motherboard -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Motherboard</label>
+                            <select id="part-mobo" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                <option value="0" data-name="-" data-socket="" data-ram="">-- Pilih Motherboard --</option>
+                                <option value="1200000" data-name="MSI PRO H610M-E" data-socket="LGA1700" data-ram="DDR4">MSI PRO H610M-E (LGA1700 / DDR4) - Rp 1.200.000</option>
+                                <option value="1600000" data-name="ASRock B550M Pro4" data-socket="AM4" data-ram="DDR4">ASRock B550M Pro4 (AM4 / DDR4) - Rp 1.600.000</option>
+                                <option value="3800000" data-name="ASUS TUF Gaming Z790" data-socket="LGA1700" data-ram="DDR5">ASUS TUF Z790 Plus (LGA1700 / DDR5) - Rp 3.800.000</option>
+                            </select>
+                        </div>
+
+                        <!-- RAM -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Memory (RAM)</label>
+                            <select id="part-ram" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                <option value="0" data-name="-" data-type="">-- Pilih RAM --</option>
+                                <option value="450000" data-name="8GB DDR4 3200MHz" data-type="DDR4">8GB DDR4 3200MHz - Rp 450.000</option>
+                                <option value="850000" data-name="16GB (2x8GB) DDR4 3200MHz" data-type="DDR4">16GB (2x8GB) DDR4 3200MHz - Rp 850.000</option>
+                                <option value="1800000" data-name="32GB (2x16GB) DDR5 5200MHz" data-type="DDR5">32GB (2x16GB) DDR5 5200MHz - Rp 1.800.000</option>
+                            </select>
+                        </div>
+
+                        <!-- Storage -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Penyimpanan (SSD/HDD)</label>
+                            <select id="part-storage" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                <option value="0" data-name="-">-- Pilih Penyimpanan --</option>
+                                <option value="400000" data-name="256GB SSD NVMe">256GB SSD NVMe - Rp 400.000</option>
+                                <option value="750000" data-name="512GB SSD NVMe">512GB SSD NVMe - Rp 750.000</option>
+                                <option value="1300000" data-name="1TB SSD NVMe Gen 4">1TB SSD NVMe Gen 4 - Rp 1.300.000</option>
+                            </select>
+                        </div>
+
+                        <!-- Kartu Grafis (VGA) -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Kartu Grafis (VGA)</label>
+                            <select id="part-vga" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                <option value="0" data-name="-">-- Tanpa VGA (Pakai Bawaan Prosesor) --</option>
+                                <option value="3500000" data-name="NVIDIA GTX 1660 Super">NVIDIA GTX 1660 Super 6GB - Rp 3.500.000</option>
+                                <option value="5500000" data-name="NVIDIA RTX 3060">NVIDIA RTX 3060 12GB - Rp 5.500.000</option>
+                                <option value="11500000" data-name="NVIDIA RTX 4070">NVIDIA RTX 4070 12GB - Rp 11.500.000</option>
+                            </select>
+                        </div>
+
+                        <!-- Power Supply -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Power Supply (PSU)</label>
+                            <select id="part-psu" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                <option value="0" data-name="-">-- Pilih Power Supply --</option>
+                                <option value="550000" data-name="500W 80+ Bronze">500W 80+ Bronze - Rp 550.000</option>
+                                <option value="950000" data-name="650W 80+ Gold">650W 80+ Gold - Rp 950.000</option>
+                                <option value="1600000" data-name="850W 80+ Gold Modular">850W 80+ Gold Modular - Rp 1.600.000</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Box Summary Total Harga & Pengecekan Kompatibilitas -->
+                <div class="w-full lg:w-1/3">
+                    <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-xl p-8 sticky top-32 text-white border border-gray-700">
+                        <h3 class="text-2xl font-bold mb-6 text-orange-500">Total Estimasi</h3>
+                        
+                        <div class="space-y-3 mb-6 text-sm text-gray-300 min-h-[150px]">
+                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>CPU</span> <span id="lbl-cpu" class="font-medium text-white text-right">-</span></div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>Mobo</span> <span id="lbl-mobo" class="font-medium text-white text-right">-</span></div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>RAM</span> <span id="lbl-ram" class="font-medium text-white text-right">-</span></div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>Storage</span> <span id="lbl-storage" class="font-medium text-white text-right">-</span></div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>VGA</span> <span id="lbl-vga" class="font-medium text-white text-right">-</span></div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>PSU</span> <span id="lbl-psu" class="font-medium text-white text-right">-</span></div>
+                        </div>
+
+                        <!-- Notifikasi Kompatibilitas -->
+                        <div id="compat-alert" class="hidden mb-6 p-4 rounded-lg bg-red-500/20 border border-red-500 text-red-200 text-sm">
+                            <div class="flex items-center mb-2 font-bold text-red-400"><i class="fa-solid fa-triangle-exclamation mr-2"></i> Peringatan Kompatibilitas!</div>
+                            <div id="compat-message" class="space-y-1"></div>
+                        </div>
+
+                        <div id="compat-success" class="hidden mb-6 p-3 rounded-lg bg-green-500/20 border border-green-500 text-green-400 text-sm flex items-center font-bold">
+                            <i class="fa-solid fa-circle-check mr-2"></i> Komponen Cocok
+                        </div>
+
+                        <div class="text-3xl font-extrabold mb-8" id="total-harga">Rp 0</div>
+                        
+                        <a href="#" id="btn-pesan-rakit" target="_blank" class="block w-full bg-orange-500 text-white text-center font-bold py-4 rounded-xl hover:bg-orange-600 transition duration-300 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> Kirim Pesanan via WA
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skrip Logika Simulasi Rakit PC -->
+    <script>
+        function hitungTotal() {
+            const parts = ['cpu', 'mobo', 'ram', 'storage', 'vga', 'psu'];
+            let total = 0, orderList = "";
+
+            parts.forEach(part => {
+                const el = document.getElementById(`part-${part}`);
+                const price = parseInt(el.value);
+                const selectedOption = el.options[el.selectedIndex];
+                const name = selectedOption.getAttribute('data-name');
+                
+                document.getElementById(`lbl-${part}`).innerText = name !== '-' ? name : '-';
+                total += price;
+
+                if (name !== '-' && price > 0) orderList += `- ${part.toUpperCase()}: ${name}%0A`;
+            });
+
+            const cpuOpt = document.getElementById('part-cpu').options[document.getElementById('part-cpu').selectedIndex];
+            const moboOpt = document.getElementById('part-mobo').options[document.getElementById('part-mobo').selectedIndex];
+            const ramOpt = document.getElementById('part-ram').options[document.getElementById('part-ram').selectedIndex];
+
+            const cpuSocket = cpuOpt.getAttribute('data-socket'), moboSocket = moboOpt.getAttribute('data-socket');
+            const moboRam = moboOpt.getAttribute('data-ram'), ramType = ramOpt.getAttribute('data-type');
+
+            let errors = [];
+            if (cpuSocket && moboSocket && cpuSocket !== moboSocket) errors.push(`<li>Socket CPU (<b>${cpuSocket}</b>) tidak cocok dgn Motherboard (<b>${moboSocket}</b>).</li>`);
+            if (moboRam && ramType && moboRam !== ramType) errors.push(`<li>Tipe memori Motherboard (<b>${moboRam}</b>) tidak cocok dgn RAM (<b>${ramType}</b>).</li>`);
+
+            const alertBox = document.getElementById('compat-alert'), msgBox = document.getElementById('compat-message');
+            const successBox = document.getElementById('compat-success'), btnPesan = document.getElementById('btn-pesan-rakit');
+
+            if (errors.length > 0) {
+                msgBox.innerHTML = `<ul class="list-disc pl-4">${errors.join('')}</ul>`;
+                alertBox.classList.remove('hidden'); successBox.classList.add('hidden');
+                btnPesan.classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none', 'bg-gray-500');
+                btnPesan.classList.remove('bg-orange-500', 'hover:bg-orange-600', 'transform', 'hover:-translate-y-1');
+            } else {
+                alertBox.classList.add('hidden');
+                btnPesan.classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none', 'bg-gray-500');
+                btnPesan.classList.add('bg-orange-500', 'hover:bg-orange-600', 'transform', 'hover:-translate-y-1');
+                if(cpuSocket && moboSocket && ramType) successBox.classList.remove('hidden');
+                else successBox.classList.add('hidden');
+            }
+
+            const formatRupiah = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(total);
+            document.getElementById('total-harga').innerText = formatRupiah;
+
+            const waNumber = "6285711779993";
+            const waText = `Halo Orange-Netcom, saya ingin konsultasi rakit PC dengan rincian spesifikasi berikut:%0A%0A${orderList}%0A*Total Estimasi: ${formatRupiah}*%0A%0AMohon info lebih lanjut.`;
+            btnPesan.href = total === 0 ? `https://wa.me/${waNumber}?text=Halo%20Orange%20Netcom,%20saya%20ingin%20konsultasi%20rakit%20PC.` : `https://wa.me/${waNumber}?text=${waText}`;
+        }
+        window.onload = hitungTotal;
+    </script>
+
+    <!-- Bagian Tentang Kami (Dengan SLIDESHOW GAMBAR BERGERAK & BINGKAI DIPERBAIKI) -->
+    <section id="tentang" class="py-20 bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                
+                <!-- Kiri: Slideshow Bergerak -->
+                <div class="w-full md:w-1/2">
+                    <!-- WRAPPER RELATIVE YANG DIPERBAIKI AGAR BINGKAI TIDAK LARI -->
+                    <div class="relative">
+                        
+                        <!-- Gambar / Slideshow -->
+                        <div class="relative w-full aspect-square md:aspect-auto md:h-[500px] rounded-2xl shadow-2xl z-10 bg-gray-900 overflow-hidden group">
+                            
+                            <!-- Gambar Animasi -->
+                            <img id="slideshow-img" src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Layanan IT" class="absolute inset-0 w-full h-full object-cover animate-zoom transition-opacity duration-1000 ease-in-out opacity-100">
+                            
+                            <!-- Overlay Gradasi Gelap -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-90"></div>
+                            
+                            <!-- Kotak Teks Bergerak -->
+                            <div id="slideshow-content" class="absolute bottom-0 left-0 w-full p-8 transition-all duration-700 ease-in-out transform translate-y-0 opacity-100">
+                                <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-4 shadow-lg animate-bounce">
+                                    <i id="slideshow-icon" class="fa-solid fa-desktop text-3xl text-white"></i>
+                                </div>
+                                <h3 id="slideshow-title" class="text-3xl font-bold text-white mb-2">Perakitan Komputer</h3>
+                                <p class="text-gray-300">Solusi teknologi cerdas, dirancang khusus untuk kebutuhan Anda.</p>
+                            </div>
+                        </div>
+
+                        <!-- Aksen Bingkai Belakang (Sekarang Mengikuti Wadah Utama) -->
+                        <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-orange-500 rounded-2xl z-0 hidden md:block"></div>
+                        
+                    </div>
+                </div>
+
+                <!-- Skrip Logika Slideshow -->
+                <script>
+                    const slides = [
+                        { img: "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Perakitan Komputer", icon: "fa-desktop" },
+                        { img: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Sistem Keamanan CCTV", icon: "fa-video" },
+                        { img: "https://images.unsplash.com/photo-1559705421-4ae9bf6fabb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Akses & Absensi", icon: "fa-fingerprint" },
+                        { img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Infrastruktur Jaringan", icon: "fa-network-wired" }
+                    ];
+
+                    let currentSlide = 0;
+                    const slideImg = document.getElementById('slideshow-img');
+                    const slideContent = document.getElementById('slideshow-content');
+                    const slideTitle = document.getElementById('slideshow-title');
+                    const slideIcon = document.getElementById('slideshow-icon');
+
+                    setInterval(() => {
+                        slideImg.classList.replace('opacity-100', 'opacity-0');
+                        slideContent.classList.replace('translate-y-0', 'translate-y-8');
+                        slideContent.classList.replace('opacity-100', 'opacity-0');
+                        
+                        setTimeout(() => {
+                            currentSlide = (currentSlide + 1) % slides.length;
+                            slideImg.src = slides[currentSlide].img;
+                            slideTitle.innerText = slides[currentSlide].title;
+                            slideIcon.className = `fa-solid ${slides[currentSlide].icon} text-3xl text-white`;
+                            
+                            slideImg.classList.replace('opacity-0', 'opacity-100');
+                            slideContent.classList.replace('translate-y-8', 'translate-y-0');
+                            slideContent.classList.replace('opacity-0', 'opacity-100');
+                        }, 800);
+                    }, 4000);
+                </script>
+
+                <!-- Kanan: Teks Tentang Kami -->
+                <div class="w-full md:w-1/2 z-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Mengapa Memilih Orange-Netcom?</h2>
+                    <div class="w-16 h-1 bg-orange-500 mb-8"></div>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                        Orange-Netcom hadir sebagai mitra strategis dalam memenuhi kebutuhan teknologi informasi dan sistem keamanan Anda. Didukung oleh tim teknisi ahli dan berpengalaman.
+                    </p>
+                    <ul class="space-y-6">
+                        <li class="flex items-start group">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mr-4 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-user-tie text-orange-500 group-hover:text-white"></i></div>
+                            <span class="text-gray-700 font-medium text-lg pt-1">Tenaga Ahli Bersertifikasi & Profesional</span>
+                        </li>
+                        <li class="flex items-start group">
+                             <div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mr-4 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-handshake text-orange-500 group-hover:text-white"></i></div>
+                            <span class="text-gray-700 font-medium text-lg pt-1">Solusi Transparan dengan Harga Kompetitif</span>
+                        </li>
+                        <li class="flex items-start group">
+                             <div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mr-4 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-shield-halved text-orange-500 group-hover:text-white"></i></div>
+                            <span class="text-gray-700 font-medium text-lg pt-1">Jaminan Kualitas, Garansi Pemasangan & Purna Jual</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Footer / Kontak -->
+    <footer id="kontak" class="bg-gray-900 text-gray-300 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <div class="bg-white inline-block p-3 rounded-lg mb-6 shadow-sm">
+                        <img src="5353.png" alt="Logo Orange-Netcom" class="h-14 md:h-16 w-auto object-contain">
+                    </div>
+                    <p class="text-base text-gray-400 leading-relaxed pr-4">Memberikan solusi terpadu untuk kebutuhan komputasi, infrastruktur jaringan, dan sistem keamanan Anda.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-xl">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-base">
+                        <li class="flex items-start group">
+                            <div class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center mr-3 group-hover:bg-orange-500 transition-colors"><i class="fa-solid fa-phone text-gray-400 group-hover:text-white"></i></div>
+                            <span class="pt-1">0857-1177-9993</span>
+                        </li>
+                        <li class="flex items-start group">
+                             <div class="w-8 h-8 rounded bg-gray-800 flex items-center justify-center mr-3 group-hover:bg-orange-500 transition-colors flex-shrink-0"><i class="fa-solid fa-location-dot text-gray-400 group-hover:text-white"></i></div>
+                            <span class="leading-relaxed pt-1">Jl. Cabe IV Terusan No 45, RT.01 RW.06,<br>Pondok Cabe Ilir, Pamulang,<br>Tangerang Selatan, Banten 15418</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-xl">Jam Operasional</h4>
+                    <ul class="space-y-4 text-base">
+                        <li class="flex justify-between border-b border-gray-700 pb-3"><span class="text-gray-400">Senin - Jumat</span> <span>08:00 - 17:00 WIB</span></li>
+                        <li class="flex justify-between border-b border-gray-700 pb-3"><span class="text-gray-400">Sabtu</span> <span>09:00 - 15:00 WIB</span></li>
+                        <li class="flex justify-between text-orange-500"><span>Minggu</span> <span class="font-medium">Tutup / Sesuai Janji Temu</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Orange-Netcom. Hak Cipta Dilindungi Undang-Undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tombol Floating WhatsApp -->
+    <a href="https://wa.me/6285711779993" target="_blank" title="Chat WhatsApp" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:bg-green-600 hover:scale-110 transition-transform duration-300 z-50 animate-bounce">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+</body>
+</html>
