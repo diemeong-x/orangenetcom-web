@@ -6,7 +6,7 @@
     <title>Orange-Netcom | Mitra Solusi IT & Keamanan Terpercaya</title>
     
     <!-- Ikon Tab Browser (Favicon) -->
-    <link rel="icon" type="image/png" href="5353.png">
+    <link rel="icon" type="image/png" href="3339.png">
     
     <!-- Tailwind CSS untuk Desain -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -35,7 +35,7 @@
             background-size: 0.65rem auto;
         }
 
-        /* Animasi Gambar Bergerak (Slow Zoom / Ken Burns) */
+        /* Animasi Gambar Bergerak */
         @keyframes slowZoom {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
@@ -44,6 +44,13 @@
         .animate-zoom {
             animation: slowZoom 20s ease-in-out infinite;
         }
+
+        /* Efek Tab Aktif */
+        .tab-btn.active {
+            background-color: #f97316; /* orange-500 */
+            color: white;
+            border-color: #f97316;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased relative">
@@ -51,16 +58,16 @@
     <!-- Navigasi (Header) -->
     <nav class="bg-white shadow-md fixed w-full z-40 top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 md:h-28 items-center transition-all duration-300">
+            <div class="flex justify-between h-20 md:h-24 items-center transition-all duration-300">
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#beranda">
-                        <img src="5353.png" alt="Logo Orange-Netcom" class="h-14 md:h-20 lg:h-24 w-auto object-contain transition-all duration-300">
+                        <img src="5353.png" alt="Logo Orange-Netcom" class="h-12 md:h-16 w-auto object-contain transition-transform hover:scale-105 duration-300">
                     </a>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#beranda" class="text-gray-700 hover:text-orange-500 font-medium transition duration-300">Beranda</a>
                     <a href="#layanan" class="text-gray-700 hover:text-orange-500 font-medium transition duration-300">Layanan</a>
-                    <a href="#simulasi" class="text-orange-500 font-bold transition duration-300">Simulasi Rakit</a>
+                    <a href="#simulasi" class="text-orange-500 font-bold transition duration-300">Simulasi Harga</a>
                     <a href="#tentang" class="text-gray-700 hover:text-orange-500 font-medium transition duration-300">Tentang Kami</a>
                     <a href="#kontak" class="text-gray-700 hover:text-orange-500 font-medium transition duration-300">Kontak</a>
                 </div>
@@ -79,18 +86,18 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">Mitra Solusi Teknologi dan Keamanan Terpercaya</h1>
             <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Orange-Netcom menghadirkan layanan integrasi IT komprehensif. Mulai dari pengadaan infrastruktur jaringan, sistem keamanan, hingga solusi komputasi yang dirancang khusus untuk bisnis Anda.
+                Orange-Netcom menghadirkan layanan integrasi IT komprehensif. Mulai dari pengadaan infrastruktur jaringan, sistem keamanan, hingga solusi komputasi yang dirancang khusus untuk Anda.
             </p>
             <a href="#simulasi" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:-translate-y-1 mr-4">
-                Mulai Rakit PC
+                Coba Simulasi Harga
             </a>
-            <a href="https://wa.me/6285711779993?text=Halo%20Orange%20Netcom,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20IT." target="_blank" class="inline-block bg-white text-gray-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:-translate-y-1 mt-4 sm:mt-0">
+            <a href="#kontak" class="inline-block bg-white text-gray-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:-translate-y-1 mt-4 sm:mt-0">
                 Konsultasi Gratis
             </a>
         </div>
     </section>
 
-    <!-- Bagian Layanan -->
+    <!-- Bagian Layanan Pendek (Katalog) -->
     <section id="layanan" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -99,242 +106,455 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer" onclick="openTab('pc')">
                     <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-desktop"></i></div>
                     <h3 class="text-xl font-bold mb-4 text-gray-800">Perakitan Komputer</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Penyediaan workstation spesifikasi kustom untuk operasional kantor, desain profesional, hingga gaming.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">Penyediaan workstation & PC Custom untuk operasional perkantoran, desain, dan gaming.</p>
                 </div>
-                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group">
+                <!-- Card 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer" onclick="openTab('cctv')">
                     <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-video"></i></div>
                     <h3 class="text-xl font-bold mb-4 text-gray-800">Sistem Keamanan CCTV</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Instalasi sistem pemantauan (CCTV) terintegrasi presisi 24/7 dengan akses kendali jarak jauh aman.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">Instalasi sistem pemantauan terintegrasi 24/7 (Analog & Digital eksklusif Dahua & Hikvision).</p>
                 </div>
-                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group">
+                <!-- Card 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer" onclick="openTab('akses')">
                     <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-fingerprint"></i></div>
                     <h3 class="text-xl font-bold mb-4 text-gray-800">Kontrol Akses & Absensi</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Implementasi akses pintu pintar dan mesin absensi biometrik untuk manajemen kehadiran akurat.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">Implementasi akses pintu pintar (door lock) dan mesin absensi sidik jari/wajah.</p>
                 </div>
-                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group">
+                <!-- Card 4 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer" onclick="openTab('jaringan')">
                     <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-server"></i></div>
                     <h3 class="text-xl font-bold mb-4 text-gray-800">Infrastruktur Jaringan</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Desain, instalasi, dan pemeliharaan infrastruktur jaringan serta konfigurasi router terpusat.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">Desain, instalasi server, router, access point (Mikrotik & Ruijie) untuk rumah, perkantoran, dan ruang publik.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bagian Simulasi Rakit PC -->
+    <!-- Bagian Simulasi (Tab System) -->
     <section id="simulasi" class="py-20 bg-gray-900 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Simulasi Rakitan PC</h2>
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Simulasi Estimasi Harga & Jasa</h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto mt-4"></div>
-                <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Pilih komponen sesuai kebutuhan Anda. Sistem kami akan otomatis mendeteksi kecocokan antar komponen dengan instan.</p>
+                <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Pilih kategori layanan di bawah ini untuk menghitung estimasi biaya perangkat dan jasa instalasi secara instan.</p>
             </div>
 
-            <div class="flex flex-col lg:flex-row gap-8">
-                <!-- Form Pilihan -->
-                <div class="w-full lg:w-2/3 bg-white p-8 rounded-2xl shadow-xl">
-                    <div class="flex items-center justify-between mb-6 border-b pb-4">
-                        <h3 class="text-xl font-bold text-gray-800"><i class="fa-solid fa-microchip text-orange-500 mr-2"></i>Pilih Komponen PC</h3>
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="openTab('pc')" id="btn-tab-pc" class="tab-btn active px-6 py-3 rounded-full font-bold text-sm md:text-base border-2 border-gray-700 text-gray-300 hover:border-orange-500 transition-all">
+                    <i class="fa-solid fa-desktop mr-2"></i> Perakitan PC
+                </button>
+                <button onclick="openTab('cctv')" id="btn-tab-cctv" class="tab-btn px-6 py-3 rounded-full font-bold text-sm md:text-base border-2 border-gray-700 text-gray-300 hover:border-orange-500 transition-all">
+                    <i class="fa-solid fa-video mr-2"></i> CCTV
+                </button>
+                <button onclick="openTab('akses')" id="btn-tab-akses" class="tab-btn px-6 py-3 rounded-full font-bold text-sm md:text-base border-2 border-gray-700 text-gray-300 hover:border-orange-500 transition-all">
+                    <i class="fa-solid fa-fingerprint mr-2"></i> Akses & Absensi
+                </button>
+                <button onclick="openTab('jaringan')" id="btn-tab-jaringan" class="tab-btn px-6 py-3 rounded-full font-bold text-sm md:text-base border-2 border-gray-700 text-gray-300 hover:border-orange-500 transition-all">
+                    <i class="fa-solid fa-network-wired mr-2"></i> Jaringan
+                </button>
+            </div>
+
+            <!-- TABS CONTENT CONTAINER -->
+            <div class="relative bg-white p-2 rounded-2xl shadow-2xl">
+                
+                <!-- TAB 1: PERAKITAN PC -->
+                <div id="content-pc" class="tab-content flex flex-col lg:flex-row gap-8 p-6 lg:p-8">
+                    <!-- Form Pilihan -->
+                    <div class="w-full lg:w-2/3">
+                        <div class="mb-6 border-b pb-4">
+                            <h3 class="text-2xl font-bold text-gray-800"><i class="fa-solid fa-microchip text-orange-500 mr-2"></i>Simulasi Rakit PC</h3>
+                            <p class="text-gray-500 mt-1">Sistem akan mengecek kecocokan komponen (CPU & Motherboard).</p>
+                        </div>
+                        
+                        <form class="space-y-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Processor (CPU)</label>
+                                    <select id="pc-cpu" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                        <option value="0" data-name="-" data-socket="">-- Pilih Processor --</option>
+                                        <option value="1500000" data-name="Intel Core i3 12100F" data-socket="LGA1700">Intel i3 12100F (LGA1700) - Rp 1.500.000</option>
+                                        <option value="3200000" data-name="AMD Ryzen 5 5600X" data-socket="AM4">AMD Ryzen 5 5600X (AM4) - Rp 3.200.000</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Motherboard</label>
+                                    <select id="pc-mobo" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                        <option value="0" data-name="-" data-socket="">-- Pilih Motherboard --</option>
+                                        <option value="1200000" data-name="MSI H610M-E" data-socket="LGA1700">MSI H610M-E (LGA1700) - Rp 1.200.000</option>
+                                        <option value="1600000" data-name="ASRock B550M Pro4" data-socket="AM4">ASRock B550M (AM4) - Rp 1.600.000</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Memory (RAM)</label>
+                                    <select id="pc-ram" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                        <option value="0" data-name="-">-- Pilih RAM --</option>
+                                        <option value="450000" data-name="8GB DDR4 3200MHz">8GB DDR4 3200MHz - Rp 450.000</option>
+                                        <option value="850000" data-name="16GB (2x8GB) DDR4">16GB (2x8GB) DDR4 - Rp 850.000</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Storage (SSD)</label>
+                                    <select id="pc-storage" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                        <option value="0" data-name="-">-- Pilih SSD --</option>
+                                        <option value="400000" data-name="256GB NVMe">256GB NVMe - Rp 400.000</option>
+                                        <option value="750000" data-name="512GB NVMe">512GB NVMe - Rp 750.000</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">VGA Card</label>
+                                    <select id="pc-vga" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                        <option value="0" data-name="-">-- Tanpa VGA --</option>
+                                        <option value="3500000" data-name="GTX 1660 Super">GTX 1660 Super - Rp 3.500.000</option>
+                                        <option value="5500000" data-name="RTX 3060">RTX 3060 - Rp 5.500.000</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Power Supply & Casing</label>
+                                    <select id="pc-psu" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                        <option value="0" data-name="-">-- Pilih --</option>
+                                        <option value="950000" data-name="PSU 500W + Case Std">PSU 500W + Case Std - Rp 950.000</option>
+                                        <option value="1500000" data-name="PSU 650W + Case RGB">PSU 650W + Case RGB - Rp 1.500.000</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Ringkasan PC -->
+                    <div class="w-full lg:w-1/3">
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 text-white h-full border border-gray-700 shadow-inner">
+                            <h3 class="text-xl font-bold mb-4 text-orange-500 border-b border-gray-700 pb-2">Estimasi Rakitan PC</h3>
+                            <div class="space-y-2 mb-4 text-sm text-gray-300 min-h-[140px]">
+                                <div class="flex justify-between"><span>CPU:</span> <span id="lbl-pc-cpu" class="font-medium text-white">-</span></div>
+                                <div class="flex justify-between"><span>Mobo:</span> <span id="lbl-pc-mobo" class="font-medium text-white">-</span></div>
+                                <div class="flex justify-between"><span>RAM:</span> <span id="lbl-pc-ram" class="font-medium text-white">-</span></div>
+                                <div class="flex justify-between"><span>SSD:</span> <span id="lbl-pc-storage" class="font-medium text-white">-</span></div>
+                                <div class="flex justify-between"><span>VGA:</span> <span id="lbl-pc-vga" class="font-medium text-white">-</span></div>
+                                <div class="flex justify-between"><span>PSU:</span> <span id="lbl-pc-psu" class="font-medium text-white">-</span></div>
+                            </div>
+                            <!-- Peringatan Kompatibilitas -->
+                            <div id="pc-alert" class="hidden mb-4 p-3 rounded bg-red-500/20 text-red-300 text-xs font-semibold"></div>
+                            
+                            <div class="text-2xl font-extrabold mb-6" id="total-pc">Rp 0</div>
+                            <a href="#" id="btn-wa-pc" target="_blank" class="block w-full bg-orange-500 text-white text-center font-bold py-3 rounded-lg hover:bg-orange-600 transition">Pesan via WA</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: CCTV -->
+                <div id="content-cctv" class="tab-content hidden flex flex-col lg:flex-row gap-8 p-6 lg:p-8">
+                    <div class="w-full lg:w-2/3">
+                        <div class="mb-4 border-b pb-4 flex justify-between items-center flex-wrap gap-2">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800"><i class="fa-solid fa-video text-orange-500 mr-2"></i>Simulasi Keamanan CCTV</h3>
+                            </div>
+                            <div class="bg-blue-50 border border-blue-200 text-blue-700 px-3 py-1 rounded-full text-xs font-bold flex items-center">
+                                <i class="fa-solid fa-award mr-1"></i> Partner Resmi: Hikvision & Dahua
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-6">Pilih teknologi kamera (Analog / Digital), kapasitas simpan, dan jumlah titik pemasangan.</p>
+
+                        <form class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Tipe Teknologi & Paket Kamera (Hikvision / Dahua)</label>
+                                <select id="cctv-paket" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                    <option value="0" data-name="-">-- Pilih Paket Kamera --</option>
+                                    
+                                    <optgroup label="Sistem Analog (HD-TVI / HDCVI)">
+                                        <option value="1800000" data-name="Paket 4 Kamera Analog (2MP HD)">Paket 4 Kamera Analog (2MP) + DVR 4CH - Rp 1.800.000</option>
+                                        <option value="3500000" data-name="Paket 8 Kamera Analog (2MP HD)">Paket 8 Kamera Analog (2MP) + DVR 8CH - Rp 3.500.000</option>
+                                        <option value="7200000" data-name="Paket 16 Kamera Analog (2MP HD)">Paket 16 Kamera Analog (2MP) + DVR 16CH - Rp 7.200.000</option>
+                                    </optgroup>
+                                    
+                                    <optgroup label="Sistem Digital (IP Camera)">
+                                        <option value="2600000" data-name="Paket 4 IP Camera Digital (2MP)">Paket 4 IP Camera Digital (2MP) + NVR 4CH - Rp 2.600.000</option>
+                                        <option value="4800000" data-name="Paket 8 IP Camera Digital (2MP)">Paket 8 IP Camera Digital (2MP) + NVR 8CH - Rp 4.800.000</option>
+                                        <option value="9500000" data-name="Paket 16 IP Camera Digital (2MP)">Paket 16 IP Camera Digital (2MP) + NVR 16CH - Rp 9.500.000</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Kapasitas HDD Khusus CCTV</label>
+                                <select id="cctv-hdd" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                    <option value="0" data-name="-">-- Pilih Kapasitas --</option>
+                                    <option value="550000" data-name="HDD Seagate Skyhawk 500GB">HDD 500GB (Estimasi rekam 1 minggu) - Rp 550.000</option>
+                                    <option value="950000" data-name="HDD Seagate Skyhawk 1TB">HDD 1TB (Estimasi rekam 2 minggu) - Rp 950.000</option>
+                                    <option value="1450000" data-name="HDD Seagate Skyhawk 2TB">HDD 2TB (Estimasi rekam 4 minggu) - Rp 1.450.000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Jasa Instalasi Pemasangan & Setting (Per Titik/Kamera)</label>
+                                <select id="cctv-jasa" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                    <option value="0" data-name="-">-- Pilih Jumlah Titik Pemasangan --</option>
+                                    <option value="600000" data-name="Jasa Pemasangan 4 Titik">4 Titik Kamera (Rp 150.000/titik) - Rp 600.000</option>
+                                    <option value="1200000" data-name="Jasa Pemasangan 8 Titik">8 Titik Kamera (Rp 150.000/titik) - Rp 1.200.000</option>
+                                    <option value="2400000" data-name="Jasa Pemasangan 16 Titik">16 Titik Kamera (Rp 150.000/titik) - Rp 2.400.000</option>
+                                </select>
+                                <p class="text-xs text-gray-500 mt-2">*Harga jasa sudah termasuk setting online ke Smartphone. Belum termasuk tarikan kabel ekstra panjang.</p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Ringkasan CCTV -->
+                    <div class="w-full lg:w-1/3">
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 text-white h-full border border-gray-700 shadow-inner">
+                            <h3 class="text-xl font-bold mb-4 text-orange-500 border-b border-gray-700 pb-2">Estimasi CCTV</h3>
+                            <div class="space-y-3 mb-4 text-sm text-gray-300 min-h-[140px]">
+                                <div><span class="block text-gray-400">Paket:</span> <span id="lbl-cctv-paket" class="font-medium text-white">-</span></div>
+                                <div><span class="block text-gray-400">HDD:</span> <span id="lbl-cctv-hdd" class="font-medium text-white">-</span></div>
+                                <div><span class="block text-gray-400">Jasa Pasang:</span> <span id="lbl-cctv-jasa" class="font-medium text-white">-</span></div>
+                            </div>
+                            <div class="text-2xl font-extrabold mb-6" id="total-cctv">Rp 0</div>
+                            <a href="#" id="btn-wa-cctv" target="_blank" class="block w-full bg-orange-500 text-white text-center font-bold py-3 rounded-lg hover:bg-orange-600 transition">Pesan via WA</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: AKSES & ABSENSI -->
+                <div id="content-akses" class="tab-content hidden p-6 lg:p-8">
+                    <div class="mb-6 border-b pb-4">
+                        <h3 class="text-2xl font-bold text-gray-800"><i class="fa-solid fa-fingerprint text-orange-500 mr-2"></i>Kontrol Akses Pintu & Absensi</h3>
+                        <p class="text-gray-500 mt-1">Solusi manajemen kehadiran dan keamanan akses ruangan.</p>
                     </div>
                     
-                    <form id="pc-builder-form" class="space-y-6">
-                        <!-- Processor -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Processor (CPU)</label>
-                            <select id="part-cpu" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
-                                <option value="0" data-name="-" data-socket="">-- Pilih Processor --</option>
-                                <option value="1500000" data-name="Intel Core i3 12100F" data-socket="LGA1700">Intel Core i3 12100F (LGA1700) - Rp 1.500.000</option>
-                                <option value="2500000" data-name="Intel Core i5 12400F" data-socket="LGA1700">Intel Core i5 12400F (LGA1700) - Rp 2.500.000</option>
-                                <option value="3200000" data-name="AMD Ryzen 5 5600X" data-socket="AM4">AMD Ryzen 5 5600X (AM4) - Rp 3.200.000</option>
-                                <option value="5500000" data-name="Intel Core i7 13700K" data-socket="LGA1700">Intel Core i7 13700K (LGA1700) - Rp 5.500.000</option>
-                            </select>
+                    <!-- Foto Dokumentasi -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="relative rounded-xl overflow-hidden h-48 border border-gray-200">
+                            <img src="https://images.unsplash.com/photo-1559705421-4ae9bf6fabb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mesin Absensi" class="object-cover w-full h-full hover:scale-105 transition-transform">
+                            <div class="absolute bottom-0 w-full bg-black/60 text-white text-xs p-2 font-semibold">Contoh: Mesin Absensi Biometrik</div>
                         </div>
-                        
-                        <!-- Motherboard -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Motherboard</label>
-                            <select id="part-mobo" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
-                                <option value="0" data-name="-" data-socket="" data-ram="">-- Pilih Motherboard --</option>
-                                <option value="1200000" data-name="MSI PRO H610M-E" data-socket="LGA1700" data-ram="DDR4">MSI PRO H610M-E (LGA1700 / DDR4) - Rp 1.200.000</option>
-                                <option value="1600000" data-name="ASRock B550M Pro4" data-socket="AM4" data-ram="DDR4">ASRock B550M Pro4 (AM4 / DDR4) - Rp 1.600.000</option>
-                                <option value="3800000" data-name="ASUS TUF Gaming Z790" data-socket="LGA1700" data-ram="DDR5">ASUS TUF Z790 Plus (LGA1700 / DDR5) - Rp 3.800.000</option>
-                            </select>
+                        <div class="relative rounded-xl overflow-hidden h-48 border border-gray-200">
+                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Access Door Lock" class="object-cover w-full h-full hover:scale-105 transition-transform">
+                            <div class="absolute bottom-0 w-full bg-black/60 text-white text-xs p-2 font-semibold">Contoh: Instalasi Magnetic Door Lock</div>
                         </div>
+                    </div>
 
-                        <!-- RAM -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Memory (RAM)</label>
-                            <select id="part-ram" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
-                                <option value="0" data-name="-" data-type="">-- Pilih RAM --</option>
-                                <option value="450000" data-name="8GB DDR4 3200MHz" data-type="DDR4">8GB DDR4 3200MHz - Rp 450.000</option>
-                                <option value="850000" data-name="16GB (2x8GB) DDR4 3200MHz" data-type="DDR4">16GB (2x8GB) DDR4 3200MHz - Rp 850.000</option>
-                                <option value="1800000" data-name="32GB (2x16GB) DDR5 5200MHz" data-type="DDR5">32GB (2x16GB) DDR5 5200MHz - Rp 1.800.000</option>
-                            </select>
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="w-full lg:w-2/3">
+                            <form class="space-y-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Mesin Absensi / Akses</label>
+                                    <select id="akses-mesin" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                        <option value="0" data-name="-">-- Pilih Mesin --</option>
+                                        <option value="1200000" data-name="Mesin Absensi Fingerprint Standard">Absensi Fingerprint Standard - Rp 1.200.000</option>
+                                        <option value="2500000" data-name="Mesin Akses + Absensi Face Recognition">Akses + Absensi Face Recognition - Rp 2.500.000</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Paket Kunci Pintu (Door Lock)</label>
+                                    <select id="akses-kunci" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                        <option value="0" data-name="-">-- Tanpa Kunci Pintu (Hanya Absen) --</option>
+                                        <option value="1500000" data-name="Paket Magnetic Lock (Pintu Kayu/Besi) + Push Button">Magnetic Lock (Pintu Kayu/Besi) + Push Button - Rp 1.500.000</option>
+                                        <option value="1800000" data-name="Paket Drop Bolt Lock (Pintu Kaca) + Push Button">Drop Bolt Lock (Pintu Kaca) + Push Button - Rp 1.800.000</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Jasa Pemasangan & Penarikan Kabel</label>
+                                    <select id="akses-jasa" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                        <option value="0" data-name="-">-- Pilih Jasa --</option>
+                                        <option value="350000" data-name="Jasa Setting Mesin Absensi Saja">Setting Mesin Absensi Saja - Rp 350.000</option>
+                                        <option value="850000" data-name="Jasa Pemasangan Akses Pintu Lengkap">Pemasangan Akses Pintu Lengkap - Rp 850.000</option>
+                                    </select>
+                                </div>
+                            </form>
                         </div>
-
-                        <!-- Storage -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Penyimpanan (SSD/HDD)</label>
-                            <select id="part-storage" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
-                                <option value="0" data-name="-">-- Pilih Penyimpanan --</option>
-                                <option value="400000" data-name="256GB SSD NVMe">256GB SSD NVMe - Rp 400.000</option>
-                                <option value="750000" data-name="512GB SSD NVMe">512GB SSD NVMe - Rp 750.000</option>
-                                <option value="1300000" data-name="1TB SSD NVMe Gen 4">1TB SSD NVMe Gen 4 - Rp 1.300.000</option>
-                            </select>
+                        <div class="w-full lg:w-1/3">
+                            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 text-white h-full border border-gray-700 shadow-inner">
+                                <h3 class="text-xl font-bold mb-4 text-orange-500 border-b border-gray-700 pb-2">Estimasi Akses Pintu</h3>
+                                <div class="space-y-3 mb-4 text-sm text-gray-300 min-h-[140px]">
+                                    <div><span class="block text-gray-400">Mesin:</span> <span id="lbl-akses-mesin" class="font-medium text-white">-</span></div>
+                                    <div><span class="block text-gray-400">Lock:</span> <span id="lbl-akses-kunci" class="font-medium text-white">-</span></div>
+                                    <div><span class="block text-gray-400">Jasa:</span> <span id="lbl-akses-jasa" class="font-medium text-white">-</span></div>
+                                </div>
+                                <div class="text-2xl font-extrabold mb-6" id="total-akses">Rp 0</div>
+                                <a href="#" id="btn-wa-akses" target="_blank" class="block w-full bg-orange-500 text-white text-center font-bold py-3 rounded-lg hover:bg-orange-600 transition">Pesan via WA</a>
+                            </div>
                         </div>
-
-                        <!-- Kartu Grafis (VGA) -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Kartu Grafis (VGA)</label>
-                            <select id="part-vga" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
-                                <option value="0" data-name="-">-- Tanpa VGA (Pakai Bawaan Prosesor) --</option>
-                                <option value="3500000" data-name="NVIDIA GTX 1660 Super">NVIDIA GTX 1660 Super 6GB - Rp 3.500.000</option>
-                                <option value="5500000" data-name="NVIDIA RTX 3060">NVIDIA RTX 3060 12GB - Rp 5.500.000</option>
-                                <option value="11500000" data-name="NVIDIA RTX 4070">NVIDIA RTX 4070 12GB - Rp 11.500.000</option>
-                            </select>
-                        </div>
-
-                        <!-- Power Supply -->
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Power Supply (PSU)</label>
-                            <select id="part-psu" onchange="hitungTotal()" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
-                                <option value="0" data-name="-">-- Pilih Power Supply --</option>
-                                <option value="550000" data-name="500W 80+ Bronze">500W 80+ Bronze - Rp 550.000</option>
-                                <option value="950000" data-name="650W 80+ Gold">650W 80+ Gold - Rp 950.000</option>
-                                <option value="1600000" data-name="850W 80+ Gold Modular">850W 80+ Gold Modular - Rp 1.600.000</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Box Summary Total Harga & Pengecekan Kompatibilitas -->
-                <div class="w-full lg:w-1/3">
-                    <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-xl p-8 sticky top-32 text-white border border-gray-700">
-                        <h3 class="text-2xl font-bold mb-6 text-orange-500">Total Estimasi</h3>
-                        
-                        <div class="space-y-3 mb-6 text-sm text-gray-300 min-h-[150px]">
-                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>CPU</span> <span id="lbl-cpu" class="font-medium text-white text-right">-</span></div>
-                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>Mobo</span> <span id="lbl-mobo" class="font-medium text-white text-right">-</span></div>
-                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>RAM</span> <span id="lbl-ram" class="font-medium text-white text-right">-</span></div>
-                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>Storage</span> <span id="lbl-storage" class="font-medium text-white text-right">-</span></div>
-                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>VGA</span> <span id="lbl-vga" class="font-medium text-white text-right">-</span></div>
-                            <div class="flex justify-between border-b border-gray-700 pb-2"><span>PSU</span> <span id="lbl-psu" class="font-medium text-white text-right">-</span></div>
-                        </div>
-
-                        <!-- Notifikasi Kompatibilitas -->
-                        <div id="compat-alert" class="hidden mb-6 p-4 rounded-lg bg-red-500/20 border border-red-500 text-red-200 text-sm">
-                            <div class="flex items-center mb-2 font-bold text-red-400"><i class="fa-solid fa-triangle-exclamation mr-2"></i> Peringatan Kompatibilitas!</div>
-                            <div id="compat-message" class="space-y-1"></div>
-                        </div>
-
-                        <div id="compat-success" class="hidden mb-6 p-3 rounded-lg bg-green-500/20 border border-green-500 text-green-400 text-sm flex items-center font-bold">
-                            <i class="fa-solid fa-circle-check mr-2"></i> Komponen Cocok
-                        </div>
-
-                        <div class="text-3xl font-extrabold mb-8" id="total-harga">Rp 0</div>
-                        
-                        <a href="#" id="btn-pesan-rakit" target="_blank" class="block w-full bg-orange-500 text-white text-center font-bold py-4 rounded-xl hover:bg-orange-600 transition duration-300 transform hover:-translate-y-1">
-                            <i class="fa-brands fa-whatsapp mr-2"></i> Kirim Pesanan via WA
-                        </a>
                     </div>
                 </div>
+
+                <!-- TAB 4: INFRASTRUKTUR JARINGAN -->
+                <div id="content-jaringan" class="tab-content hidden flex flex-col lg:flex-row gap-8 p-6 lg:p-8">
+                    <div class="w-full lg:w-2/3">
+                        <div class="mb-4 border-b pb-4 flex justify-between items-center flex-wrap gap-2">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800"><i class="fa-solid fa-server text-orange-500 mr-2"></i>Infrastruktur Jaringan</h3>
+                            </div>
+                            <div class="bg-blue-50 border border-blue-200 text-blue-700 px-3 py-1 rounded-full text-xs font-bold flex items-center">
+                                <i class="fa-solid fa-award mr-1"></i> Partner Spesialis: Mikrotik & Ruijie
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                            Pekerjaan mencakup desain dan instalasi jaringan untuk <b>Rumah, Perkantoran, dan Ruang Publik</b>. Meliputi pengadaan server, router management, switch distribusi, hingga access point wifi. Skala pengerjaan mencakup <b>Mikro/Lokal, Gedung/Kampus, dan Kota/Area Luas</b>.
+                        </p>
+
+                        <form class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Router Utama (Management Bandwidth)</label>
+                                <select id="jar-router" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                    <option value="0" data-name="-">-- Pilih Router --</option>
+                                    <option value="1100000" data-name="Mikrotik RB750Gr3 (Gigabit)">Mikrotik RB750Gr3 (Skala Mikro) - Rp 1.100.000</option>
+                                    <option value="2800000" data-name="Mikrotik RB3011 (Rackmount)">Mikrotik RB3011 Rackmount (Skala Gedung) - Rp 2.800.000</option>
+                                    <option value="1800000" data-name="Ruijie Reyee Cloud Router">Ruijie Reyee Cloud Router - Rp 1.800.000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Switch Distribution</label>
+                                <select id="jar-switch" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                    <option value="0" data-name="-">-- Tanpa Switch / Bawaan Router --</option>
+                                    <option value="550000" data-name="Switch 8 Port Gigabit Non-PoE">Switch 8 Port Gigabit Non-PoE - Rp 550.000</option>
+                                    <option value="1600000" data-name="Ruijie Switch 8 Port PoE (Untuk AP/CCTV)">Ruijie Switch 8 Port PoE (Untuk AP/CCTV) - Rp 1.600.000</option>
+                                    <option value="2500000" data-name="Ruijie Switch 24 Port Gigabit">Ruijie Switch 24 Port Gigabit Rackmount - Rp 2.500.000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Access Point (Penyebar WiFi)</label>
+                                <select id="jar-ap" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                    <option value="0" data-name="-">-- Tanpa Access Point --</option>
+                                    <option value="1200000" data-name="1x Ruijie Reyee Ceiling AP WiFi 6">1x Ruijie Reyee Ceiling AP WiFi 6 - Rp 1.200.000</option>
+                                    <option value="3600000" data-name="3x Ruijie Reyee Ceiling AP WiFi 6">3x Ruijie Reyee Ceiling AP WiFi 6 - Rp 3.600.000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Skala Pekerjaan & Jasa Instalasi Jaringan</label>
+                                <select id="jar-jasa" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 cursor-pointer">
+                                    <option value="0" data-name="-">-- Pilih Skala Pekerjaan --</option>
+                                    <option value="750000" data-name="Skala Mikro / Lokal (Rumah / Perkantoran Kecil)">Skala Mikro / Lokal (Rumah / Perkantoran Kecil) - Rp 750.000</option>
+                                    <option value="3500000" data-name="Skala Gedung / Kampus (Perkantoran / Ruang Publik)">Skala Gedung / Kampus (Perkantoran / Ruang Publik) - Rp 3.500.000</option>
+                                    <option value="8500000" data-name="Skala Kota / Area Luas (Distribusi Fiber Optic / Terpusat)">Skala Kota / Area Luas (Distribusi Multi-Area) - Rp 8.500.000</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Ringkasan Jaringan -->
+                    <div class="w-full lg:w-1/3">
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 text-white h-full border border-gray-700 shadow-inner">
+                            <h3 class="text-xl font-bold mb-4 text-orange-500 border-b border-gray-700 pb-2">Estimasi Jaringan</h3>
+                            <div class="space-y-3 mb-4 text-sm text-gray-300 min-h-[140px]">
+                                <div><span class="block text-gray-400">Router:</span> <span id="lbl-jar-router" class="font-medium text-white">-</span></div>
+                                <div><span class="block text-gray-400">Switch:</span> <span id="lbl-jar-switch" class="font-medium text-white">-</span></div>
+                                <div><span class="block text-gray-400">Acc. Point:</span> <span id="lbl-jar-ap" class="font-medium text-white">-</span></div>
+                                <div><span class="block text-gray-400">Skala Kerja:</span> <span id="lbl-jar-jasa" class="font-medium text-white">-</span></div>
+                            </div>
+                            <div class="text-2xl font-extrabold mb-6" id="total-jaringan">Rp 0</div>
+                            <a href="#" id="btn-wa-jaringan" target="_blank" class="block w-full bg-orange-500 text-white text-center font-bold py-3 rounded-lg hover:bg-orange-600 transition">Pesan via WA</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Skrip Logika Simulasi Rakit PC -->
+    <!-- Skrip Logika Tab & Simulasi -->
     <script>
-        function hitungTotal() {
-            const parts = ['cpu', 'mobo', 'ram', 'storage', 'vga', 'psu'];
-            let total = 0, orderList = "";
+        // Fungsi pindah Tab
+        function openTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(c => c.classList.add('hidden'));
+            
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(b => {
+                b.classList.remove('active', 'bg-orange-500', 'text-white', 'border-orange-500');
+                b.classList.add('bg-transparent', 'text-gray-300', 'border-gray-700');
+            });
+            
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            
+            const activeBtn = document.getElementById('btn-tab-' + tabName);
+            activeBtn.classList.add('active', 'bg-orange-500', 'text-white', 'border-orange-500');
+            activeBtn.classList.remove('bg-transparent', 'text-gray-300', 'border-gray-700');
 
-            parts.forEach(part => {
-                const el = document.getElementById(`part-${part}`);
-                const price = parseInt(el.value);
-                const selectedOption = el.options[el.selectedIndex];
-                const name = selectedOption.getAttribute('data-name');
+            const simulasiSection = document.getElementById('simulasi');
+            const y = simulasiSection.getBoundingClientRect().top + window.scrollY - 100;
+            window.scrollTo({top: y, behavior: 'smooth'});
+        }
+
+        const formatRp = (angka) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
+        const waNumber = "6285711779993";
+
+        // Fungsi Penghitung Total Simulasi
+        function hitungTotal(kategori) {
+            let total = 0;
+            let orderText = "";
+            let dataIds = [];
+
+            if(kategori === 'pc') dataIds = ['cpu', 'mobo', 'ram', 'storage', 'vga', 'psu'];
+            else if(kategori === 'cctv') dataIds = ['paket', 'hdd', 'jasa'];
+            else if(kategori === 'akses') dataIds = ['mesin', 'kunci', 'jasa'];
+            else if(kategori === 'jaringan') dataIds = ['router', 'switch', 'ap', 'jasa'];
+
+            dataIds.forEach(id => {
+                const el = document.getElementById(`${kategori}-${id}`);
+                const price = parseInt(el.value) || 0;
+                const name = el.options[el.selectedIndex].getAttribute('data-name');
                 
-                document.getElementById(`lbl-${part}`).innerText = name !== '-' ? name : '-';
+                document.getElementById(`lbl-${kategori}-${id}`).innerText = name !== '-' ? name : '-';
                 total += price;
 
-                if (name !== '-' && price > 0) orderList += `- ${part.toUpperCase()}: ${name}%0A`;
+                if (name !== '-' && price > 0) orderText += `- ${name}%0A`;
             });
 
-            const cpuOpt = document.getElementById('part-cpu').options[document.getElementById('part-cpu').selectedIndex];
-            const moboOpt = document.getElementById('part-mobo').options[document.getElementById('part-mobo').selectedIndex];
-            const ramOpt = document.getElementById('part-ram').options[document.getElementById('part-ram').selectedIndex];
+            document.getElementById(`total-${kategori}`).innerText = formatRp(total);
 
-            const cpuSocket = cpuOpt.getAttribute('data-socket'), moboSocket = moboOpt.getAttribute('data-socket');
-            const moboRam = moboOpt.getAttribute('data-ram'), ramType = ramOpt.getAttribute('data-type');
+            // Logika Kompatibilitas PC
+            if(kategori === 'pc') {
+                const cpuOpt = document.getElementById('pc-cpu').options[document.getElementById('pc-cpu').selectedIndex];
+                const moboOpt = document.getElementById('pc-mobo').options[document.getElementById('pc-mobo').selectedIndex];
+                const cpuSocket = cpuOpt.getAttribute('data-socket');
+                const moboSocket = moboOpt.getAttribute('data-socket');
+                const alertBox = document.getElementById('pc-alert');
 
-            let errors = [];
-            if (cpuSocket && moboSocket && cpuSocket !== moboSocket) errors.push(`<li>Socket CPU (<b>${cpuSocket}</b>) tidak cocok dgn Motherboard (<b>${moboSocket}</b>).</li>`);
-            if (moboRam && ramType && moboRam !== ramType) errors.push(`<li>Tipe memori Motherboard (<b>${moboRam}</b>) tidak cocok dgn RAM (<b>${ramType}</b>).</li>`);
-
-            const alertBox = document.getElementById('compat-alert'), msgBox = document.getElementById('compat-message');
-            const successBox = document.getElementById('compat-success'), btnPesan = document.getElementById('btn-pesan-rakit');
-
-            if (errors.length > 0) {
-                msgBox.innerHTML = `<ul class="list-disc pl-4">${errors.join('')}</ul>`;
-                alertBox.classList.remove('hidden'); successBox.classList.add('hidden');
-                btnPesan.classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none', 'bg-gray-500');
-                btnPesan.classList.remove('bg-orange-500', 'hover:bg-orange-600', 'transform', 'hover:-translate-y-1');
-            } else {
-                alertBox.classList.add('hidden');
-                btnPesan.classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none', 'bg-gray-500');
-                btnPesan.classList.add('bg-orange-500', 'hover:bg-orange-600', 'transform', 'hover:-translate-y-1');
-                if(cpuSocket && moboSocket && ramType) successBox.classList.remove('hidden');
-                else successBox.classList.add('hidden');
+                if (cpuSocket && moboSocket && cpuSocket !== moboSocket) {
+                    alertBox.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Peringatan: Socket CPU (${cpuSocket}) tidak cocok dgn Motherboard (${moboSocket}).`;
+                    alertBox.classList.remove('hidden');
+                } else {
+                    alertBox.classList.add('hidden');
+                }
             }
 
-            const formatRupiah = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(total);
-            document.getElementById('total-harga').innerText = formatRupiah;
-
-            const waNumber = "6285711779993";
-            const waText = `Halo Orange-Netcom, saya ingin konsultasi rakit PC dengan rincian spesifikasi berikut:%0A%0A${orderList}%0A*Total Estimasi: ${formatRupiah}*%0A%0AMohon info lebih lanjut.`;
-            btnPesan.href = total === 0 ? `https://wa.me/${waNumber}?text=Halo%20Orange%20Netcom,%20saya%20ingin%20konsultasi%20rakit%20PC.` : `https://wa.me/${waNumber}?text=${waText}`;
+            // Generate Link WA
+            const btnPesan = document.getElementById(`btn-wa-${kategori}`);
+            const kategoriNama = kategori === 'pc' ? 'Perakitan PC' : (kategori === 'cctv' ? 'Instalasi CCTV' : (kategori === 'akses' ? 'Akses Pintu' : 'Infrastruktur Jaringan'));
+            
+            const waTeks = total === 0 
+                ? `https://wa.me/${waNumber}?text=Halo%20Orange-Netcom,%20saya%20ingin%20konsultasi%20layanan%20${kategoriNama}.` 
+                : `https://wa.me/${waNumber}?text=Halo%20Orange-Netcom,%20saya%20tertarik%20dengan%20simulasi%20${kategoriNama}:%0A%0A${orderText}%0A*Total Estimasi: ${formatRp(total)}*%0A%0AMohon info lebih lanjut.`;
+            
+            btnPesan.href = waTeks;
         }
-        window.onload = hitungTotal;
+
+        window.onload = () => {
+            ['pc', 'cctv', 'akses', 'jaringan'].forEach(kat => hitungTotal(kat));
+        };
     </script>
 
-    <!-- Bagian Tentang Kami (Dengan SLIDESHOW GAMBAR BERGERAK & BINGKAI DIPERBAIKI) -->
+    <!-- Bagian Tentang Kami -->
     <section id="tentang" class="py-20 bg-gray-50 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center gap-16">
-                
                 <!-- Kiri: Slideshow Bergerak -->
-                <div class="w-full md:w-1/2">
-                    <!-- WRAPPER RELATIVE YANG DIPERBAIKI AGAR BINGKAI TIDAK LARI -->
-                    <div class="relative">
-                        
-                        <!-- Gambar / Slideshow -->
-                        <div class="relative w-full aspect-square md:aspect-auto md:h-[500px] rounded-2xl shadow-2xl z-10 bg-gray-900 overflow-hidden group">
-                            
-                            <!-- Gambar Animasi -->
-                            <img id="slideshow-img" src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Layanan IT" class="absolute inset-0 w-full h-full object-cover animate-zoom transition-opacity duration-1000 ease-in-out opacity-100">
-                            
-                            <!-- Overlay Gradasi Gelap -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-90"></div>
-                            
-                            <!-- Kotak Teks Bergerak -->
-                            <div id="slideshow-content" class="absolute bottom-0 left-0 w-full p-8 transition-all duration-700 ease-in-out transform translate-y-0 opacity-100">
-                                <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-4 shadow-lg animate-bounce">
-                                    <i id="slideshow-icon" class="fa-solid fa-desktop text-3xl text-white"></i>
-                                </div>
-                                <h3 id="slideshow-title" class="text-3xl font-bold text-white mb-2">Perakitan Komputer</h3>
-                                <p class="text-gray-300">Solusi teknologi cerdas, dirancang khusus untuk kebutuhan Anda.</p>
+                <div class="w-full md:w-1/2 relative">
+                    <div class="relative w-full aspect-square md:aspect-auto md:h-[500px] rounded-2xl shadow-2xl z-10 bg-gray-900 overflow-hidden group">
+                        <img id="slideshow-img" src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Layanan IT" class="absolute inset-0 w-full h-full object-cover animate-zoom transition-opacity duration-1000 ease-in-out opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-90"></div>
+                        <div id="slideshow-content" class="absolute bottom-0 left-0 w-full p-8 transition-all duration-700 ease-in-out">
+                            <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-4 shadow-lg animate-bounce">
+                                <i id="slideshow-icon" class="fa-solid fa-desktop text-3xl text-white"></i>
                             </div>
+                            <h3 id="slideshow-title" class="text-3xl font-bold text-white mb-2">Perakitan Komputer</h3>
+                            <p class="text-gray-300">Solusi teknologi cerdas, dirancang khusus untuk kebutuhan Anda.</p>
                         </div>
-
-                        <!-- Aksen Bingkai Belakang (Sekarang Mengikuti Wadah Utama) -->
-                        <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-orange-500 rounded-2xl z-0 hidden md:block"></div>
-                        
                     </div>
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-orange-500 rounded-2xl z-0 hidden md:block"></div>
                 </div>
 
-                <!-- Skrip Logika Slideshow -->
                 <script>
                     const slides = [
                         { img: "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Perakitan Komputer", icon: "fa-desktop" },
@@ -342,7 +562,6 @@
                         { img: "https://images.unsplash.com/photo-1559705421-4ae9bf6fabb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Akses & Absensi", icon: "fa-fingerprint" },
                         { img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Infrastruktur Jaringan", icon: "fa-network-wired" }
                     ];
-
                     let currentSlide = 0;
                     const slideImg = document.getElementById('slideshow-img');
                     const slideContent = document.getElementById('slideshow-content');
@@ -351,9 +570,7 @@
 
                     setInterval(() => {
                         slideImg.classList.replace('opacity-100', 'opacity-0');
-                        slideContent.classList.replace('translate-y-0', 'translate-y-8');
                         slideContent.classList.replace('opacity-100', 'opacity-0');
-                        
                         setTimeout(() => {
                             currentSlide = (currentSlide + 1) % slides.length;
                             slideImg.src = slides[currentSlide].img;
@@ -361,7 +578,6 @@
                             slideIcon.className = `fa-solid ${slides[currentSlide].icon} text-3xl text-white`;
                             
                             slideImg.classList.replace('opacity-0', 'opacity-100');
-                            slideContent.classList.replace('translate-y-8', 'translate-y-0');
                             slideContent.classList.replace('opacity-0', 'opacity-100');
                         }, 800);
                     }, 4000);
@@ -399,7 +615,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div>
                     <div class="bg-white inline-block p-3 rounded-lg mb-6 shadow-sm">
-                        <img src="5353.png" alt="Logo Orange-Netcom" class="h-14 md:h-16 w-auto object-contain">
+                        <img src="5353.png" alt="Logo Orange-Netcom" class="h-10 md:h-14 w-auto object-contain">
                     </div>
                     <p class="text-base text-gray-400 leading-relaxed pr-4">Memberikan solusi terpadu untuk kebutuhan komputasi, infrastruktur jaringan, dan sistem keamanan Anda.</p>
                 </div>
@@ -421,7 +637,7 @@
                     <ul class="space-y-4 text-base">
                         <li class="flex justify-between border-b border-gray-700 pb-3"><span class="text-gray-400">Senin - Jumat</span> <span>08:00 - 17:00 WIB</span></li>
                         <li class="flex justify-between border-b border-gray-700 pb-3"><span class="text-gray-400">Sabtu</span> <span>09:00 - 15:00 WIB</span></li>
-                        <li class="flex justify-between text-orange-500"><span>Minggu</span> <span class="font-medium">Tutup / Sesuai Janji Temu</span></li>
+                        <li class="flex justify-between text-orange-500"><span>Minggu</span> <span class="font-medium">Tutup / Janji Temu</span></li>
                     </ul>
                 </div>
             </div>
