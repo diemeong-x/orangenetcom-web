@@ -1,0 +1,84 @@
+{
+    "wa_admin": "6285711779993",
+    "harga": {
+        "pc_cpu": [
+            { "nama": "Intel Core i3 12100F (LGA1700)", "harga": 1500000, "socket": "LGA1700" },
+            { "nama": "AMD Ryzen 5 5600X (AM4)", "harga": 3200000, "socket": "AM4" }
+        ],
+        "pc_mobo": [
+            { "nama": "MSI H610M-E (LGA1700)", "harga": 1200000, "socket": "LGA1700" },
+            { "nama": "ASRock B550M Pro4 (AM4)", "harga": 1600000, "socket": "AM4" }
+        ],
+        "pc_ram": [
+            { "nama": "8GB DDR4 3200MHz", "harga": 450000 },
+            { "nama": "16GB (2x8GB) DDR4", "harga": 850000 }
+        ],
+        "pc_storage": [
+            { "nama": "256GB NVMe", "harga": 400000 },
+            { "nama": "512GB NVMe", "harga": 750000 }
+        ],
+        "pc_vga": [
+            { "nama": "Tanpa VGA", "harga": 0 },
+            { "nama": "GTX 1660 Super", "harga": 3500000 },
+            { "nama": "RTX 3060", "harga": 5500000 }
+        ],
+        "pc_psu": [
+            { "nama": "PSU 500W + Case Std", "harga": 950000 },
+            { "nama": "PSU 650W + Case RGB", "harga": 1500000 }
+        ],
+        "cctv_paket_analog": [
+            { "nama": "Paket 4 Kamera Analog (2MP) + DVR", "harga": 1800000 },
+            { "nama": "Paket 8 Kamera Analog (2MP) + DVR", "harga": 3500000 },
+            { "nama": "Paket 16 Kamera Analog (2MP) + DVR", "harga": 7200000 }
+        ],
+        "cctv_paket_digital": [
+            { "nama": "Paket 4 IP Camera Digital (2MP) + NVR", "harga": 2600000 },
+            { "nama": "Paket 8 IP Camera Digital (2MP) + NVR", "harga": 4800000 },
+            { "nama": "Paket 16 IP Camera Digital (2MP) + NVR", "harga": 9500000 }
+        ],
+        "cctv_hdd": [
+            { "nama": "HDD Seagate Skyhawk 500GB", "harga": 550000 },
+            { "nama": "HDD Seagate Skyhawk 1TB", "harga": 950000 },
+            { "nama": "HDD Seagate Skyhawk 2TB", "harga": 1450000 }
+        ],
+        "cctv_jasa": [
+            { "nama": "4 Titik Kamera", "harga": 600000 },
+            { "nama": "8 Titik Kamera", "harga": 1200000 },
+            { "nama": "16 Titik Kamera", "harga": 2400000 }
+        ],
+        "akses_mesin": [
+            { "nama": "Absensi Fingerprint Standard", "harga": 1200000 },
+            { "nama": "Akses + Absensi Face Recognition", "harga": 2500000 }
+        ],
+        "akses_kunci": [
+            { "nama": "Tanpa Kunci Pintu (Hanya Absen)", "harga": 0 },
+            { "nama": "Magnetic Lock (Pintu Kayu/Besi) + Push Button", "harga": 1500000 },
+            { "nama": "Drop Bolt Lock (Pintu Kaca) + Push Button", "harga": 1800000 }
+        ],
+        "akses_jasa": [
+            { "nama": "Setting Mesin Absensi Saja", "harga": 350000 },
+            { "nama": "Pemasangan Akses Pintu Lengkap", "harga": 850000 }
+        ],
+        "jar_router": [
+            { "nama": "Mikrotik RB750Gr3 (Skala Mikro)", "harga": 1100000 },
+            { "nama": "Mikrotik RB3011 Rackmount (Skala Gedung)", "harga": 2800000 },
+            { "nama": "Ruijie Reyee Cloud Router", "harga": 1800000 }
+        ],
+        "jar_switch": [
+            { "nama": "Tanpa Switch / Bawaan Router", "harga": 0 },
+            { "nama": "Switch 8 Port Gigabit Non-PoE", "harga": 550000 },
+            { "nama": "Ruijie Switch 8 Port PoE", "harga": 1600000 },
+            { "nama": "Ruijie Switch 24 Port Gigabit", "harga": 2500000 }
+        ],
+        "jar_ap": [
+            { "nama": "Tanpa Access Point", "harga": 0 },
+            { "nama": "1x Ruijie Reyee Ceiling AP WiFi 6", "harga": 1200000 },
+            { "nama": "3x Ruijie Reyee Ceiling AP WiFi 6", "harga": 3600000 }
+        ],
+        "jar_jasa": [
+            { "nama": "Skala Mikro / Lokal (Rumah / Perkantoran Kecil)", "harga": 750000 },
+            { "nama": "Skala Gedung / Kampus (Perkantoran / Ruang Publik)", "harga": 3500000 },
+            { "nama": "Skala Kota / Area Luas (Distribusi Multi-Area)", "harga": 8500000 }
+        ]
+    }
+}
