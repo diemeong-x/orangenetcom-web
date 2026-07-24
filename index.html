@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orange-Netcom | Mitra Solusi IT & Keamanan Terpercaya</title>
+    
+    <!-- SEO Meta Tags Teroptimasi -->
+    <title>Orange Netcom | Jasa Instalasi Jaringan, CCTV & Rakit PC Profesional</title>
+    <meta name="description" content="Orange Netcom menyediakan solusi IT terpadu: Instalasi Infrastruktur Jaringan (Mikrotik/Ruijie), Keamanan CCTV, Akses Pintu, dan Rakitan PC Server/Workstation.">
+    <meta name="keywords" content="jasa instalasi jaringan, jasa pasang cctv, rakit pc server, akses pintu biometrik, IT konsultan jakarta, mikrotik, ruijie, hikvision">
+    <meta name="author" content="Orange Netcom">
+    
+    <!-- Open Graph / WhatsApp / Facebook Share -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Orange Netcom - Solusi Konektivitas Modern">
+    <meta property="og:description" content="Mitra terpercaya untuk instalasi jaringan, CCTV, dan infrastruktur IT bisnis Anda. Coba simulasi harga kami sekarang!">
+    <meta property="og:image" content="5353.png"> 
     
     <!-- Ikon Tab Browser (Favicon) -->
     <link rel="icon" type="image/png" href="3339.png">
+    
+    <!-- Optimization: Preconnect ke eksternal domain agar loading font/icon lebih cepat -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Tailwind CSS untuk Desain -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -63,10 +77,10 @@
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#beranda">
-                        <img src="5353.png" alt="Logo Orange-Netcom" class="h-12 w-auto object-contain transition-transform hover:scale-105 duration-300">
+                        <img src="5353.png" alt="Logo Orange Netcom" class="h-12 w-auto object-contain transition-transform hover:scale-105 duration-300">
                     </a>
                 </div>
-                <div class="hidden md:flex space-x-8">
+                <div id="nav-menu" class="hidden md:flex space-x-8">
                     <a href="#beranda" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Beranda</a>
                     <a href="#layanan" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Layanan</a>
                     <a href="#simulasi" class="text-orange-500 font-bold transition duration-300">Simulasi Harga</a>
@@ -74,7 +88,7 @@
                     <a href="#kontak" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Kontak</a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button class="text-slate-800 hover:text-orange-500 focus:outline-none">
+                    <button id="btn-mobile-menu" class="text-slate-800 hover:text-orange-500 focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -95,13 +109,13 @@
             <span class="inline-block py-1 px-3 rounded-full bg-orange-500/20 text-orange-400 font-semibold text-sm mb-4 border border-orange-500/30">Professional IT Solutions</span>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-md">Mitra Solusi Teknologi & <br class="hidden md:block"> Keamanan Terpercaya</h1>
             <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Orange-Netcom menghadirkan layanan integrasi IT komprehensif. Mulai dari infrastruktur jaringan, sistem keamanan (CCTV & Akses), hingga perakitan komputasi khusus untuk skala bisnis Anda.
+                Orange Netcom menghadirkan layanan integrasi IT komprehensif. Mulai dari infrastruktur jaringan, sistem keamanan (CCTV & Akses), hingga perakitan komputasi khusus untuk skala bisnis Anda.
             </p>
             
             <a href="#simulasi" class="inline-block bg-white text-slate-900 hover:bg-orange-500 hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg transform hover:-translate-y-1 mr-4 border-2 border-white hover:border-orange-500">
                 Coba Simulasi Harga
             </a>
-            <a href="https://wa.me/6285711779993?text=Halo%20Orange-Netcom,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20infrastruktur%20IT%20dan%20Keamanan." target="_blank" class="inline-block bg-white text-slate-900 hover:bg-orange-500 hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg transform hover:-translate-y-1 mt-4 sm:mt-0 border-2 border-white hover:border-orange-500">
+            <a href="https://wa.me/6285711779993?text=Halo%20Orange%20Netcom,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20infrastruktur%20IT%20dan%20Keamanan." target="_blank" class="inline-block bg-white text-slate-900 hover:bg-orange-500 hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg transform hover:-translate-y-1 mt-4 sm:mt-0 border-2 border-white hover:border-orange-500">
                 Konsultasi Gratis
             </a>
         </div>
@@ -256,10 +270,21 @@
                     </div>
                 </div>
 
-                <!-- TAB 3: AKSES & ABSENSI (Gambar contoh telah dihapus) -->
+                <!-- TAB 3: AKSES & ABSENSI -->
                 <div id="content-akses" class="tab-content hidden p-4 lg:p-6">
                     <div class="mb-6 border-b border-gray-200 pb-4">
                         <h3 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-fingerprint text-orange-500 mr-2"></i>Kontrol Akses Pintu & Absensi</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="relative rounded-xl overflow-hidden h-48 border border-gray-200">
+                            <img src="https://images.unsplash.com/photo-1559705421-4ae9bf6fabb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mesin Absensi" loading="lazy" class="object-cover w-full h-full hover:scale-105 transition-transform">
+                            <div class="absolute bottom-0 w-full bg-black/60 text-white text-xs p-2 font-semibold">Contoh: Mesin Absensi Biometrik</div>
+                        </div>
+                        <div class="relative rounded-xl overflow-hidden h-48 border border-gray-200">
+                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Access Door Lock" loading="lazy" class="object-cover w-full h-full hover:scale-105 transition-transform">
+                            <div class="absolute bottom-0 w-full bg-black/60 text-white text-xs p-2 font-semibold">Contoh: Instalasi Magnetic Door Lock</div>
+                        </div>
                     </div>
 
                     <div class="flex flex-col lg:flex-row gap-8">
@@ -336,29 +361,121 @@
         </div>
     </div>
 
-    <!-- Bagian Portofolio & Klien -->
+    <!-- Bagian Portofolio & Studi Kasus -->
     <section id="portfolio" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-orange-500 font-bold tracking-wider text-sm uppercase">Kisah Sukses Klien</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Studi Kasus & Portofolio</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-gray-500 max-w-2xl mx-auto">Bukti nyata dedikasi kami dalam memberikan solusi infrastruktur IT dan Sistem Keamanan yang rapi, terintegrasi, dan berstandar profesional.</p>
+            </div>
+
+            <!-- STUDI KASUS 1: INFRASTRUKTUR JARINGAN -->
+            <div class="bg-white rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col lg:flex-row mb-10 group">
+                <div class="lg:w-2/5 relative h-64 lg:h-auto overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Instalasi Rack Server Jaringan" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wide">Jaringan & Server</div>
+                </div>
+                <div class="lg:w-3/5 p-6 md:p-10 flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Penataan Server & Distribusi WiFi Area Perkantoran</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-medium"><i class="fa-solid fa-location-dot text-orange-500 mr-2"></i>Gedung Perkantoran, Jakarta Selatan</p>
+                    
+                    <div class="space-y-5 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-red-500 flex-shrink-0 mr-4 border border-red-100"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Tantangan</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">Kabel di ruang server kusut berantakan sehingga sulit saat ada pemeliharaan (maintenance). Selain itu, koneksi WiFi sering terputus (blank spot) saat staf berpindah lantai atau ruangan.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500 flex-shrink-0 mr-4 border border-blue-100"><i class="fa-solid fa-lightbulb"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Solusi Orange Netcom</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">Melakukan <i>cable management</i> ulang pada rack server. Manajemen bandwidth diatur ulang menggunakan <b>Router Mikrotik</b>, dipadukan dengan instalasi <b>Access Point Ruijie Reyee WiFi 6</b> dengan fitur <i>Seamless Roaming</i>.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 flex-shrink-0 mr-4 border border-green-100"><i class="fa-solid fa-check-double"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Hasil Akhir</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">Ruang server menjadi sangat rapi dan aman. Koneksi internet kini stabil merata di seluruh sudut kantor, meningkatkan produktivitas staf tanpa ada lagi keluhan sinyal putus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/6285711779993?text=Halo%20Orange%20Netcom,%20saya%20tertarik%20membenahi%20jaringan/server%20seperti%20di%20portofolio%20Perkantoran.%20Bisa%20bantu%20konsultasi?" target="_blank" class="inline-flex justify-center items-center bg-slate-900 text-white hover:bg-orange-500 font-bold py-3 px-6 rounded-xl transition-all duration-300 w-full sm:w-auto self-start border-2 border-slate-900 hover:border-orange-500 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                        <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Konsultasikan Proyek Serupa
+                    </a>
+                </div>
+            </div>
+
+            <!-- STUDI KASUS 2: CCTV & KEAMANAN -->
+            <div class="bg-white rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col lg:flex-row-reverse mb-10 group">
+                <div class="lg:w-2/5 relative h-64 lg:h-auto overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Instalasi IP Camera" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wide">Sistem Keamanan CCTV</div>
+                </div>
+                <div class="lg:w-3/5 p-6 md:p-10 flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Pembaruan Sistem Keamanan Terpadu Area Gudang</h3>
+                    <p class="text-gray-500 text-sm mb-6 font-medium"><i class="fa-solid fa-location-dot text-orange-500 mr-2"></i>Area Pabrik Industri, Banten</p>
+                    
+                    <div class="space-y-5 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-red-500 flex-shrink-0 mr-4 border border-red-100"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Tantangan</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">CCTV analog lama klien banyak menampilkan *noise* (semut) dan gambar sama sekali tidak terlihat jelas saat malam hari (kurangnya pencahayaan gudang). Masih terdapat area *blind spot* rawan pencurian.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500 flex-shrink-0 mr-4 border border-blue-100"><i class="fa-solid fa-lightbulb"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Solusi Orange Netcom</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">Migrasi total ke sistem digital dengan memasang <b>16 Titik IP Camera Hikvision 2MP (Full Color / DarkFighter)</b> yang dikendalikan oleh NVR modern, serta dipasangkan <b>HDD Seagate Skyhawk</b> khusus rekaman CCTV nonstop 24/7.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 flex-shrink-0 mr-4 border border-green-100"><i class="fa-solid fa-check-double"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Hasil Akhir</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">Pengawasan 24 jam dengan visual warna yang tajam meski dalam kondisi gudang gelap. Seluruh area ter-cover penuh dan pemilik perusahaan dapat memantau aktivitas gudang secara langsung <i>(real-time)</i> dari aplikasi di Smartphone.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/6285711779993?text=Halo%20Orange%20Netcom,%20saya%20tertarik%20memasang/upgrade%20CCTV%20seperti%20di%20portofolio%20Pabrik.%20Bisa%20bantu%20konsultasi?" target="_blank" class="inline-flex justify-center items-center bg-slate-900 text-white hover:bg-orange-500 font-bold py-3 px-6 rounded-xl transition-all duration-300 w-full sm:w-auto self-start border-2 border-slate-900 hover:border-orange-500 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                        <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Konsultasikan Keamanan Anda
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Klien Pendek -->
+    <section class="py-20 bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Portofolio & Klien Kami</h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
                 <p class="mt-4 text-gray-500">Dedikasi kami menghasilkan instalasi yang rapi, aman, dan berstandar profesional.</p>
             </div>
-
+            
             <!-- Galeri Foto Pekerjaan/Proyek Asli -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                 <div class="relative group rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all h-64">
-                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Instalasi Rack Server" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Instalasi Rack Server" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white"><p class="font-bold">Instalasi Server & Jaringan</p><p class="text-xs text-orange-400">Gedung Perkantoran Jakarta</p></div>
                 </div>
                 <div class="relative group rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all h-64">
-                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Instalasi CCTV" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Instalasi CCTV" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white"><p class="font-bold">Pemasangan IP Camera</p><p class="text-xs text-orange-400">Pabrik Industri Banten</p></div>
                 </div>
                 <div class="relative group rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all h-64">
-                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Instalasi Akses Pintu" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Instalasi Akses Pintu" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white"><p class="font-bold">Sistem Akses Biometrik</p><p class="text-xs text-orange-400">Ruang Publik & Instansi</p></div>
                 </div>
@@ -373,7 +490,7 @@
                 <!-- Tentang & Logo -->
                 <div>
                     <div class="bg-white inline-block p-2 rounded-xl mb-6 shadow-sm">
-                        <img src="5353.png" alt="Logo Orange-Netcom" class="h-10 w-auto object-contain">
+                        <img src="5353.png" alt="Logo Orange Netcom" class="h-10 w-auto object-contain">
                     </div>
                     <p class="text-sm text-gray-400 leading-relaxed pr-4 mb-6">Memberikan solusi terpadu untuk kebutuhan komputasi, infrastruktur jaringan, dan sistem keamanan Anda dengan standar profesional tertinggi.</p>
                 </div>
@@ -381,7 +498,7 @@
                 <!-- Kontak -->
                 <div>
                     <h4 class="text-white font-bold mb-6 text-xl">Hubungi Kami</h4>
-                    <ul class="space-y-4 text-sm">
+                    <ul class="space-y-4 text-sm mb-8">
                         <li class="flex items-start group">
                             <div class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center mr-3 group-hover:bg-orange-500 transition-colors text-orange-500 group-hover:text-white"><i class="fa-solid fa-phone"></i></div>
                             <span class="pt-1 text-gray-300">0857-1177-9993</span>
@@ -403,23 +520,54 @@
                     <ul class="space-y-3 text-sm mb-6">
                         <li class="flex justify-between border-b border-slate-800 pb-2"><span class="text-gray-400">Senin - Jumat</span> <span>08:00 - 17:00 WIB</span></li>
                         <li class="flex justify-between border-b border-slate-800 pb-2"><span class="text-gray-400">Sabtu</span> <span>09:00 - 15:00 WIB</span></li>
-                        <li class="flex justify-between text-orange-500 font-medium"><span>Minggu</span> <span>Tutup / Janji Temu</span></li>
+                        <li class="flex justify-between text-orange-500 font-medium mb-4"><span>Minggu</span> <span>Tutup / Janji Temu</span></li>
                     </ul>
                     <!-- Embed Google Maps -->
-                    <div class="w-full h-32 rounded-lg overflow-hidden border border-slate-700">
+                    <div class="w-full h-32 rounded-lg overflow-hidden border border-slate-700 mb-6">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.556754020108!2d106.749000!3d-6.330000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTknNDguMCJTIDEwNsKwNDQnNTYuNCJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <!-- Media Sosial -->
+                    <h4 class="text-white font-bold mb-4 text-lg">Ikuti Proyek Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:bg-orange-500 hover:text-white transition-all transform hover:-translate-y-1">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:bg-[#0a66c2] hover:text-white transition-all transform hover:-translate-y-1">
+                            <i class="fa-brands fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all transform hover:-translate-y-1">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="border-t border-slate-800 mt-12 pt-8 text-center text-sm text-gray-500">
-                <p>&copy; 2026 Orange-Netcom. Mitra IT Terpercaya Anda. Hak Cipta Dilindungi Undang-Undang.</p>
+                <p>&copy; 2026 Orange Netcom. Mitra IT Terpercaya Anda. Hak Cipta Dilindungi Undang-Undang.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Skrip Utama (Mengambil data JSON / Fallback) -->
+    <!-- Skrip Utama -->
     <script>
-        // Fallback Database Internal (Jika data.json gagal dimuat)
+        // --- FITUR MENU MOBILE ---
+        const btnMobile = document.getElementById('btn-mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        btnMobile.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('flex');
+            navMenu.classList.toggle('flex-col');
+            navMenu.classList.toggle('absolute');
+            navMenu.classList.toggle('top-20');
+            navMenu.classList.toggle('left-0');
+            navMenu.classList.toggle('w-full');
+            navMenu.classList.toggle('bg-white');
+            navMenu.classList.toggle('p-5');
+            navMenu.classList.toggle('shadow-lg');
+        });
+
+        // Fallback Database Internal
         const FALLBACK_DB = {
             wa_admin: "6285711779993",
             harga: {
@@ -451,7 +599,7 @@
 
         let DB_HARGA = {};
         let WA_ADMIN_NUMBER = "";
-        let ACTIVE_TAB = 'pc'; // Melacak tab yang sedang terbuka
+        let ACTIVE_TAB = 'pc';
         const formatRp = (angka) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
 
         async function muatDataHarga() {
@@ -533,7 +681,8 @@
                 if(lbl) lbl.innerText = name !== '-' ? name : '-';
                 
                 total += price;
-                if (name !== '-' && price > 0) orderText += `- ${name}%0A`;
+                if (name !== '-' && price > 0) orderText += `- ${name}
+`;
             });
 
             // Update Total di Layar Desktop
@@ -558,18 +707,21 @@
                 }
             }
 
-            // Generate Pesan WA Spesifik (Format Rapi)
+            // Generate Pesan WA Spesifik (Format Rapi dengan URI Encoding)
             let katNama = "";
             if(kategori === 'pc') katNama = "Rakit PC";
             else if(kategori === 'cctv') katNama = "Instalasi CCTV";
             else if(kategori === 'akses') katNama = "Akses Pintu & Absensi";
             else if(kategori === 'jaringan') katNama = "Infrastruktur Jaringan";
 
-            const linkWaBase = `https://wa.me/${WA_ADMIN_NUMBER}?text=`;
-            const waTeks = total === 0 
-                ? `${linkWaBase}Halo%20Orange-Netcom,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20${katNama}.` 
-                : `${linkWaBase}Halo%20Orange-Netcom,%20saya%20tertarik%20dengan%20layanan%20${katNama}.%20Berikut%20rinciannya:%0A%0A${orderText}%0Adengan%20estimasi%20Total%20*${formatRp(total)}*.%20Mohon%20info%20lebih%20lanjut.`;
+            const pesanMentah = total === 0 
+                ? `Halo Orange Netcom, saya ingin konsultasi mengenai layanan ${katNama}.` 
+                : `Halo Orange Netcom, saya tertarik dengan layanan ${katNama}. Berikut rinciannya:
+
+${orderText}dengan estimasi Total *${formatRp(total)}*. Mohon info lebih lanjut.`;
             
+            const waTeks = `https://wa.me/${WA_ADMIN_NUMBER}?text=${encodeURIComponent(pesanMentah)}`;
+
             // Update tombol Desktop
             const btnPesan = document.getElementById(`btn-wa-${kategori}`);
             if(btnPesan) btnPesan.href = waTeks;
