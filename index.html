@@ -5,26 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags Teroptimasi -->
-    <title>Orange Netcom | Jasa Instalasi Jaringan, CCTV & Rakit PC Profesional</title>
-    <meta name="description" content="Orange Netcom menyediakan solusi IT terpadu: Instalasi Infrastruktur Jaringan (Mikrotik/Ruijie), Keamanan CCTV, Akses Pintu, dan Rakitan PC Server/Workstation.">
-    <meta name="keywords" content="jasa instalasi jaringan, jasa pasang cctv, rakit pc server, akses pintu biometrik, IT konsultan jakarta, mikrotik, ruijie, hikvision">
+    <title>Orange Netcom | Ahli Infrastruktur IT, Jaringan & Keamanan Bisnis</title>
+    <meta name="description" content="Orange Netcom menyediakan solusi IT profesional: Manajemen Jaringan (MikroTik/Ruijie), Integrasi Keamanan CCTV, Akses Pintu, dan Rakitan Workstation.">
+    <meta name="keywords" content="jasa instalasi jaringan, manajemen bandwidth mikrotik, jasa pasang cctv, rakit pc server, akses pintu biometrik, mikhmon, IT konsultan">
     <meta name="author" content="Orange Netcom">
     
     <!-- Open Graph / WhatsApp / Facebook Share -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Orange Netcom - Solusi Konektivitas Modern">
-    <meta property="og:description" content="Mitra terpercaya untuk instalasi jaringan, CCTV, dan infrastruktur IT bisnis Anda. Coba simulasi harga kami sekarang!">
+    <meta property="og:title" content="Orange Netcom - Solusi IT & Jaringan Profesional">
+    <meta property="og:description" content="Mitra terpercaya untuk instalasi jaringan, manajemen bandwidth, CCTV, dan infrastruktur IT bisnis Anda.">
     <meta property="og:image" content="5353.png"> 
     
-    <!-- Ikon Tab Browser (Favicon) -->
     <link rel="icon" type="image/png" href="3339.png">
-    
-    <!-- Optimization: Preconnect ke eksternal domain agar loading font/icon lebih cepat -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    <!-- Tailwind CSS untuk Desain -->
+    <!-- Tailwind CSS & FontAwesome -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -33,7 +29,7 @@
                 extend: {
                     colors: {
                         orange: { 500: '#f97316', 600: '#ea580c' },
-                        slate: { 800: '#1e293b', 900: '#0f172a' } /* Dark Navy Palette */
+                        slate: { 800: '#1e293b', 900: '#0f172a' }
                     }
                 }
             }
@@ -49,7 +45,6 @@
             background-size: 0.65rem auto;
         }
 
-        /* Animasi */
         @keyframes slowZoom {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -57,35 +52,33 @@
         }
         .animate-zoom { animation: slowZoom 25s ease-in-out infinite; }
 
-        /* Efek Tab Aktif */
         .tab-btn.active {
             background-color: #f97316;
             color: white;
             border-color: #f97316;
         }
 
-        /* Hide scrollbar untuk area klien */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased relative pb-20 lg:pb-0">
 
-    <!-- Navigasi (Header) - Sticky & Smooth -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
+    <!-- Navigasi -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#beranda">
-                        <img src="5353.png" alt="Logo Orange Netcom" class="h-12 w-auto object-contain transition-transform hover:scale-105 duration-300">
+                        <img src="5353.png" alt="Logo Orange Netcom" class="h-12 w-auto object-contain transition-transform hover:scale-105 duration-300" onerror="this.src='https://via.placeholder.com/150x50?text=Orange+Netcom'">
                     </a>
                 </div>
-                <div id="nav-menu" class="hidden md:flex space-x-8">
+                <div id="nav-menu" class="hidden md:flex space-x-8 items-center">
                     <a href="#beranda" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Beranda</a>
                     <a href="#layanan" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Layanan</a>
-                    <a href="#simulasi" class="text-orange-500 font-bold transition duration-300">Simulasi Harga</a>
+                    <a href="#simulasi" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Simulasi Harga</a>
                     <a href="#portfolio" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Portofolio</a>
-                    <a href="#kontak" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Kontak</a>
+                    <a href="#survei" class="bg-orange-500 text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 transition duration-300 shadow-md">Jadwal Survei</a>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="btn-mobile-menu" class="text-slate-800 hover:text-orange-500 focus:outline-none">
@@ -96,63 +89,93 @@
         </div>
     </nav>
 
-    <!-- Bagian Hero (Beranda) -->
+    <!-- Bagian Hero -->
     <section id="beranda" class="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-slate-900 text-white overflow-hidden">
-        <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80" alt="Data Center Background" class="w-full h-full object-cover animate-zoom">
         </div>
-        <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-slate-900/85 z-10"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
-            <span class="inline-block py-1 px-3 rounded-full bg-orange-500/20 text-orange-400 font-semibold text-sm mb-4 border border-orange-500/30">Professional IT Solutions</span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-md">Mitra Solusi Teknologi & <br class="hidden md:block"> Keamanan Terpercaya</h1>
+            <span class="inline-block py-1.5 px-4 rounded-full bg-orange-500/20 text-orange-400 font-bold text-sm mb-6 border border-orange-500/30 tracking-wide uppercase">
+                Ahli Infrastruktur IT & Keamanan
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-md">
+                Ekspertis Jaringan Bisnis & <br class="hidden md:block"> Sistem Terintegrasi
+            </h1>
             <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Orange Netcom menghadirkan layanan integrasi IT komprehensif. Mulai dari infrastruktur jaringan, sistem keamanan (CCTV & Akses), hingga perakitan komputasi khusus untuk skala bisnis Anda.
+                Orange Netcom memberikan fondasi teknologi yang solid. Dari setup <strong>manajemen bandwidth yang presisi</strong>, sistem CCTV & kendali akses mutakhir, hingga perakitan workstation tingkat tinggi untuk kelancaran operasional Anda.
             </p>
             
-            <a href="#simulasi" class="inline-block bg-white text-slate-900 hover:bg-orange-500 hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg transform hover:-translate-y-1 mr-4 border-2 border-white hover:border-orange-500">
-                Coba Simulasi Harga
-            </a>
-            <a href="https://wa.me/6285711779993?text=Halo%20Orange%20Netcom,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20infrastruktur%20IT%20dan%20Keamanan." target="_blank" class="inline-block bg-white text-slate-900 hover:bg-orange-500 hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg transform hover:-translate-y-1 mt-4 sm:mt-0 border-2 border-white hover:border-orange-500">
-                Konsultasi Gratis
-            </a>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#simulasi" class="inline-flex justify-center items-center bg-orange-500 text-white hover:bg-orange-600 font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg transform hover:-translate-y-1 border-2 border-orange-500">
+                    <i class="fa-solid fa-calculator mr-2"></i> Kalkulator Layanan
+                </a>
+                <a href="#survei" class="inline-flex justify-center items-center bg-transparent text-white hover:bg-white/10 font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg transform hover:-translate-y-1 border-2 border-white/50 hover:border-white">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Ajukan Survei Lokasi
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Bagian Layanan Pendek -->
+    <!-- Keunggulan (Trust Section) -->
+    <section class="py-12 bg-white border-b border-gray-200 relative z-30 -mt-10 mx-4 sm:mx-8 lg:mx-auto max-w-7xl rounded-2xl shadow-xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-12 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            <div class="p-4">
+                <div class="text-orange-500 text-4xl mb-4"><i class="fa-solid fa-microchip"></i></div>
+                <h4 class="font-bold text-slate-800 text-lg mb-2">Perangkat Keras Pilihan</h4>
+                <p class="text-sm text-gray-500">Kesesuaian komponen terjamin untuk stabilitas workstation dan server harian.</p>
+            </div>
+            <div class="p-4">
+                <div class="text-orange-500 text-4xl mb-4"><i class="fa-solid fa-server"></i></div>
+                <h4 class="font-bold text-slate-800 text-lg mb-2">Manajemen Konfigurasi Ahli</h4>
+                <p class="text-sm text-gray-500">Integrasi routing, syslog, hingga hotspot portal dengan kontrol penuh.</p>
+            </div>
+            <div class="p-4">
+                <div class="text-orange-500 text-4xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4 class="font-bold text-slate-800 text-lg mb-2">Garansi Pemasangan</h4>
+                <p class="text-sm text-gray-500">Pengerjaan rapi, tersistem, dan didukung garansi pemeliharaan instalasi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Layanan -->
     <section id="layanan" class="py-20 bg-gray-50 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Layanan Profesional Kami</h2>
+                <span class="text-orange-500 font-bold tracking-wider text-sm uppercase">Fokus Keahlian Kami</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">Layanan Profesional Terpadu</h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Card 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2" onclick="openTab('pc')">
-                    <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white group-hover:rotate-6 transition-all duration-300 shadow-sm"><i class="fa-solid fa-microchip"></i></div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-800">Perakitan PC</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Workstation & PC Custom handal untuk operasional perkantoran, desain, dan server.</p>
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2 relative overflow-hidden" onclick="openTab('pc')">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-orange-500 transition-colors"></div>
+                    <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white group-hover:rotate-6 transition-all duration-300 shadow-sm"><i class="fa-solid fa-desktop"></i></div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Perakitan PC & Server</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Workstation custom & server handal (termasuk instalasi OS dan sistem berbasis Linux/Windows) untuk operasional perkantoran.</p>
                 </div>
                 <!-- Card 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2" onclick="openTab('cctv')">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2 relative overflow-hidden" onclick="openTab('cctv')">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-orange-500 transition-colors"></div>
                     <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white group-hover:rotate-6 transition-all duration-300 shadow-sm"><i class="fa-solid fa-video"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-800">Keamanan CCTV</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Sistem pemantauan 24/7 (Analog & Digital eksklusif merk Dahua & Hikvision).</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Sistem pemantauan digital 24/7 dengan resolusi tinggi. Eksklusif merk terpercaya seperti Dahua & Hikvision.</p>
                 </div>
                 <!-- Card 3 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2" onclick="openTab('akses')">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2 relative overflow-hidden" onclick="openTab('akses')">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-orange-500 transition-colors"></div>
                     <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white group-hover:rotate-6 transition-all duration-300 shadow-sm"><i class="fa-solid fa-fingerprint"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-800">Akses & Absensi</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Implementasi kontrol akses pintu pintar (door lock) & sistem absensi biometrik.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Implementasi kontrol akses pintu biometrik (door lock) & mesin absensi terintegrasi untuk keamanan ruangan.</p>
                 </div>
                 <!-- Card 4 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2" onclick="openTab('jaringan')">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2 relative overflow-hidden" onclick="openTab('jaringan')">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-orange-500 transition-colors"></div>
                     <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white group-hover:rotate-6 transition-all duration-300 shadow-sm"><i class="fa-solid fa-network-wired"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-800">Infrastruktur Jaringan</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Desain & instalasi jaringan (Mikrotik & Ruijie) untuk perkantoran dan ruang publik.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Instalasi jaringan Mikrotik & Ruijie, manajemen IP Accounting, integrasi portal hotspot (Mikhmon), serta Syslog monitoring.</p>
                 </div>
             </div>
         </div>
@@ -163,9 +186,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
                 <span class="text-orange-500 font-bold tracking-wider text-sm uppercase">Kalkulator Cerdas</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">Simulasi Estimasi Harga & Jasa</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">Simulasi Estimasi Biaya</h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-4 text-gray-500 max-w-2xl mx-auto">Pilih kategori layanan di bawah ini untuk menghitung estimasi biaya perangkat dan jasa secara real-time.</p>
+                <p class="mt-4 text-gray-500 max-w-2xl mx-auto">Gunakan fitur ini untuk memprediksi anggaran perangkat dan jasa instalasi secara real-time sebelum melakukan konsultasi lebih lanjut.</p>
             </div>
 
             <!-- Tab Buttons -->
@@ -185,23 +208,22 @@
             </div>
 
             <!-- TABS CONTENT CONTAINER -->
-            <div class="relative bg-gray-50 border border-gray-100 p-2 md:p-4 rounded-3xl shadow-xl">
+            <div class="relative bg-gray-50 border border-gray-200 p-2 md:p-6 rounded-3xl shadow-lg">
                 
                 <!-- TAB 1: PERAKITAN PC -->
-                <div id="content-pc" class="tab-content flex flex-col lg:flex-row gap-8 p-4 lg:p-6">
+                <div id="content-pc" class="tab-content flex flex-col lg:flex-row gap-8 p-2 lg:p-4">
                     <div class="w-full lg:w-2/3">
                         <div class="mb-6 border-b border-gray-200 pb-4">
-                            <h3 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-microchip text-orange-500 mr-2"></i>Pilih Komponen PC</h3>
+                            <h3 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-microchip text-orange-500 mr-2"></i>Konfigurasi Komponen PC</h3>
                         </div>
-                        
                         <form class="space-y-5">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Processor (CPU)</label><select id="pc-cpu" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
-                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Motherboard</label><select id="pc-mobo" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
-                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Memory (RAM)</label><select id="pc-ram" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
-                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Storage (SSD)</label><select id="pc-storage" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
-                                <div><label class="block text-sm font-bold text-slate-700 mb-2">VGA Card</label><select id="pc-vga" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
-                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Power Supply & Casing</label><select id="pc-psu" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Processor (CPU)</label><select id="pc-cpu" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Motherboard</label><select id="pc-mobo" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Memory (RAM)</label><select id="pc-ram" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Storage (SSD)</label><select id="pc-storage" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                                <div><label class="block text-sm font-bold text-slate-700 mb-2">VGA Card</label><select id="pc-vga" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Power Supply & Casing</label><select id="pc-psu" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                             </div>
                         </form>
                     </div>
@@ -218,39 +240,39 @@
                             </div>
 
                             <div class="space-y-3 mb-6 text-sm text-gray-400 min-h-[140px]">
-                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>CPU</span> <span id="lbl-pc-cpu" class="font-semibold text-white text-right w-1/2 line-clamp-1">-</span></div>
-                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>Mobo</span> <span id="lbl-pc-mobo" class="font-semibold text-white text-right w-1/2 line-clamp-1">-</span></div>
-                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>RAM</span> <span id="lbl-pc-ram" class="font-semibold text-white text-right w-1/2 line-clamp-1">-</span></div>
-                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>Storage</span> <span id="lbl-pc-storage" class="font-semibold text-white text-right w-1/2 line-clamp-1">-</span></div>
-                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>VGA</span> <span id="lbl-pc-vga" class="font-semibold text-white text-right w-1/2 line-clamp-1">-</span></div>
-                                <div class="flex justify-between pb-2"><span>PSU</span> <span id="lbl-pc-psu" class="font-semibold text-white text-right w-1/2 line-clamp-1">-</span></div>
+                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>CPU</span> <span id="lbl-pc-cpu" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
+                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>Mobo</span> <span id="lbl-pc-mobo" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
+                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>RAM</span> <span id="lbl-pc-ram" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
+                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>Storage</span> <span id="lbl-pc-storage" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
+                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>VGA</span> <span id="lbl-pc-vga" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
+                                <div class="flex justify-between pb-2"><span>PSU</span> <span id="lbl-pc-psu" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
                             </div>
                             
                             <p class="text-gray-400 text-sm mb-1">Estimasi Total</p>
                             <div class="text-3xl font-extrabold mb-6 text-white" id="total-pc">Rp 0</div>
-                            <a href="#" id="btn-wa-pc" target="_blank" class="hidden lg:flex justify-center items-center w-full bg-orange-500 text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]">
-                                <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Pesan via WA
-                            </a>
+                            <button onclick="kirimWhatsApp('pc')" class="hidden lg:flex justify-center items-center w-full bg-orange-500 text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]">
+                                <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Kirim ke WhatsApp
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- TAB 2: CCTV -->
-                <div id="content-cctv" class="tab-content hidden flex flex-col lg:flex-row gap-8 p-4 lg:p-6">
+                <div id="content-cctv" class="tab-content hidden flex flex-col lg:flex-row gap-8 p-2 lg:p-4">
                     <div class="w-full lg:w-2/3">
                         <div class="mb-6 border-b border-gray-200 pb-4 flex justify-between items-center flex-wrap gap-3">
-                            <h3 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-video text-orange-500 mr-2"></i>Simulasi Keamanan CCTV</h3>
+                            <h3 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-video text-orange-500 mr-2"></i>Pilihan Sistem CCTV</h3>
                             <div class="bg-blue-50 border border-blue-200 text-blue-700 px-3 py-1 rounded-full text-xs font-bold flex items-center">
-                                <i class="fa-solid fa-award mr-1"></i> Partner Resmi: Hikvision & Dahua
+                                <i class="fa-solid fa-award mr-1"></i> Partner: Hikvision & Dahua
                             </div>
                         </div>
                         <form class="space-y-6">
-                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Tipe Teknologi & Paket (Hikvision / Dahua)</label><select id="cctv-paket" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
-                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Kapasitas HDD Khusus CCTV</label><select id="cctv-hdd" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
+                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Tipe Teknologi & Paket DVR/NVR</label><select id="cctv-paket" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Kapasitas Penyimpanan (HDD Khusus CCTV)</label><select id="cctv-hdd" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                             <div>
-                                <label class="block text-sm font-bold text-slate-700 mb-2">Jasa Instalasi Pemasangan & Setting Online</label>
-                                <select id="cctv-jasa" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select>
-                                <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-circle-info mr-1"></i> Belum termasuk biaya penarikan kabel ekstra panjang untuk gedung bertingkat.</p>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Jasa Pemasangan & Konfigurasi Online</label>
+                                <select id="cctv-jasa" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select>
+                                <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-circle-info mr-1 text-orange-500"></i> Harga estimasi belum termasuk penambahan panjang kabel di lokasi/gedung bertingkat.</p>
                             </div>
                         </form>
                     </div>
@@ -259,72 +281,77 @@
                         <div class="bg-slate-900 rounded-3xl p-6 md:p-8 text-white sticky top-28 shadow-2xl border border-slate-800">
                             <h3 class="text-lg font-bold mb-4 text-orange-500 border-b border-slate-700 pb-3">Ringkasan CCTV</h3>
                             <div class="space-y-4 mb-6 text-sm text-gray-400 min-h-[140px]">
-                                <div><span class="block text-xs uppercase tracking-wider mb-1">Paket Kamera</span> <span id="lbl-cctv-paket" class="font-semibold text-white block">-</span></div>
-                                <div><span class="block text-xs uppercase tracking-wider mb-1">Penyimpanan</span> <span id="lbl-cctv-hdd" class="font-semibold text-white block">-</span></div>
-                                <div><span class="block text-xs uppercase tracking-wider mb-1">Jasa Instalasi</span> <span id="lbl-cctv-jasa" class="font-semibold text-white block">-</span></div>
+                                <div><span class="block text-xs uppercase tracking-wider mb-1">Paket Kamera</span> <span id="lbl-cctv-paket" class="font-semibold text-white block truncate">-</span></div>
+                                <div><span class="block text-xs uppercase tracking-wider mb-1">Penyimpanan</span> <span id="lbl-cctv-hdd" class="font-semibold text-white block truncate">-</span></div>
+                                <div><span class="block text-xs uppercase tracking-wider mb-1">Jasa Instalasi</span> <span id="lbl-cctv-jasa" class="font-semibold text-white block truncate">-</span></div>
                             </div>
                             <p class="text-gray-400 text-sm mb-1">Estimasi Total</p>
                             <div class="text-3xl font-extrabold mb-6 text-white" id="total-cctv">Rp 0</div>
-                            <a href="#" id="btn-wa-cctv" target="_blank" class="hidden lg:flex justify-center items-center w-full bg-orange-500 text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]"><i class="fa-brands fa-whatsapp text-xl mr-2"></i> Pesan via WA</a>
+                            <button onclick="kirimWhatsApp('cctv')" class="hidden lg:flex justify-center items-center w-full bg-orange-500 text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]"><i class="fa-brands fa-whatsapp text-xl mr-2"></i> Kirim ke WhatsApp</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- TAB 3: AKSES & ABSENSI -->
-                <div id="content-akses" class="tab-content hidden p-4 lg:p-6">
+                <div id="content-akses" class="tab-content hidden p-2 lg:p-4">
                     <div class="mb-6 border-b border-gray-200 pb-4">
                         <h3 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-fingerprint text-orange-500 mr-2"></i>Kontrol Akses Pintu & Absensi</h3>
                     </div>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                        <div class="relative rounded-xl overflow-hidden h-48 border border-gray-200">
-                            <img src="https://images.unsplash.com/photo-1559705421-4ae9bf6fabb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mesin Absensi" loading="lazy" class="object-cover w-full h-full hover:scale-105 transition-transform">
-                            <div class="absolute bottom-0 w-full bg-black/60 text-white text-xs p-2 font-semibold">Contoh: Mesin Absensi Biometrik</div>
-                        </div>
-                        <div class="relative rounded-xl overflow-hidden h-48 border border-gray-200">
-                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Access Door Lock" loading="lazy" class="object-cover w-full h-full hover:scale-105 transition-transform">
-                            <div class="absolute bottom-0 w-full bg-black/60 text-white text-xs p-2 font-semibold">Contoh: Instalasi Magnetic Door Lock</div>
-                        </div>
-                    </div>
-
                     <div class="flex flex-col lg:flex-row gap-8">
                         <div class="w-full lg:w-2/3">
                             <form class="space-y-6">
-                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Mesin Absensi / Akses Biometrik</label><select id="akses-mesin" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
-                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Tipe Kunci Pintu (Door Lock)</label><select id="akses-kunci" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
-                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Jasa Instalasi & Setting Software</label><select id="akses-jasa" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
+                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Pilih Mesin Absensi / Akses Biometrik</label><select id="akses-mesin" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Tipe Pengunci Pintu (Magnetic Door Lock)</label><select id="akses-kunci" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Jasa Instalasi & Setup Perangkat Lunak</label><select id="akses-jasa" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                             </form>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                                <div class="relative rounded-xl overflow-hidden h-32 border border-gray-200">
+                                    <img src="https://images.unsplash.com/photo-1559705421-4ae9bf6fabb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mesin Absensi" class="object-cover w-full h-full opacity-80">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-3"><span class="text-white text-sm font-bold">Teknologi Biometrik</span></div>
+                                </div>
+                                <div class="relative rounded-xl overflow-hidden h-32 border border-gray-200">
+                                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Access Door Lock" class="object-cover w-full h-full opacity-80">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-3"><span class="text-white text-sm font-bold">Sistem Kontrol Pintu</span></div>
+                                </div>
+                            </div>
                         </div>
+                        
                         <div class="w-full lg:w-1/3 relative">
                             <div class="bg-slate-900 rounded-3xl p-6 md:p-8 text-white sticky top-28 shadow-2xl border border-slate-800">
                                 <h3 class="text-lg font-bold mb-4 text-orange-500 border-b border-slate-700 pb-3">Ringkasan Akses</h3>
                                 <div class="space-y-4 mb-6 text-sm text-gray-400 min-h-[140px]">
-                                    <div><span class="block text-xs uppercase tracking-wider mb-1">Mesin</span> <span id="lbl-akses-mesin" class="font-semibold text-white block">-</span></div>
-                                    <div><span class="block text-xs uppercase tracking-wider mb-1">Door Lock</span> <span id="lbl-akses-kunci" class="font-semibold text-white block">-</span></div>
-                                    <div><span class="block text-xs uppercase tracking-wider mb-1">Instalasi</span> <span id="lbl-akses-jasa" class="font-semibold text-white block">-</span></div>
+                                    <div><span class="block text-xs uppercase tracking-wider mb-1">Mesin</span> <span id="lbl-akses-mesin" class="font-semibold text-white block truncate">-</span></div>
+                                    <div><span class="block text-xs uppercase tracking-wider mb-1">Door Lock</span> <span id="lbl-akses-kunci" class="font-semibold text-white block truncate">-</span></div>
+                                    <div><span class="block text-xs uppercase tracking-wider mb-1">Instalasi</span> <span id="lbl-akses-jasa" class="font-semibold text-white block truncate">-</span></div>
                                 </div>
                                 <p class="text-gray-400 text-sm mb-1">Estimasi Total</p>
                                 <div class="text-3xl font-extrabold mb-6 text-white" id="total-akses">Rp 0</div>
-                                <a href="#" id="btn-wa-akses" target="_blank" class="hidden lg:flex justify-center items-center w-full bg-orange-500 text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]"><i class="fa-brands fa-whatsapp text-xl mr-2"></i> Pesan via WA</a>
+                                <button onclick="kirimWhatsApp('akses')" class="hidden lg:flex justify-center items-center w-full bg-orange-500 text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]"><i class="fa-brands fa-whatsapp text-xl mr-2"></i> Kirim ke WhatsApp</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- TAB 4: INFRASTRUKTUR JARINGAN -->
-                <div id="content-jaringan" class="tab-content hidden flex flex-col lg:flex-row gap-8 p-4 lg:p-6">
+                <div id="content-jaringan" class="tab-content hidden flex flex-col lg:flex-row gap-8 p-2 lg:p-4">
                     <div class="w-full lg:w-2/3">
                         <div class="mb-6 border-b border-gray-200 pb-4 flex justify-between items-center flex-wrap gap-3">
-                            <h3 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-server text-orange-500 mr-2"></i>Infrastruktur Jaringan</h3>
+                            <h3 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-server text-orange-500 mr-2"></i>Infrastruktur & Server Jaringan</h3>
                             <div class="bg-blue-50 border border-blue-200 text-blue-700 px-3 py-1 rounded-full text-xs font-bold flex items-center">
-                                <i class="fa-solid fa-award mr-1"></i> Mikrotik & Ruijie
+                                <i class="fa-solid fa-gears mr-1"></i> Mikrotik, Ruijie & Custom Dashboards
                             </div>
                         </div>
                         <form class="space-y-6">
-                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Router Utama (Management Bandwidth)</label><select id="jar-router" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
-                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Switch Distribution / PoE</label><select id="jar-switch" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
-                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Access Point (Penyebar WiFi)</label><select id="jar-ap" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
-                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Skala Pekerjaan Jasa Instalasi & Kabel</label><select id="jar-jasa" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer"></select></div>
+                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Router Utama (Manajemen Bandwidth/Hotspot)</label><select id="jar-router" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Switch Distribution / PoE</label><select id="jar-switch" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Access Point (Penyebar Sinyal WiFi)</label><select id="jar-ap" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Layanan Setup & Integrasi Khusus</label>
+                                <select id="jar-jasa" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select>
+                                <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-circle-check mr-1 text-green-500"></i> Termasuk opsi integrasi Hotspot Management (Mikhmon) & Sistem Monitoring Logs (Syslog).</p>
+                            </div>
                         </form>
                     </div>
 
@@ -332,14 +359,14 @@
                         <div class="bg-slate-900 rounded-3xl p-6 md:p-8 text-white sticky top-28 shadow-2xl border border-slate-800">
                             <h3 class="text-lg font-bold mb-4 text-orange-500 border-b border-slate-700 pb-3">Ringkasan Jaringan</h3>
                             <div class="space-y-4 mb-6 text-sm text-gray-400 min-h-[140px]">
-                                <div><span class="block text-xs uppercase tracking-wider mb-1">Router</span> <span id="lbl-jar-router" class="font-semibold text-white block">-</span></div>
-                                <div><span class="block text-xs uppercase tracking-wider mb-1">Switch</span> <span id="lbl-jar-switch" class="font-semibold text-white block">-</span></div>
-                                <div><span class="block text-xs uppercase tracking-wider mb-1">Access Point</span> <span id="lbl-jar-ap" class="font-semibold text-white block">-</span></div>
-                                <div><span class="block text-xs uppercase tracking-wider mb-1">Skala Proyek</span> <span id="lbl-jar-jasa" class="font-semibold text-white block">-</span></div>
+                                <div><span class="block text-xs uppercase tracking-wider mb-1">Router</span> <span id="lbl-jar-router" class="font-semibold text-white block truncate">-</span></div>
+                                <div><span class="block text-xs uppercase tracking-wider mb-1">Switch</span> <span id="lbl-jar-switch" class="font-semibold text-white block truncate">-</span></div>
+                                <div><span class="block text-xs uppercase tracking-wider mb-1">Access Point</span> <span id="lbl-jar-ap" class="font-semibold text-white block truncate">-</span></div>
+                                <div><span class="block text-xs uppercase tracking-wider mb-1">Layanan</span> <span id="lbl-jar-jasa" class="font-semibold text-white block truncate">-</span></div>
                             </div>
                             <p class="text-gray-400 text-sm mb-1">Estimasi Total</p>
                             <div class="text-3xl font-extrabold mb-6 text-white" id="total-jaringan">Rp 0</div>
-                            <a href="#" id="btn-wa-jaringan" target="_blank" class="hidden lg:flex justify-center items-center w-full bg-orange-500 text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]"><i class="fa-brands fa-whatsapp text-xl mr-2"></i> Pesan via WA</a>
+                            <button onclick="kirimWhatsApp('jaringan')" class="hidden lg:flex justify-center items-center w-full bg-orange-500 text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-[0_4px_14px_0_rgba(249,115,22,0.39)]"><i class="fa-brands fa-whatsapp text-xl mr-2"></i> Kirim ke WhatsApp</button>
                         </div>
                     </div>
                 </div>
@@ -349,153 +376,139 @@
     </section>
 
     <!-- Bar Pemesanan Bawah (Khusus Mobile) -->
-    <div id="mobile-bottom-bar" class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 shadow-[0_-10px_20px_-5px_rgba(0,0,0,0.15)] lg:hidden z-50 transition-transform duration-300">
+    <div id="mobile-bottom-bar" class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 shadow-[0_-10px_20px_-5px_rgba(0,0,0,0.15)] lg:hidden z-50">
         <div class="flex justify-between items-center max-w-7xl mx-auto">
             <div>
                 <p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Total Estimasi</p>
                 <p class="text-xl font-extrabold text-slate-900" id="mobile-total">Rp 0</p>
             </div>
-            <a href="#" id="mobile-btn-wa" target="_blank" class="bg-orange-500 text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-orange-600 shadow-[0_4px_10px_0_rgba(249,115,22,0.3)] flex items-center">
+            <button onclick="kirimWhatsAppMobile()" class="bg-orange-500 text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-orange-600 shadow-[0_4px_10px_0_rgba(249,115,22,0.3)] flex items-center">
                 <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Pesan
-            </a>
+            </button>
         </div>
     </div>
 
-    <!-- Bagian Portofolio & Studi Kasus -->
-    <section id="portfolio" class="py-20 bg-gray-50 border-t border-gray-200">
+    <!-- FORMULIR SURVEI (FITUR BARU) -->
+    <section id="survei" class="py-20 bg-slate-800 text-white relative">
+        <div class="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="inline-block py-1 px-3 rounded-full bg-orange-500/20 text-orange-400 font-bold text-sm mb-4 border border-orange-500/30">Jadwalkan Konsultasi Teknis</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Formulir Pengajuan Survei Lokasi</h2>
+                <p class="mt-4 text-gray-400">Tim teknisi kami siap mengunjungi lokasi Anda untuk melakukan asesmen dan perancangan topologi secara akurat.</p>
+            </div>
+            
+            <div class="bg-white text-gray-800 rounded-3xl p-8 md:p-10 shadow-2xl">
+                <form id="formSurvei" onsubmit="submitFormSurvei(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap PIC</label>
+                            <input type="text" id="sv-nama" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Masukkan nama Anda">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Instansi / Perusahaan</label>
+                            <input type="text" id="sv-instansi" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Nama perusahaan / lembaga">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Jenis Layanan yang Dibutuhkan</label>
+                            <select id="sv-layanan" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none cursor-pointer">
+                                <option value="" disabled selected>-- Pilih Layanan Utama --</option>
+                                <option value="Infrastruktur Jaringan & Server">Infrastruktur Jaringan & Server</option>
+                                <option value="Instalasi CCTV & Keamanan">Instalasi CCTV & Keamanan</option>
+                                <option value="Akses Pintu & Absensi">Akses Pintu & Absensi</option>
+                                <option value="Pengadaan PC Workstation">Pengadaan PC / Workstation Lab</option>
+                                <option value="Lainnya (Tulis di Catatan)">Lainnya (Custom)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Rencana Tanggal Survei</label>
+                            <input type="date" id="sv-tanggal" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Alamat Lengkap Lokasi</label>
+                        <textarea id="sv-alamat" rows="3" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Sertakan detail lantai, gedung, atau patokan lokasi..."></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Catatan Tambahan Kebutuhan (Opsional)</label>
+                        <textarea id="sv-catatan" rows="3" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Misal: Kendala jaringan lambat, butuh setting mikhmon, atau titik cctv gelap..."></textarea>
+                    </div>
+                    <div class="pt-4 text-center">
+                        <button type="submit" class="bg-slate-900 text-white font-bold py-4 px-10 rounded-full hover:bg-orange-500 transition-all duration-300 shadow-lg transform hover:-translate-y-1 flex items-center justify-center mx-auto w-full md:w-auto">
+                            <i class="fa-solid fa-paper-plane mr-3"></i> Ajukan Permintaan Survei (via WA)
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Portofolio -->
+    <section id="portfolio" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="text-orange-500 font-bold tracking-wider text-sm uppercase">Kisah Sukses Klien</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Studi Kasus & Portofolio</h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-4 text-gray-500 max-w-2xl mx-auto">Bukti nyata dedikasi kami dalam memberikan solusi infrastruktur IT dan Sistem Keamanan yang rapi, terintegrasi, dan berstandar profesional.</p>
             </div>
 
-            <!-- STUDI KASUS 1: INFRASTRUKTUR JARINGAN -->
+            <!-- STUDI KASUS 1 -->
             <div class="bg-white rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col lg:flex-row mb-10 group">
                 <div class="lg:w-2/5 relative h-64 lg:h-auto overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Instalasi Rack Server Jaringan" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wide">Jaringan & Server</div>
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Instalasi Rack Server Jaringan" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wide">Jaringan & Mikrotik</div>
                 </div>
                 <div class="lg:w-3/5 p-6 md:p-10 flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Penataan Server & Distribusi WiFi Area Perkantoran</h3>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Penataan Infrastruktur Server Perkantoran</h3>
                     <p class="text-gray-500 text-sm mb-6 font-medium"><i class="fa-solid fa-location-dot text-orange-500 mr-2"></i>Gedung Perkantoran, Jakarta Selatan</p>
                     
                     <div class="space-y-5 mb-8">
                         <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-red-500 flex-shrink-0 mr-4 border border-red-100"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Tantangan</h4>
-                                <p class="text-gray-600 text-sm leading-relaxed">Kabel di ruang server kusut berantakan sehingga sulit saat ada pemeliharaan (maintenance). Selain itu, koneksi WiFi sering terputus (blank spot) saat staf berpindah lantai atau ruangan.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
                             <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500 flex-shrink-0 mr-4 border border-blue-100"><i class="fa-solid fa-lightbulb"></i></div>
                             <div>
-                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Solusi Orange Netcom</h4>
-                                <p class="text-gray-600 text-sm leading-relaxed">Melakukan <i>cable management</i> ulang pada rack server. Manajemen bandwidth diatur ulang menggunakan <b>Router Mikrotik</b>, dipadukan dengan instalasi <b>Access Point Ruijie Reyee WiFi 6</b> dengan fitur <i>Seamless Roaming</i>.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 flex-shrink-0 mr-4 border border-green-100"><i class="fa-solid fa-check-double"></i></div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Hasil Akhir</h4>
-                                <p class="text-gray-600 text-sm leading-relaxed">Ruang server menjadi sangat rapi dan aman. Koneksi internet kini stabil merata di seluruh sudut kantor, meningkatkan produktivitas staf tanpa ada lagi keluhan sinyal putus.</p>
+                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Tindakan Solutif</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">Melakukan <i>cable management</i> ulang. Mengimplementasikan pembatasan IP accounting dan manajemen bandwidth via <b>Router Mikrotik</b> dipadukan <b>Access Point Ruijie Reyee</b> dengan fitur Seamless Roaming bebas <i>blank spot</i>.</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <a href="https://wa.me/6285711779993?text=Halo%20Orange%20Netcom,%20saya%20tertarik%20membenahi%20jaringan/server%20seperti%20di%20portofolio%20Perkantoran.%20Bisa%20bantu%20konsultasi?" target="_blank" class="inline-flex justify-center items-center bg-slate-900 text-white hover:bg-orange-500 font-bold py-3 px-6 rounded-xl transition-all duration-300 w-full sm:w-auto self-start border-2 border-slate-900 hover:border-orange-500 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                        <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Konsultasikan Proyek Serupa
-                    </a>
                 </div>
             </div>
 
-            <!-- STUDI KASUS 2: CCTV & KEAMANAN -->
+            <!-- STUDI KASUS 2 -->
             <div class="bg-white rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col lg:flex-row-reverse mb-10 group">
                 <div class="lg:w-2/5 relative h-64 lg:h-auto overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Instalasi IP Camera" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Instalasi IP Camera" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wide">Sistem Keamanan CCTV</div>
                 </div>
                 <div class="lg:w-3/5 p-6 md:p-10 flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Pembaruan Sistem Keamanan Terpadu Area Gudang</h3>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Digitalisasi Sistem Keamanan Area Gudang</h3>
                     <p class="text-gray-500 text-sm mb-6 font-medium"><i class="fa-solid fa-location-dot text-orange-500 mr-2"></i>Area Pabrik Industri, Banten</p>
                     
                     <div class="space-y-5 mb-8">
                         <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-red-500 flex-shrink-0 mr-4 border border-red-100"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500 flex-shrink-0 mr-4 border border-blue-100"><i class="fa-solid fa-shield-check"></i></div>
                             <div>
-                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Tantangan</h4>
-                                <p class="text-gray-600 text-sm leading-relaxed">CCTV analog lama klien banyak menampilkan *noise* (semut) dan gambar sama sekali tidak terlihat jelas saat malam hari (kurangnya pencahayaan gudang). Masih terdapat area *blind spot* rawan pencurian.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500 flex-shrink-0 mr-4 border border-blue-100"><i class="fa-solid fa-lightbulb"></i></div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Solusi Orange Netcom</h4>
-                                <p class="text-gray-600 text-sm leading-relaxed">Migrasi total ke sistem digital dengan memasang <b>16 Titik IP Camera Hikvision 2MP (Full Color / DarkFighter)</b> yang dikendalikan oleh NVR modern, serta dipasangkan <b>HDD Seagate Skyhawk</b> khusus rekaman CCTV nonstop 24/7.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 flex-shrink-0 mr-4 border border-green-100"><i class="fa-solid fa-check-double"></i></div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Hasil Akhir</h4>
-                                <p class="text-gray-600 text-sm leading-relaxed">Pengawasan 24 jam dengan visual warna yang tajam meski dalam kondisi gudang gelap. Seluruh area ter-cover penuh dan pemilik perusahaan dapat memantau aktivitas gudang secara langsung <i>(real-time)</i> dari aplikasi di Smartphone.</p>
+                                <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-1">Tindakan Solutif</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">Migrasi total ke sistem digital menggunakan titik <b>IP Camera Hikvision (DarkFighter)</b> yang handal di area minim cahaya, dikonfigurasi penyimpanan khusus agar rekaman aman termonitor real-time dari aplikasi mobile pemilik pabrik.</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <a href="https://wa.me/6285711779993?text=Halo%20Orange%20Netcom,%20saya%20tertarik%20memasang/upgrade%20CCTV%20seperti%20di%20portofolio%20Pabrik.%20Bisa%20bantu%20konsultasi?" target="_blank" class="inline-flex justify-center items-center bg-slate-900 text-white hover:bg-orange-500 font-bold py-3 px-6 rounded-xl transition-all duration-300 w-full sm:w-auto self-start border-2 border-slate-900 hover:border-orange-500 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                        <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Konsultasikan Keamanan Anda
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Galeri Klien Pendek -->
-    <section class="py-20 bg-gray-50 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Portofolio & Klien Kami</h2>
-                <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
-                <p class="mt-4 text-gray-500">Dedikasi kami menghasilkan instalasi yang rapi, aman, dan berstandar profesional.</p>
-            </div>
-            
-            <!-- Galeri Foto Pekerjaan/Proyek Asli -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                <div class="relative group rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all h-64">
-                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Instalasi Rack Server" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 text-white"><p class="font-bold">Instalasi Server & Jaringan</p><p class="text-xs text-orange-400">Gedung Perkantoran Jakarta</p></div>
-                </div>
-                <div class="relative group rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all h-64">
-                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Instalasi CCTV" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 text-white"><p class="font-bold">Pemasangan IP Camera</p><p class="text-xs text-orange-400">Pabrik Industri Banten</p></div>
-                </div>
-                <div class="relative group rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all h-64">
-                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Instalasi Akses Pintu" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 text-white"><p class="font-bold">Sistem Akses Biometrik</p><p class="text-xs text-orange-400">Ruang Publik & Instansi</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bagian Footer / Kontak -->
+    <!-- Footer / Kontak -->
     <footer id="kontak" class="bg-slate-900 text-gray-300 py-16 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <!-- Tentang & Logo -->
                 <div>
                     <div class="bg-white inline-block p-2 rounded-xl mb-6 shadow-sm">
-                        <img src="5353.png" alt="Logo Orange Netcom" class="h-10 w-auto object-contain">
+                        <img src="5353.png" alt="Logo Orange Netcom" class="h-10 w-auto object-contain" onerror="this.src='https://via.placeholder.com/150x40?text=Orange+Netcom'">
                     </div>
-                    <p class="text-sm text-gray-400 leading-relaxed pr-4 mb-6">Memberikan solusi terpadu untuk kebutuhan komputasi, infrastruktur jaringan, dan sistem keamanan Anda dengan standar profesional tertinggi.</p>
+                    <p class="text-sm text-gray-400 leading-relaxed pr-4 mb-6">Membantu ratusan bisnis terhubung secara aman dan efisien dengan standar topologi dan keamanan yang teruji.</p>
                 </div>
                 
-                <!-- Kontak -->
                 <div>
                     <h4 class="text-white font-bold mb-6 text-xl">Hubungi Kami</h4>
                     <ul class="space-y-4 text-sm mb-8">
@@ -514,7 +527,6 @@
                     </ul>
                 </div>
                 
-                <!-- Jam Operasional & Map -->
                 <div>
                     <h4 class="text-white font-bold mb-6 text-xl">Lokasi & Operasional</h4>
                     <ul class="space-y-3 text-sm mb-6">
@@ -522,38 +534,19 @@
                         <li class="flex justify-between border-b border-slate-800 pb-2"><span class="text-gray-400">Sabtu</span> <span>09:00 - 15:00 WIB</span></li>
                         <li class="flex justify-between text-orange-500 font-medium mb-4"><span>Minggu</span> <span>Tutup / Janji Temu</span></li>
                     </ul>
-                    <!-- Embed Google Maps -->
-                    <div class="w-full h-32 rounded-lg overflow-hidden border border-slate-700 mb-6">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.556754020108!2d106.749000!3d-6.330000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTknNDguMCJTIDEwNsKwNDQnNTYuNCJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-
-                    <!-- Media Sosial -->
-                    <h4 class="text-white font-bold mb-4 text-lg">Ikuti Proyek Kami</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:bg-orange-500 hover:text-white transition-all transform hover:-translate-y-1">
-                            <i class="fa-brands fa-instagram text-xl"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:bg-[#0a66c2] hover:text-white transition-all transform hover:-translate-y-1">
-                            <i class="fa-brands fa-linkedin-in text-xl"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all transform hover:-translate-y-1">
-                            <i class="fa-brands fa-tiktok text-xl"></i>
-                        </a>
-                    </div>
                 </div>
             </div>
             <div class="border-t border-slate-800 mt-12 pt-8 text-center text-sm text-gray-500">
-                <p>&copy; 2026 Orange Netcom. Mitra IT Terpercaya Anda. Hak Cipta Dilindungi Undang-Undang.</p>
+                <p>&copy; 2026 Orange Netcom. Mitra IT & Jaringan Terpercaya. Hak Cipta Dilindungi Undang-Undang.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Skrip Utama -->
+    <!-- LOGIKA JAVASCRIPT -->
     <script>
-        // --- FITUR MENU MOBILE ---
+        // Menu Mobile Toggle
         const btnMobile = document.getElementById('btn-mobile-menu');
         const navMenu = document.getElementById('nav-menu');
-
         btnMobile.addEventListener('click', () => {
             navMenu.classList.toggle('hidden');
             navMenu.classList.toggle('flex');
@@ -565,9 +558,10 @@
             navMenu.classList.toggle('bg-white');
             navMenu.classList.toggle('p-5');
             navMenu.classList.toggle('shadow-lg');
+            navMenu.classList.toggle('border-b');
         });
 
-        // Fallback Database Internal
+        // Data Base Mock
         const FALLBACK_DB = {
             wa_admin: "6285711779993",
             harga: {
@@ -581,47 +575,39 @@
                 ],
                 pc_ram: [{ nama: "8GB DDR4 3200MHz", harga: 450000 }, { nama: "16GB (2x8GB) DDR4", harga: 850000 }],
                 pc_storage: [{ nama: "256GB NVMe", harga: 400000 }, { nama: "512GB NVMe", harga: 750000 }],
-                pc_vga: [{ nama: "Tanpa VGA", harga: 0 }, { nama: "GTX 1660 Super", harga: 3500000 }, { nama: "RTX 3060", harga: 5500000 }],
-                pc_psu: [{ nama: "PSU 500W + Case Std", harga: 950000 }, { nama: "PSU 650W + Case RGB", harga: 1500000 }],
-                cctv_paket_analog: [{ nama: "Paket 4 Kamera Analog (2MP) + DVR", harga: 1800000 }, { nama: "Paket 8 Kamera Analog", harga: 3500000 }],
-                cctv_paket_digital: [{ nama: "Paket 4 IP Camera Digital (2MP) + NVR", harga: 2600000 }],
-                cctv_hdd: [{ nama: "HDD Seagate Skyhawk 500GB", harga: 550000 }, { nama: "HDD Seagate 1TB", harga: 950000 }],
-                cctv_jasa: [{ nama: "4 Titik Kamera", harga: 600000 }, { nama: "8 Titik Kamera", harga: 1200000 }],
-                akses_mesin: [{ nama: "Absensi Fingerprint Standard", harga: 1200000 }, { nama: "Akses Face Recognition", harga: 2500000 }],
-                akses_kunci: [{ nama: "Tanpa Kunci Pintu", harga: 0 }, { nama: "Magnetic Lock + Push Button", harga: 1500000 }],
-                akses_jasa: [{ nama: "Setting Mesin Absensi", harga: 350000 }, { nama: "Pemasangan Lengkap", harga: 850000 }],
-                jar_router: [{ nama: "Mikrotik RB750Gr3", harga: 1100000 }, { nama: "Ruijie Reyee Cloud", harga: 1800000 }],
-                jar_switch: [{ nama: "Tanpa Switch", harga: 0 }, { nama: "Switch 8 Port PoE", harga: 1600000 }],
-                jar_ap: [{ nama: "Tanpa Access Point", harga: 0 }, { nama: "Ruijie Reyee Ceiling AP", harga: 1200000 }],
-                jar_jasa: [{ nama: "Skala Mikro / Lokal", harga: 750000 }, { nama: "Skala Gedung", harga: 3500000 }]
+                pc_vga: [{ nama: "Tanpa VGA Khusus", harga: 0 }, { nama: "Nvidia GTX 1660 Super", harga: 3500000 }, { nama: "Nvidia RTX 3060", harga: 5500000 }],
+                pc_psu: [{ nama: "PSU 500W + Case Std", harga: 950000 }, { nama: "PSU 650W + Case Khusus Server/RGB", harga: 1500000 }],
+                
+                cctv_paket_analog: [{ nama: "Paket 4 Titik Kamera Analog (2MP) + DVR", harga: 1800000 }, { nama: "Paket 8 Titik Kamera Analog (2MP) + DVR", harga: 3500000 }],
+                cctv_paket_digital: [{ nama: "Paket 4 Titik IP Camera Digital (2MP) + NVR", harga: 2600000 }],
+                cctv_hdd: [{ nama: "HDD Seagate Skyhawk 500GB", harga: 550000 }, { nama: "HDD Seagate Skyhawk 1TB", harga: 950000 }, { nama: "HDD Seagate Skyhawk 2TB", harga: 1450000 }],
+                cctv_jasa: [{ nama: "Jasa 4 Titik Kamera", harga: 600000 }, { nama: "Jasa 8 Titik Kamera", harga: 1200000 }],
+                
+                akses_mesin: [{ nama: "Absensi Fingerprint Standard", harga: 1200000 }, { nama: "Sistem Face Recognition", harga: 2500000 }],
+                akses_kunci: [{ nama: "Tanpa Magnetic Lock", harga: 0 }, { nama: "Magnetic Door Lock + Push Button", harga: 1500000 }],
+                akses_jasa: [{ nama: "Setting Mesin Absensi", harga: 350000 }, { nama: "Pemasangan Lock & Sistem Lengkap", harga: 850000 }],
+                
+                jar_router: [{ nama: "Router Mikrotik RB750Gr3", harga: 1100000 }, { nama: "Router Mikrotik RB450Gx4 (Heavy Load)", harga: 2200000 }, { nama: "Ruijie Reyee Cloud Router", harga: 1800000 }],
+                jar_switch: [{ nama: "Tanpa Switch (Langsung dari Router)", harga: 0 }, { nama: "Switch Gigabit 8 Port", harga: 600000 }, { nama: "Switch 8 Port PoE", harga: 1600000 }],
+                jar_ap: [{ nama: "Tanpa Access Point", harga: 0 }, { nama: "Ruijie Reyee Ceiling AP (WiFi 6)", harga: 1200000 }],
+                jar_jasa: [{ nama: "Jasa Konfigurasi & Tarik Kabel Standar", harga: 750000 }, { nama: "Setup Lengkap: Integrasi Bandwidth & Mikhmon (Hotspot)", harga: 1500000 }, { nama: "Proyek Skala Gedung / Pabrik", harga: 3500000 }]
             }
         };
 
-        let DB_HARGA = {};
-        let WA_ADMIN_NUMBER = "";
+        let DB_HARGA = FALLBACK_DB.harga;
+        let WA_ADMIN_NUMBER = FALLBACK_DB.wa_admin;
         let ACTIVE_TAB = 'pc';
-        const formatRp = (angka) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
+        let CURRENT_ORDER_TEXT = "";
+        let CURRENT_TOTAL = 0;
 
-        async function muatDataHarga() {
-            try {
-                const response = await fetch('data.json');
-                const data = await response.json();
-                WA_ADMIN_NUMBER = data.wa_admin;
-                DB_HARGA = data.harga;
-            } catch (error) {
-                console.warn("Menggunakan data fallback internal.");
-                WA_ADMIN_NUMBER = FALLBACK_DB.wa_admin;
-                DB_HARGA = FALLBACK_DB.harga;
-            }
-            initDropdowns();
-        }
+        const formatRp = (angka) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
 
         function buildDropdown(id, data, placeholder) {
             const el = document.getElementById(id);
             if(!el || !data) return;
             let html = `<option value="0" data-name="-" data-socket="">-- ${placeholder} --</option>`;
             data.forEach(item => {
-                const prcTxt = item.harga > 0 ? ` - ${formatRp(item.harga)}` : "";
+                const prcTxt = item.harga > 0 ? ` (+${formatRp(item.harga)})` : "";
                 const sckAttr = item.socket ? ` data-socket="${item.socket}"` : "";
                 html += `<option value="${item.harga}" data-name="${item.nama}"${sckAttr}>${item.nama}${prcTxt}</option>`;
             });
@@ -631,39 +617,40 @@
         function initDropdowns() {
             buildDropdown('pc-cpu', DB_HARGA.pc_cpu, 'Pilih Processor');
             buildDropdown('pc-mobo', DB_HARGA.pc_mobo, 'Pilih Motherboard');
-            buildDropdown('pc-ram', DB_HARGA.pc_ram, 'Pilih RAM');
+            buildDropdown('pc-ram', DB_HARGA.pc_ram, 'Pilih Kapasitas RAM');
             buildDropdown('pc-storage', DB_HARGA.pc_storage, 'Pilih Storage SSD');
             buildDropdown('pc-vga', DB_HARGA.pc_vga, 'Pilih Kartu Grafis');
             buildDropdown('pc-psu', DB_HARGA.pc_psu, 'Pilih PSU & Casing');
             
             const elCctv = document.getElementById('cctv-paket');
             if(elCctv && DB_HARGA.cctv_paket_analog) {
-                let h = `<option value="0" data-name="-">-- Pilih Paket Kamera --</option>
-                         <optgroup label="Sistem Analog (HD-TVI / HDCVI)">`;
-                DB_HARGA.cctv_paket_analog.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} - ${formatRp(i.harga)}</option>`);
-                h += `</optgroup><optgroup label="Sistem Digital (IP Camera)">`;
-                DB_HARGA.cctv_paket_digital.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} - ${formatRp(i.harga)}</option>`);
+                let h = `<option value="0" data-name="-">-- Pilih Paket & Teknologi Kamera --</option>
+                         <optgroup label="Sistem Analog HD">`;
+                DB_HARGA.cctv_paket_analog.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
+                h += `</optgroup><optgroup label="Sistem Digital IP Camera">`;
+                DB_HARGA.cctv_paket_digital.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
                 h += `</optgroup>`;
                 elCctv.innerHTML = h;
             }
             buildDropdown('cctv-hdd', DB_HARGA.cctv_hdd, 'Pilih Kapasitas HDD');
-            buildDropdown('cctv-jasa', DB_HARGA.cctv_jasa, 'Pilih Jasa Pemasangan');
+            buildDropdown('cctv-jasa', DB_HARGA.cctv_jasa, 'Pilih Titik Instalasi');
             
-            buildDropdown('akses-mesin', DB_HARGA.akses_mesin, 'Pilih Mesin Akses');
-            buildDropdown('akses-kunci', DB_HARGA.akses_kunci, 'Pilih Kunci Pintu');
-            buildDropdown('akses-jasa', DB_HARGA.akses_jasa, 'Pilih Jasa Instalasi');
+            buildDropdown('akses-mesin', DB_HARGA.akses_mesin, 'Pilih Perangkat Akses/Absen');
+            buildDropdown('akses-kunci', DB_HARGA.akses_kunci, 'Pilih Hardware Kunci');
+            buildDropdown('akses-jasa', DB_HARGA.akses_jasa, 'Pilih Jasa Pemasangan');
             
-            buildDropdown('jar-router', DB_HARGA.jar_router, 'Pilih Router');
-            buildDropdown('jar-switch', DB_HARGA.jar_switch, 'Pilih Switch');
-            buildDropdown('jar-ap', DB_HARGA.jar_ap, 'Pilih Access Point');
-            buildDropdown('jar-jasa', DB_HARGA.jar_jasa, 'Pilih Skala Proyek');
+            buildDropdown('jar-router', DB_HARGA.jar_router, 'Pilih Tipe Router');
+            buildDropdown('jar-switch', DB_HARGA.jar_switch, 'Pilih Kapasitas Switch');
+            buildDropdown('jar-ap', DB_HARGA.jar_ap, 'Pilih Pemancar (Access Point)');
+            buildDropdown('jar-jasa', DB_HARGA.jar_jasa, 'Pilih Tingkat Kompleksitas Jasa');
 
-            ['pc', 'cctv', 'akses', 'jaringan'].forEach(kat => hitungTotal(kat));
+            // Kalkulasi awal state
+            ['pc', 'cctv', 'akses', 'jaringan'].forEach(kat => hitungTotal(kat, true));
         }
 
-        window.onload = muatDataHarga;
+        window.onload = initDropdowns;
 
-        function hitungTotal(kategori) {
+        function hitungTotal(kategori, isInit = false) {
             let total = 0; let orderText = ""; let dataIds = [];
             
             if(kategori === 'pc') dataIds = ['cpu', 'mobo', 'ram', 'storage', 'vga', 'psu'];
@@ -685,11 +672,11 @@
 `;
             });
 
-            // Update Total di Layar Desktop
+            // Update DOM element total
             const totalEl = document.getElementById(`total-${kategori}`);
             if(totalEl) totalEl.innerText = formatRp(total);
 
-            // Validasi Khusus PC
+            // Validasi Socket Khusus PC
             if(kategori === 'pc') {
                 const cpuOpt = document.getElementById('pc-cpu').options[document.getElementById('pc-cpu').selectedIndex];
                 const moboOpt = document.getElementById('pc-mobo').options[document.getElementById('pc-mobo').selectedIndex];
@@ -699,42 +686,24 @@
                 const cSock = cpuOpt ? cpuOpt.getAttribute('data-socket') : '';
                 const mSock = moboOpt ? moboOpt.getAttribute('data-socket') : '';
 
-                if (cSock && mSock && cSock !== mSock) {
-                    alertMsg.innerHTML = `<strong>Komponen tidak kompatibel:</strong><br>Socket CPU (${cSock}) tidak cocok dengan Motherboard (${mSock}).`;
+                if (cSock && mSock && cSock !== mSock && cSock !== '-' && mSock !== '-') {
+                    alertMsg.innerHTML = `<strong>Terdapat Ketidakcocokan Komponen:</strong><br>Socket CPU (${cSock}) tidak kompatibel dengan Motherboard (${mSock}). Mohon ganti kombinasi.`;
                     alertBox.classList.remove('hidden');
                 } else if(alertBox) {
                     alertBox.classList.add('hidden');
                 }
             }
 
-            // Generate Pesan WA Spesifik (Format Rapi dengan URI Encoding)
-            let katNama = "";
-            if(kategori === 'pc') katNama = "Rakit PC";
-            else if(kategori === 'cctv') katNama = "Instalasi CCTV";
-            else if(kategori === 'akses') katNama = "Akses Pintu & Absensi";
-            else if(kategori === 'jaringan') katNama = "Infrastruktur Jaringan";
-
-            const pesanMentah = total === 0 
-                ? `Halo Orange Netcom, saya ingin konsultasi mengenai layanan ${katNama}.` 
-                : `Halo Orange Netcom, saya tertarik dengan layanan ${katNama}. Berikut rinciannya:
-
-${orderText}dengan estimasi Total *${formatRp(total)}*. Mohon info lebih lanjut.`;
-            
-            const waTeks = `https://wa.me/${WA_ADMIN_NUMBER}?text=${encodeURIComponent(pesanMentah)}`;
-
-            // Update tombol Desktop
-            const btnPesan = document.getElementById(`btn-wa-${kategori}`);
-            if(btnPesan) btnPesan.href = waTeks;
-
-            // Jika Kategori ini adalah tab yang aktif, update juga tombol sticky Mobile
-            if(kategori === ACTIVE_TAB) {
+            // Sync ke Active Tab / Mobile Sticky
+            if(kategori === ACTIVE_TAB || isInit) {
+                CURRENT_TOTAL = total;
+                CURRENT_ORDER_TEXT = orderText;
                 document.getElementById('mobile-total').innerText = formatRp(total);
-                document.getElementById('mobile-btn-wa').href = waTeks;
             }
         }
 
         function openTab(tabName) {
-            ACTIVE_TAB = tabName; // Set tab aktif
+            ACTIVE_TAB = tabName; 
             
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(c => c.classList.add('hidden'));
@@ -750,11 +719,67 @@ ${orderText}dengan estimasi Total *${formatRp(total)}*. Mohon info lebih lanjut.
             activeBtn.classList.add('active', 'bg-orange-500', 'text-white', 'border-orange-500');
             activeBtn.classList.remove('bg-transparent', 'text-gray-500', 'border-gray-200');
 
-            // Kalkulasi ulang untuk trigger update nilai ke sticky mobile bar
+            // Force recalculate saat buka tab agar state WA ter-update
             hitungTotal(tabName);
+        }
 
-            const y = document.getElementById('simulasi').getBoundingClientRect().top + window.scrollY - 100;
-            window.scrollTo({top: y, behavior: 'smooth'});
+        function buildWA_Url(kategori, total, textRincian) {
+            let katNama = "";
+            if(kategori === 'pc') katNama = "Perakitan PC / Server";
+            else if(kategori === 'cctv') katNama = "Instalasi CCTV";
+            else if(kategori === 'akses') katNama = "Keamanan Akses Pintu";
+            else if(kategori === 'jaringan') katNama = "Infrastruktur Jaringan Bisnis";
+
+            const msg = total === 0 
+                ? `Halo Orange Netcom, saya ingin konsultasi lebih detail mengenai layanan *${katNama}*.` 
+                : `Halo Orange Netcom, saya menggunakan Simulator Web dan tertarik untuk mengestimasi layanan *${katNama}* dengan rincian berikut:
+
+${textRincian}
+Estimasi Total: *${formatRp(total)}*
+
+Mohon informasi lebih lanjut mengenai teknis dan ketersediaan teknisi.`;
+            return `https://wa.me/${WA_ADMIN_NUMBER}?text=${encodeURIComponent(msg)}`;
+        }
+
+        function kirimWhatsApp(kategori) {
+            // Hitung ulang sblm kirim untuk memastikan data akurat
+            hitungTotal(kategori);
+            const wa_url = buildWA_Url(kategori, CURRENT_TOTAL, CURRENT_ORDER_TEXT);
+            window.open(wa_url, '_blank');
+        }
+
+        function kirimWhatsAppMobile() {
+            kirimWhatsApp(ACTIVE_TAB);
+        }
+
+        // LOGIKA PENGAJUAN SURVEI LOKASI
+        function submitFormSurvei(event) {
+            event.preventDefault();
+            
+            const nama = document.getElementById('sv-nama').value.trim();
+            const instansi = document.getElementById('sv-instansi').value.trim();
+            const layanan = document.getElementById('sv-layanan').value;
+            const tanggal = document.getElementById('sv-tanggal').value;
+            const alamat = document.getElementById('sv-alamat').value.trim();
+            const catatan = document.getElementById('sv-catatan').value.trim();
+
+            const waMsg = `*PENGAJUAN JADWAL SURVEI LOKASI*
+
+Halo Tim Orange Netcom, 
+Saya ingin menjadwalkan survei teknis dengan data sebagai berikut:
+
+- *PIC*: ${nama}
+- *Perusahaan*: ${instansi}
+- *Fokus Kebutuhan*: ${layanan}
+- *Rencana Tanggal*: ${tanggal}
+- *Alamat Lokasi*: ${alamat}
+${catatan ? `
+- *Keluhan/Catatan Khusus*: ${catatan}` : ""}
+
+Mohon konfirmasi ketersediaan jadwal tim survei. Terima kasih.`;
+
+            const wa_url = `https://wa.me/${WA_ADMIN_NUMBER}?text=${encodeURIComponent(waMsg)}`;
+            window.open(wa_url, '_blank');
         }
     </script>
 </body>
