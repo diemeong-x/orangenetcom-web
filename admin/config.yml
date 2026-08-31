@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main # Sesuaikan jika cabang utama Anda bernama 'master'
+  branch: main
 
 media_folder: "images"
 public_folder: "/images"
@@ -13,7 +13,7 @@ collections:
         label: "Database Layanan Utama"
         name: "database_harga"
         fields:
-          # Skema untuk Rakitan PC
+          # --- 1. SKEMA RAKITAN PC ---
           - label: "Prosesor (PC CPU)"
             name: "pc_cpu"
             widget: "list"
@@ -21,20 +21,119 @@ collections:
               - {label: "Nama Komponen", name: "nama", widget: "string"}
               - {label: "Harga (Rp)", name: "harga", widget: "number"}
               - {label: "Socket", name: "socket", widget: "string", required: false}
-          - label: "Motherboard"
-            name: "pc-mobo"
+          
+          - label: "Motherboard (PC Mobo)"
+            name: "pc_mobo"
             widget: "list"
             fields:
               - {label: "Nama Komponen", name: "nama", widget: "string"}
               - {label: "Harga (Rp)", name: "harga", widget: "number"}
               - {label: "Socket", name: "socket", widget: "string", required: false}
-          
-          # Skema untuk CCTV
+
+          - label: "Memory (PC RAM)"
+            name: "pc_ram"
+            widget: "list"
+            fields:
+              - {label: "Nama Komponen", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Penyimpanan (PC Storage)"
+            name: "pc_storage"
+            widget: "list"
+            fields:
+              - {label: "Nama Komponen", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Kartu Grafis (PC VGA)"
+            name: "pc_vga"
+            widget: "list"
+            fields:
+              - {label: "Nama Komponen", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Power Supply & Casing (PC PSU)"
+            name: "pc_psu"
+            widget: "list"
+            fields:
+              - {label: "Nama Komponen", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          # --- 2. SKEMA CCTV ---
           - label: "Paket CCTV Analog"
             name: "cctv_paket_analog"
             widget: "list"
             fields:
               - {label: "Nama Paket", name: "nama", widget: "string"}
               - {label: "Harga (Rp)", name: "harga", widget: "number"}
-          
-          # Lanjutkan pola blok "list" di atas untuk pc_mobo, jar_router, akses_mesin, dll.
+
+          - label: "Paket CCTV Digital (IP Camera)"
+            name: "cctv_paket_digital"
+            widget: "list"
+            fields:
+              - {label: "Nama Paket", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Penyimpanan CCTV (HDD)"
+            name: "cctv_hdd"
+            widget: "list"
+            fields:
+              - {label: "Nama Komponen", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Jasa Instalasi CCTV"
+            name: "cctv_jasa"
+            widget: "list"
+            fields:
+              - {label: "Nama Jasa", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          # --- 3. SKEMA AKSES & ABSENSI ---
+          - label: "Mesin Akses / Absensi"
+            name: "akses_mesin"
+            widget: "list"
+            fields:
+              - {label: "Nama Mesin", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Kunci Pintu (Door Lock)"
+            name: "akses_kunci"
+            widget: "list"
+            fields:
+              - {label: "Nama Kunci", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Jasa Instalasi Akses"
+            name: "akses_jasa"
+            widget: "list"
+            fields:
+              - {label: "Nama Jasa", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          # --- 4. SKEMA JARINGAN ---
+          - label: "Router Jaringan"
+            name: "jar_router"
+            widget: "list"
+            fields:
+              - {label: "Nama Router", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Switch Jaringan"
+            name: "jar_switch"
+            widget: "list"
+            fields:
+              - {label: "Nama Switch", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Access Point"
+            name: "jar_ap"
+            widget: "list"
+            fields:
+              - {label: "Nama Access Point", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Jasa Konfigurasi Jaringan"
+            name: "jar_jasa"
+            widget: "list"
+            fields:
+              - {label: "Nama Jasa", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
