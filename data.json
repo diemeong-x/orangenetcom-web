@@ -1,73 +1,218 @@
 {
-  "pc_cpu": [
-    { "nama": "Intel Core i3 12100F (LGA1700)", "harga": 1500000, "socket": "LGA1700" },
-    { "nama": "AMD Ryzen 5 5600X (AM4)", "harga": 3200000, "socket": "AM4" }
-  ],
-  "pc_mobo": [
-    { "nama": "MSI H610M-E (LGA1700)", "harga": 1200000, "socket": "LGA1700" },
-    { "nama": "ASRock B550M Pro4 (AM4)", "harga": 1600000, "socket": "AM4" }
-  ],
-  "pc_ram": [
-    { "nama": "8GB DDR4 3200MHz", "harga": 450000 },
-    { "nama": "16GB (2x8GB) DDR4", "harga": 850000 }
-  ],
-  "pc_storage": [
-    { "nama": "256GB NVMe", "harga": 400000 },
-    { "nama": "512GB NVMe", "harga": 750000 }
-  ],
-  "pc_vga": [
-    { "nama": "Tanpa VGA Khusus", "harga": 0 },
-    { "nama": "Nvidia GTX 1660 Super", "harga": 3500000 },
-    { "nama": "Nvidia RTX 3060", "harga": 5500000 }
-  ],
-  "pc_psu": [
-    { "nama": "PSU 500W + Case Std", "harga": 950000 },
-    { "nama": "PSU 650W + Case Server/RGB", "harga": 1500000 }
-  ],
-  "cctv_paket_analog": [
-    { "nama": "Paket 4 Kamera Analog (2MP) + DVR", "harga": 1800000 },
-    { "nama": "Paket 8 Kamera Analog (2MP) + DVR", "harga": 3500000 }
-  ],
-  "cctv_paket_digital": [
-    { "nama": "Paket 4 IP Camera Digital (2MP) + NVR", "harga": 2600000 }
-  ],
-  "cctv_hdd": [
-    { "nama": "HDD Seagate Skyhawk 500GB", "harga": 550000 },
-    { "nama": "HDD Seagate Skyhawk 1TB", "harga": 950000 }
-  ],
   "cctv_jasa": [
-    { "nama": "Jasa 4 Titik Kamera", "harga": 600000 },
-    { "nama": "Jasa 8 Titik Kamera", "harga": 1200000 }
-  ],
-  "akses_mesin": [
-    { "nama": "Absensi Fingerprint Standard", "harga": 1200000 },
-    { "nama": "Sistem Face Recognition", "harga": 2500000 }
+    {
+      "nama": "Jasa 4 Titik Kamera",
+      "harga": 600000
+    },
+    {
+      "nama": "Jasa 8 Titik Kamera",
+      "harga": 1200000
+    }
   ],
   "akses_kunci": [
-    { "nama": "Tanpa Magnetic Lock", "harga": 0 },
-    { "nama": "Magnetic Door Lock + Push Button", "harga": 1500000 }
+    {
+      "nama": "Tanpa Magnetic Lock",
+      "harga": 0
+    },
+    {
+      "nama": "Magnetic Door Lock + Push Button",
+      "harga": 1500000
+    }
   ],
-  "akses_jasa": [
-    { "nama": "Setting Mesin Absensi", "harga": 350000 },
-    { "nama": "Pemasangan Lock & Sistem Lengkap", "harga": 850000 }
+  "cctv_paket_analog": [
+    {
+      "nama": "Paket 4 Kamera Analog (2MP) + DVR",
+      "harga": 1800000
+    },
+    {
+      "nama": "Paket 8 Kamera Analog (2MP) + DVR",
+      "harga": 3500000
+    }
   ],
-  "jar_router": [
-    { "nama": "Router Mikrotik RB750Gr3", "harga": 1100000 },
-    { "nama": "Router Mikrotik RB450Gx4 (Heavy Load)", "harga": 2200000 },
-    { "nama": "Ruijie Reyee Cloud Router", "harga": 1800000 }
+  "pc_vga": [
+    {
+      "nama": "Tanpa VGA Khusus",
+      "harga": 0
+    },
+    {
+      "nama": "Nvidia GTX 1660 Super",
+      "harga": 3500000
+    },
+    {
+      "nama": "Nvidia RTX 3060",
+      "harga": 5500000
+    }
   ],
-  "jar_switch": [
-    { "nama": "Tanpa Switch", "harga": 0 },
-    { "nama": "Switch Gigabit 8 Port", "harga": 600000 },
-    { "nama": "Switch 8 Port PoE", "harga": 1600000 }
+  "cctv_paket_digital": [
+    {
+      "nama": "Paket 4 IP Camera Digital (2MP) + NVR",
+      "harga": 2600000
+    }
   ],
-  "jar_ap": [
-    { "nama": "Tanpa Access Point", "harga": 0 },
-    { "nama": "Ruijie Reyee Ceiling AP (WiFi 6)", "harga": 1200000 }
+  "pc_psu": [
+    {
+      "nama": "PSU 500W + Case Std",
+      "harga": 950000
+    },
+    {
+      "nama": "PSU 650W + Case Server/RGB",
+      "harga": 1500000
+    }
   ],
   "jar_jasa": [
-    { "nama": "Jasa Konfigurasi & Tarik Kabel Standar", "harga": 750000 },
-    { "nama": "Setup Lengkap: Integrasi Bandwidth & Mikhmon (Hotspot)", "harga": 1500000 },
-    { "nama": "Proyek Skala Gedung / Pabrik", "harga": 3500000 }
+    {
+      "nama": "Jasa Konfigurasi & Tarik Kabel Standar",
+      "harga": 750000
+    },
+    {
+      "nama": "Setup Lengkap: Integrasi Bandwidth & Mikhmon (Hotspot)",
+      "harga": 1500000
+    },
+    {
+      "nama": "Proyek Skala Gedung / Pabrik",
+      "harga": 3500000
+    }
+  ],
+  "cctv_hdd": [
+    {
+      "nama": "HDD Seagate Skyhawk 500GB",
+      "harga": 550000
+    },
+    {
+      "nama": "HDD Seagate Skyhawk 1TB",
+      "harga": 950000
+    }
+  ],
+  "akses_jasa": [
+    {
+      "nama": "Setting Mesin Absensi",
+      "harga": 350000
+    },
+    {
+      "nama": "Pemasangan Lock & Sistem Lengkap",
+      "harga": 850000
+    }
+  ],
+  "jar_router": [
+    {
+      "nama": "Router Mikrotik RB750Gr3",
+      "harga": 1100000
+    },
+    {
+      "nama": "Router Mikrotik RB450Gx4 (Heavy Load)",
+      "harga": 2200000
+    },
+    {
+      "nama": "Ruijie Reyee Cloud Router",
+      "harga": 1800000
+    }
+  ],
+  "pc_storage": [
+    {
+      "nama": "256GB NVMe",
+      "harga": 400000
+    },
+    {
+      "nama": "512GB NVMe",
+      "harga": 750000
+    }
+  ],
+  "pc_ram": [
+    {
+      "nama": "8GB DDR4 3200MHz",
+      "harga": 450000
+    },
+    {
+      "nama": "16GB (2x8GB) DDR4",
+      "harga": 850000
+    }
+  ],
+  "jar_ap": [
+    {
+      "nama": "Tanpa Access Point",
+      "harga": 0
+    },
+    {
+      "nama": "Ruijie Reyee Ceiling AP (WiFi 6)",
+      "harga": 1200000
+    }
+  ],
+  "jar_switch": [
+    {
+      "nama": "Tanpa Switch",
+      "harga": 0
+    },
+    {
+      "nama": "Switch Gigabit 8 Port",
+      "harga": 600000
+    },
+    {
+      "nama": "Switch 8 Port PoE",
+      "harga": 1600000
+    }
+  ],
+  "akses_mesin": [
+    {
+      "nama": "Absensi Fingerprint Standard",
+      "harga": 1200000
+    },
+    {
+      "nama": "Sistem Face Recognition",
+      "harga": 2500000
+    }
+  ],
+  "pc_mobo": [
+    {
+      "nama": "MSI H610M-E (LGA1700)",
+      "harga": 1200000,
+      "socket": "LGA1700"
+    },
+    {
+      "nama": "ASRock B550M Pro4 (AM4)",
+      "harga": 1600000,
+      "socket": "AM4"
+    }
+  ],
+  "pc_cpu": [
+    {
+      "nama": "Intel Pentium Gold G7400",
+      "harga": 1529000,
+      "socket": "LGA1700"
+    },
+    {
+      "nama": "Intel Core i3 12100F",
+      "harga": 1569000,
+      "socket": "LGA1700"
+    },
+    {
+      "nama": "Intel Core i3 12100",
+      "harga": 2280000,
+      "socket": "LGA1700"
+    },
+    {
+      "nama": "Intel Core i5 12400F",
+      "harga": 2585000,
+      "socket": "LGA1700"
+    },
+    {
+      "nama": "Intel Core i5 12400",
+      "harga": 3529000,
+      "socket": "LGA1700"
+    },
+    {
+      "nama": "Intel Core i7 12700F",
+      "harga": 5189000,
+      "socket": "LGA1700"
+    },
+    {
+      "nama": "Intel Core i7 12700",
+      "harga": 5620000,
+      "socket": "LGA1700"
+    },
+    {
+      "nama": "AMD Ryzen 5 5600X (AM4)",
+      "harga": 3200000,
+      "socket": "AM4"
+    }
   ]
 }
