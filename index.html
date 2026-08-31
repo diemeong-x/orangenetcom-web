@@ -614,50 +614,61 @@
             el.innerHTML = html;
         }
 
-        // Fungsi Baru: Menerapkan Filter Brand & Socket
+        // Fungsi Baru: Menerapkan Filter Brand & Socket Dinamis
         function applyPCFilter() {
             const brand = document.getElementById('filter-brand').value.toLowerCase();
-            const socket = document.getElementById('filter-socket').value;
+            const socketEl = document.getElementById('filter-socket');
+            let selectedSocket = socketEl.value; // Simpan pilihan socket saat ini
 
-            // 1. Saring Data CPU
-            let filteredCPU = DB_HARGA.pc_cpu || [];
+            // 1. Saring daftar CPU berdasarkan Brand yang dipilih
+            let cpuByBrand = DB_HARGA.pc_cpu || [];
             if (brand !== 'semua') {
-                filteredCPU = filteredCPU.filter(item => item.nama.toLowerCase().includes(brand));
+                cpuByBrand = cpuByBrand.filter(item => item.nama.toLowerCase().includes(brand));
             }
-            if (socket !== 'semua') {
-                filteredCPU = filteredCPU.filter(item => item.socket === socket);
-            }
-            buildDropdown('pc-cpu', filteredCPU, 'Pilih Processor');
 
-            // 2. Saring Data Motherboard Otomatis (mengikuti socket yang dipilih)
+            // 2. Ekstrak daftar socket yang tersedia khusus untuk Brand tersebut
+            const availableSockets = new Set();
+            cpuByBrand.forEach(c => { if(c.socket && c.socket !== '-') availableSockets.add(c.socket) });
+            
+            // Fitur Auto-Reset: Jika socket yang dipilih sebelumnya tidak cocok dengan brand baru (misal: dari AM4 ganti ke Intel)
+            if (selectedSocket !== 'semua' && !availableSockets.has(selectedSocket)) {
+                selectedSocket = 'semua'; 
+            }
+
+            // 3. Render ulang opsi dropdown Tipe Socket
+            let htmlSock = `<option value="semua">-- Semua Socket --</option>`;
+            availableSockets.forEach(s => {
+                const isSelected = (s === selectedSocket) ? 'selected' : '';
+                htmlSock += `<option value="${s}" ${isSelected}>${s}</option>`;
+            });
+            socketEl.innerHTML = htmlSock;
+
+            // 4. Terapkan saringan akhir CPU (Berdasarkan Brand & Socket)
+            let finalCPU = cpuByBrand;
+            if (selectedSocket !== 'semua') {
+                finalCPU = finalCPU.filter(item => item.socket === selectedSocket);
+            }
+            buildDropdown('pc-cpu', finalCPU, 'Pilih Processor');
+
+            // 5. Terapkan saringan Motherboard
             let filteredMobo = DB_HARGA.pc_mobo || [];
-            if (socket !== 'semua') {
-                filteredMobo = filteredMobo.filter(item => item.socket === socket);
+            if (selectedSocket !== 'semua') {
+                // Jika ada socket spesifik yang dipilih, tampilkan mobo dengan socket tersebut
+                filteredMobo = filteredMobo.filter(item => item.socket === selectedSocket);
+            } else {
+                // Jika 'semua' socket, sembunyikan mobo dari brand lawan (tampilkan mobo dari socket yang available saja)
+                filteredMobo = filteredMobo.filter(item => availableSockets.has(item.socket));
             }
             buildDropdown('pc-mobo', filteredMobo, 'Pilih Motherboard');
 
-            // Hitung ulang harga karena opsi ter-reset
             hitungTotal('pc');
         }
 
-        // Modifikasi fungsi initDropdowns yang sudah ada
         function initDropdowns() {
-            // Ekstrak daftar socket secara dinamis dari database CPU
-            const allSockets = new Set();
-            if(DB_HARGA.pc_cpu) {
-                DB_HARGA.pc_cpu.forEach(c => { if(c.socket && c.socket !== '-') allSockets.add(c.socket) });
-            }
-            const socketEl = document.getElementById('filter-socket');
-            if(socketEl) {
-                let htmlSock = `<option value="semua">-- Semua Socket --</option>`;
-                allSockets.forEach(s => htmlSock += `<option value="${s}">${s}</option>`);
-                socketEl.innerHTML = htmlSock;
-            }
-
-            // Panggil filter untuk mengisi dropdown CPU & Mobo pertama kali
+            // Panggil filter untuk mencetak CPU, Mobo, dan Socket secara dinamis untuk pertama kalinya
             applyPCFilter();
             
-            // Render sisa komponen PC
+            // Render sisa dropdown PC (termasuk periferal dan network)
             buildDropdown('pc-ram', DB_HARGA.pc_ram, 'Pilih Kapasitas RAM');
             buildDropdown('pc-storage', DB_HARGA.pc_storage, 'Pilih Storage SSD');
             buildDropdown('pc-vga', DB_HARGA.pc_vga, 'Pilih Kartu Grafis');
@@ -665,6 +676,7 @@
             buildDropdown('pc-peripheral', DB_HARGA.pc_peripheral, 'Pilih Aksesoris');
             buildDropdown('pc-network', DB_HARGA.pc_network, 'Pilih Network Card');
             
+            // Render dropdown CCTV
             const elCctv = document.getElementById('cctv-paket');
             if(elCctv && (DB_HARGA.cctv_paket_analog || DB_HARGA.cctv_paket_digital)) {
                 let h = `<option value="0" data-name="-">-- Pilih Paket & Teknologi Kamera --</option>`;
@@ -683,6 +695,7 @@
             buildDropdown('cctv-hdd', DB_HARGA.cctv_hdd, 'Pilih Kapasitas HDD');
             buildDropdown('cctv-jasa', DB_HARGA.cctv_jasa, 'Pilih Titik Instalasi');
             
+            // Render dropdown Akses & Jaringan
             buildDropdown('akses-mesin', DB_HARGA.akses_mesin, 'Pilih Perangkat Akses/Absen');
             buildDropdown('akses-kunci', DB_HARGA.akses_kunci, 'Pilih Hardware Kunci');
             buildDropdown('akses-jasa', DB_HARGA.akses_jasa, 'Pilih Jasa Pemasangan');
@@ -692,7 +705,7 @@
             buildDropdown('jar-ap', DB_HARGA.jar_ap, 'Pilih Pemancar (Access Point)');
             buildDropdown('jar-jasa', DB_HARGA.jar_jasa, 'Pilih Tingkat Kompleksitas Jasa');
 
-            // Kalkulasi awal state
+            // Kalkulasi awal state ke semua Tab
             ['pc', 'cctv', 'akses', 'jaringan'].forEach(kat => hitungTotal(kat, true));
         }
 
