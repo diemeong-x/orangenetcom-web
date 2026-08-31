@@ -581,11 +581,12 @@
         function buildDropdown(id, data, placeholder) {
             const el = document.getElementById(id);
             if(!el || !data) return;
-            let html = `<option value="0" data-name="-" data-socket="">-- ${placeholder} --</option>`;
+            let html = `<option value="0" data-name="-" data-socket="" data-ram="">-- ${placeholder} --</option>`;
             data.forEach(item => {
                 const prcTxt = item.harga > 0 ? ` (+${formatRp(item.harga)})` : "";
                 const sckAttr = item.socket ? ` data-socket="${item.socket}"` : "";
-                html += `<option value="${item.harga}" data-name="${item.nama}"${sckAttr}>${item.nama}${prcTxt}</option>`;
+                const ramAttr = item.tipe_ram ? ` data-ram="${item.tipe_ram}"` : "";
+                html += `<option value="${item.harga}" data-name="${item.nama}"${sckAttr}${ramAttr}>${item.nama}${prcTxt}</option>`;
             });
             el.innerHTML = html;
         }
@@ -662,25 +663,63 @@
                 if(lbl) lbl.innerText = name !== '-' ? name : '-';
                 
                 total += price;
-                if (name !== '-' && price > 0) orderText += `- ${name}
-`;
+                if (name !== '-' && price > 0) orderText += `- ${name}\n`;
             });
 
             const totalEl = document.getElementById(`total-${kategori}`);
             if(totalEl) totalEl.innerText = formatRp(total);
 
-            // Validasi Socket Khusus PC
+            // Validasi Khusus Perakitan PC
             if(kategori === 'pc') {
                 const cpuOpt = document.getElementById('pc-cpu').options[document.getElementById('pc-cpu').selectedIndex];
                 const moboOpt = document.getElementById('pc-mobo').options[document.getElementById('pc-mobo').selectedIndex];
+                const ramOpt = document.getElementById('pc-ram').options[document.getElementById('pc-ram').selectedIndex];
+                const vgaOpt = document.getElementById('pc-vga').options[document.getElementById('pc-vga').selectedIndex];
+                
                 const alertBox = document.getElementById('pc-alert');
                 const alertMsg = document.getElementById('pc-alert-msg');
-                
-                const cSock = cpuOpt ? cpuOpt.getAttribute('data-socket') : '';
-                const mSock = moboOpt ? moboOpt.getAttribute('data-socket') : '';
+                let errorMsgs = [];
 
-                if (cSock && mSock && cSock !== mSock && cSock !== '-' && mSock !== '-') {
-                    alertMsg.innerHTML = `<strong>Terdapat Ketidakcocokan Komponen:</strong><br>Socket CPU (${cSock}) tidak kompatibel dengan Motherboard (${mSock}). Mohon ganti kombinasi.`;
+                if (cpuOpt && moboOpt) {
+                    // 1. Cek Kompatibilitas Socket
+                    const cSock = cpuOpt.getAttribute('data-socket');
+                    const mSock = moboOpt.getAttribute('data-socket');
+                    if (cSock && mSock && cSock !== mSock && cSock !== '-' && mSock !== '-') {
+                        errorMsgs.push(`- <strong>Socket:</strong> CPU (${cSock}) tidak cocok dengan Motherboard (${mSock}).`);
+                    }
+
+                    // 2. Cek Kewajiban VGA Card
+                    const cpuName = cpuOpt.getAttribute('data-name');
+                    const vgaName = vgaOpt ? vgaOpt.getAttribute('data-name') : '';
+                    const nameLow = cpuName.toLowerCase();
+                    let requiresVGA = false;
+                    
+                    // Aturan Intel: Wajib VGA jika nama prosesor mengandung akhiran "F"
+                    if (nameLow.includes('intel') && /f(\s|$|\()/.test(nameLow)) {
+                        requiresVGA = true;
+                    }
+                    // Aturan AMD: Wajib VGA jika nama prosesor TIDAK mengandung akhiran "G"
+                    else if (nameLow.includes('amd') && !/g(\s|$|\()/.test(nameLow) && cpuName !== '-') {
+                        requiresVGA = true;
+                    }
+
+                    if (requiresVGA && (vgaName === 'Tanpa VGA Khusus' || vgaName === '-')) {
+                        errorMsgs.push(`- <strong>Grafis:</strong> Prosesor ${cpuName} tidak memiliki iGPU bawaan. Wajib memilih VGA Card.`);
+                    }
+                }
+
+                if (moboOpt && ramOpt) {
+                    // 3. Cek Kompatibilitas Tipe RAM
+                    const mRam = moboOpt.getAttribute('data-ram');
+                    const rRam = ramOpt.getAttribute('data-ram');
+                    if (mRam && rRam && mRam !== rRam && mRam !== '-' && rRam !== '-') {
+                        errorMsgs.push(`- <strong>RAM:</strong> Slot Motherboard (${mRam}) tidak cocok dengan memori (${rRam}).`);
+                    }
+                }
+
+                // Tampilkan Peringatan jika ada Error
+                if (errorMsgs.length > 0) {
+                    alertMsg.innerHTML = `<strong>Peringatan Kompatibilitas Sistem:</strong><br>` + errorMsgs.join('<br>');
                     alertBox.classList.remove('hidden');
                 } else if(alertBox) {
                     alertBox.classList.add('hidden');
