@@ -681,20 +681,31 @@
             
             // Render dropdown CCTV
             const elCctv = document.getElementById('cctv-paket');
-            if(elCctv && (DB_HARGA.cctv_paket_analog || DB_HARGA.cctv_paket_digital)) {
+            if(elCctv && (DB_HARGA.cctv_paket_analog || DB_HARGA.cctv_paket_digital || DB_HARGA.cctv_paket_wireless)) {
                 let h = `<option value="0" data-name="-">-- Pilih Paket & Teknologi Kamera --</option>`;
+                
                 if(DB_HARGA.cctv_paket_analog) {
                     h += `<optgroup label="Sistem Analog HD">`;
                     DB_HARGA.cctv_paket_analog.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
                     h += `</optgroup>`;
                 }
+                
                 if(DB_HARGA.cctv_paket_digital) {
                     h += `<optgroup label="Sistem Digital IP Camera">`;
                     DB_HARGA.cctv_paket_digital.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
                     h += `</optgroup>`;
                 }
+
+                // --- TAMBAHAN UNTUK KATEGORI WIRELESS ---
+                if(DB_HARGA.cctv_paket_wireless) {
+                    h += `<optgroup label="Sistem Wireless (WiFi / Smart Cam)">`;
+                    DB_HARGA.cctv_paket_wireless.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
+                    h += `</optgroup>`;
+                }
+
                 elCctv.innerHTML = h;
             }
+            
             buildDropdown('cctv-hdd', DB_HARGA.cctv_hdd, 'Pilih Kapasitas HDD');
             buildDropdown('cctv-jasa', DB_HARGA.cctv_jasa, 'Pilih Titik Instalasi');
             
