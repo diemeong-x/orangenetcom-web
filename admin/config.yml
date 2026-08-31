@@ -60,6 +60,20 @@ collections:
               - {label: "Nama Komponen", name: "nama", widget: "string"}
               - {label: "Harga (Rp)", name: "harga", widget: "number"}
 
+          - label: "Mouse & Keyboard (PC Peripheral)"
+            name: "pc_peripheral"
+            widget: "list"
+            fields:
+              - {label: "Nama Komponen", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Kartu Jaringan (PC Network)"
+            name: "pc_network"
+            widget: "list"
+            fields:
+              - {label: "Nama Komponen", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}    
+
           # --- 2. SKEMA CCTV ---
           - label: "Paket CCTV Analog"
             name: "cctv_paket_analog"
