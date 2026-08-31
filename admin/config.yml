@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: diemeong-x/orangenetcom-web # Ganti dengan repositori asli
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "katalog"
+    label: "Manajemen Katalog & Harga"
+    files:
+      - file: "data.json"
+        label: "Database Layanan Utama"
+        name: "database_harga"
+        fields:
+          # Skema untuk Rakitan PC
+          - label: "Prosesor (PC CPU)"
+            name: "pc_cpu"
+            widget: "list"
+            fields:
+              - {label: "Nama Komponen", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+              - {label: "Socket", name: "socket", widget: "string", required: false}
+          
+          # Skema untuk CCTV
+          - label: "Paket CCTV Analog"
+            name: "cctv_paket_analog"
+            widget: "list"
+            fields:
+              - {label: "Nama Paket", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+          
+          # Lanjutkan pola blok "list" di atas untuk pc_mobo, jar_router, akses_mesin, dll.
