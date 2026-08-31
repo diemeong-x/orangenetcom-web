@@ -120,7 +120,8 @@
   "pc_ram": [
     {
       "nama": "8GB DDR4 3200MHz",
-      "harga": 450000
+      "harga": 450000,
+      "tipe_ram": "DDR4"
     },
     {
       "nama": "16GB (2x8GB) DDR4",
@@ -165,7 +166,8 @@
     {
       "nama": "MSI H610M-E (LGA1700)",
       "harga": 1200000,
-      "socket": "LGA1700"
+      "socket": "LGA1700",
+      "tipe_ram": "DDR4"
     },
     {
       "nama": "ASRock B550M Pro4 (AM4)",
