@@ -49,6 +49,16 @@
       "harga": 2600000
     }
   ],
+  "cctv_paket_wireless": [
+    {
+      "nama": "Paket 2 Smart WiFi Camera + MicroSD",
+      "harga": 1200000
+    },
+    {
+      "nama": "Paket 4 Kamera Wireless NVR",
+      "harga": 2800000
+    }
+  ],
   "pc_peripheral": [
     { "nama": "Tanpa Mouse & Keyboard", "harga": 0 },
     { "nama": "Mouse & Keyboard Kabel Standard", "harga": 150000 },
