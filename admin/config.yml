@@ -1,7 +1,6 @@
 backend:
-  name: github
-  repo: diemeong-x/orangenetcom-web # Ganti dengan repositori asli
-  branch: main
+  name: git-gateway
+  branch: main # Sesuaikan jika cabang utama Anda bernama 'master'
 
 media_folder: "images"
 public_folder: "/images"
