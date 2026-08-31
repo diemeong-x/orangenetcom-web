@@ -29,6 +29,7 @@ collections:
               - {label: "Nama Komponen", name: "nama", widget: "string"}
               - {label: "Harga (Rp)", name: "harga", widget: "number"}
               - {label: "Socket", name: "socket", widget: "string", required: false}
+              - {label: "Tipe RAM (DDR3/DDR4/DDR5)", name: "tipe_ram", widget: "string", required: false}
 
           - label: "Memory (PC RAM)"
             name: "pc_ram"
@@ -36,6 +37,7 @@ collections:
             fields:
               - {label: "Nama Komponen", name: "nama", widget: "string"}
               - {label: "Harga (Rp)", name: "harga", widget: "number"}
+              - {label: "Tipe RAM (DDR3/DDR4/DDR5)", name: "tipe_ram", widget: "string", required: false}
 
           - label: "Penyimpanan (PC Storage)"
             name: "pc_storage"
