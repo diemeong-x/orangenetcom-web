@@ -53,8 +53,15 @@ collections:
               - {label: "Nama Komponen", name: "nama", widget: "string"}
               - {label: "Harga (Rp)", name: "harga", widget: "number"}
 
-          - label: "Power Supply & Casing (PC PSU)"
+          - label: "Power Supply (PC PSU)"
             name: "pc_psu"
+            widget: "list"
+            fields:
+              - {label: "Nama Komponen", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+
+          - label: "Casing PC (PC Casing)"
+            name: "pc_casing"
             widget: "list"
             fields:
               - {label: "Nama Komponen", name: "nama", widget: "string"}
