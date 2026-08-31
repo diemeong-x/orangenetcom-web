@@ -96,6 +96,13 @@ collections:
               - {label: "Nama Paket", name: "nama", widget: "string"}
               - {label: "Harga (Rp)", name: "harga", widget: "number"}
 
+          - label: "Paket CCTV Wireless (WiFi)"
+            name: "cctv_paket_wireless"
+            widget: "list"
+            fields:
+              - {label: "Nama Paket", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+          
           - label: "Penyimpanan CCTV (HDD)"
             name: "cctv_hdd"
             widget: "list"
