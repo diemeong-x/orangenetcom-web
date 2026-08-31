@@ -212,6 +212,16 @@
       "socket": "LGA1700"
     },
     {
+      "nama": "Intel Core i9 12900F",
+      "harga": 6670000,
+      "socket": "LGA1700"
+    },
+    {
+      "nama": "Intel Core i9 12900K",
+      "harga": 7445000,
+      "socket": "LGA1700"
+    },
+    {
       "nama": "AMD Ryzen 5 5600X (AM4)",
       "harga": 3200000,
       "socket": "AM4"
