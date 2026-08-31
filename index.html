@@ -662,6 +662,8 @@
             buildDropdown('pc-storage', DB_HARGA.pc_storage, 'Pilih Storage SSD');
             buildDropdown('pc-vga', DB_HARGA.pc_vga, 'Pilih Kartu Grafis');
             buildDropdown('pc-psu', DB_HARGA.pc_psu, 'Pilih PSU & Casing');
+            buildDropdown('pc-peripheral', DB_HARGA.pc_peripheral, 'Pilih Aksesoris');
+            buildDropdown('pc-network', DB_HARGA.pc_network, 'Pilih Network Card');
             
             const elCctv = document.getElementById('cctv-paket');
             if(elCctv && (DB_HARGA.cctv_paket_analog || DB_HARGA.cctv_paket_digital)) {
@@ -710,7 +712,7 @@
         function hitungTotal(kategori, isInit = false) {
             let total = 0; let orderText = ""; let dataIds = [];
             
-            if(kategori === 'pc') dataIds = ['cpu', 'mobo', 'ram', 'storage', 'vga', 'psu'];
+            if(kategori === 'pc') dataIds = ['cpu', 'mobo', 'ram', 'storage', 'vga', 'psu', 'peripheral', 'network'];
             else if(kategori === 'cctv') dataIds = ['paket', 'hdd', 'jasa'];
             else if(kategori === 'akses') dataIds = ['mesin', 'kunci', 'jasa'];
             else if(kategori === 'jaringan') dataIds = ['router', 'switch', 'ap', 'jasa'];
