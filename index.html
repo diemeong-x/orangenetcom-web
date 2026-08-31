@@ -14,11 +14,13 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Orange Netcom - Solusi IT & Jaringan Profesional">
     <meta property="og:description" content="Mitra terpercaya untuk instalasi jaringan, manajemen bandwidth, CCTV, dan infrastruktur IT bisnis Anda.">
-    <meta property="og:image" content="5353.png"> 
     
     <link rel="icon" type="image/png" href="3339.png">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
+    <!-- Netlify Identity Widget untuk Login Admin -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <!-- Tailwind CSS & FontAwesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -69,27 +71,18 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#beranda">
+                    <a href="#beranda" class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 120" class="h-12 w-auto object-contain transition-transform hover:scale-105 duration-300" aria-label="Logo Orange Netcom">
-							<!-- Huruf 'O' Modifikasi (Simpul Jaringan & Jeruk) -->
-							<g transform="translate(10, 15)">
-								<!-- Cincin Luar (Fiber Optic / Sinyal) -->
-								<circle cx="40" cy="40" r="28" fill="none" stroke="#f97316" stroke-width="10" />
-								<!-- Titik Simpul / Inti Server -->
-								<circle cx="40" cy="40" r="10" fill="#f97316" />
-								<!-- Garis Konektivitas -->
-								<line x1="40" y1="40" x2="58" y2="22" stroke="#f97316" stroke-width="5" stroke-linecap="round" />
-								<!-- Daun Minimalis -->
-								<path d="M 54 12 Q 65 0 75 10 Q 65 22 54 12 Z" fill="#22c55e" />
-							</g>
-  
-							<!-- Teks Identitas Utama -->
-							<text x="105" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#f97316" letter-spacing="1">RANGE</text>
-							<text x="330" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#1e293b" letter-spacing="1">NETCOM</text>
-  
-							<!-- Tagline Korporat (Dibuat Sama Rata / Justified) -->
-							<text x="105" y="100" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="15" fill="#64748b" textLength="480" lengthAdjust="spacing">SOLUSI KONEKTIVITAS MODERN</text>
-						</svg>
+                          <g transform="translate(10, 15)">
+                            <circle cx="40" cy="40" r="28" fill="none" stroke="#f97316" stroke-width="10" />
+                            <circle cx="40" cy="40" r="10" fill="#f97316" />
+                            <line x1="40" y1="40" x2="58" y2="22" stroke="#f97316" stroke-width="5" stroke-linecap="round" />
+                            <path d="M 54 12 Q 65 0 75 10 Q 65 22 54 12 Z" fill="#22c55e" />
+                          </g>
+                          <text x="105" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#f97316" letter-spacing="1">RANGE</text>
+                          <text x="330" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#1e293b" letter-spacing="1">NETCOM</text>
+                          <text x="105" y="100" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="15" fill="#64748b" textLength="480" lengthAdjust="spacing">SOLUSI KONEKTIVITAS MODERN</text>
+                        </svg>
                     </a>
                 </div>
                 <div id="nav-menu" class="hidden md:flex space-x-8 items-center">
@@ -247,12 +240,10 @@
                         </form>
                     </div>
 
-                    <!-- Sticky Box (Desktop) -->
                     <div class="w-full lg:w-1/3 relative">
                         <div class="bg-slate-900 rounded-3xl p-6 md:p-8 text-white sticky top-28 shadow-2xl border border-slate-800">
                             <h3 class="text-lg font-bold mb-4 text-orange-500 border-b border-slate-700 pb-3">Ringkasan Rakitan</h3>
                             
-                            <!-- Alert Validasi -->
                             <div id="pc-alert" class="hidden mb-4 p-4 rounded-xl bg-red-500/10 border border-red-500/50 text-red-400 text-sm font-medium flex items-start shadow-inner">
                                 <i class="fa-solid fa-triangle-exclamation mt-1 mr-2 text-red-500"></i>
                                 <span id="pc-alert-msg"></span>
@@ -396,7 +387,7 @@
         </div>
     </div>
 
-    <!-- FORMULIR SURVEI (FITUR BARU) -->
+    <!-- FORMULIR SURVEI -->
     <section id="survei" class="py-20 bg-slate-800 text-white relative">
         <div class="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -512,26 +503,17 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <div>
                     <div class="bg-white inline-block p-2 rounded-xl mb-6 shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 120" class="h-12 w-auto object-contain transition-transform hover:scale-105 duration-300" aria-label="Logo Orange Netcom">
-							<!-- Huruf 'O' Modifikasi (Simpul Jaringan & Jeruk) -->
-							<g transform="translate(10, 15)">
-								<!-- Cincin Luar (Fiber Optic / Sinyal) -->
-								<circle cx="40" cy="40" r="28" fill="none" stroke="#f97316" stroke-width="10" />
-								<!-- Titik Simpul / Inti Server -->
-								<circle cx="40" cy="40" r="10" fill="#f97316" />
-								<!-- Garis Konektivitas -->
-								<line x1="40" y1="40" x2="58" y2="22" stroke="#f97316" stroke-width="5" stroke-linecap="round" />
-								<!-- Daun Minimalis -->
-								<path d="M 54 12 Q 65 0 75 10 Q 65 22 54 12 Z" fill="#22c55e" />
-							</g>
-  
-							<!-- Teks Identitas Utama -->
-							<text x="105" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#f97316" letter-spacing="1">RANGE</text>
-							<text x="330" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#1e293b" letter-spacing="1">NETCOM</text>
-  
-							<!-- Tagline Korporat (Dibuat Sama Rata / Justified) -->
-							<text x="105" y="100" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="15" fill="#64748b" textLength="480" lengthAdjust="spacing">SOLUSI KONEKTIVITAS MODERN</text>
-						</svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 120" class="h-10 w-auto object-contain" aria-label="Logo Orange Netcom">
+                          <g transform="translate(10, 15)">
+                            <circle cx="40" cy="40" r="28" fill="none" stroke="#f97316" stroke-width="10" />
+                            <circle cx="40" cy="40" r="10" fill="#f97316" />
+                            <line x1="40" y1="40" x2="58" y2="22" stroke="#f97316" stroke-width="5" stroke-linecap="round" />
+                            <path d="M 54 12 Q 65 0 75 10 Q 65 22 54 12 Z" fill="#22c55e" />
+                          </g>
+                          <text x="105" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#f97316" letter-spacing="1">RANGE</text>
+                          <text x="330" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#1e293b" letter-spacing="1">NETCOM</text>
+                          <text x="105" y="100" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="15" fill="#64748b" textLength="480" lengthAdjust="spacing">SOLUSI KONEKTIVITAS MODERN</text>
+                        </svg>
                     </div>
                     <p class="text-sm text-gray-400 leading-relaxed pr-4 mb-6">Membantu ratusan bisnis terhubung secara aman dan efisien dengan standar topologi dan keamanan yang teruji.</p>
                 </div>
@@ -569,7 +551,7 @@
         </div>
     </footer>
 
-    <!-- LOGIKA JAVASCRIPT -->
+    <!-- LOGIKA JAVASCRIPT & FETCH CMS -->
     <script>
         // Menu Mobile Toggle
         const btnMobile = document.getElementById('btn-mobile-menu');
@@ -588,41 +570,8 @@
             navMenu.classList.toggle('border-b');
         });
 
-        // Data Base Mock
-        const FALLBACK_DB = {
-            wa_admin: "6285711779993",
-            harga: {
-                pc_cpu: [
-                    { nama: "Intel Core i3 12100F (LGA1700)", harga: 1500000, socket: "LGA1700" },
-                    { nama: "AMD Ryzen 5 5600X (AM4)", harga: 3200000, socket: "AM4" }
-                ],
-                pc_mobo: [
-                    { nama: "MSI H610M-E (LGA1700)", harga: 1200000, socket: "LGA1700" },
-                    { nama: "ASRock B550M Pro4 (AM4)", harga: 1600000, socket: "AM4" }
-                ],
-                pc_ram: [{ nama: "8GB DDR4 3200MHz", harga: 450000 }, { nama: "16GB (2x8GB) DDR4", harga: 850000 }],
-                pc_storage: [{ nama: "256GB NVMe", harga: 400000 }, { nama: "512GB NVMe", harga: 750000 }],
-                pc_vga: [{ nama: "Tanpa VGA Khusus", harga: 0 }, { nama: "Nvidia GTX 1660 Super", harga: 3500000 }, { nama: "Nvidia RTX 3060", harga: 5500000 }],
-                pc_psu: [{ nama: "PSU 500W + Case Std", harga: 950000 }, { nama: "PSU 650W + Case Khusus Server/RGB", harga: 1500000 }],
-                
-                cctv_paket_analog: [{ nama: "Paket 4 Titik Kamera Analog (2MP) + DVR", harga: 1800000 }, { nama: "Paket 8 Titik Kamera Analog (2MP) + DVR", harga: 3500000 }],
-                cctv_paket_digital: [{ nama: "Paket 4 Titik IP Camera Digital (2MP) + NVR", harga: 2600000 }],
-                cctv_hdd: [{ nama: "HDD Seagate Skyhawk 500GB", harga: 550000 }, { nama: "HDD Seagate Skyhawk 1TB", harga: 950000 }, { nama: "HDD Seagate Skyhawk 2TB", harga: 1450000 }],
-                cctv_jasa: [{ nama: "Jasa 4 Titik Kamera", harga: 600000 }, { nama: "Jasa 8 Titik Kamera", harga: 1200000 }],
-                
-                akses_mesin: [{ nama: "Absensi Fingerprint Standard", harga: 1200000 }, { nama: "Sistem Face Recognition", harga: 2500000 }],
-                akses_kunci: [{ nama: "Tanpa Magnetic Lock", harga: 0 }, { nama: "Magnetic Door Lock + Push Button", harga: 1500000 }],
-                akses_jasa: [{ nama: "Setting Mesin Absensi", harga: 350000 }, { nama: "Pemasangan Lock & Sistem Lengkap", harga: 850000 }],
-                
-                jar_router: [{ nama: "Router Mikrotik RB750Gr3", harga: 1100000 }, { nama: "Router Mikrotik RB450Gx4 (Heavy Load)", harga: 2200000 }, { nama: "Ruijie Reyee Cloud Router", harga: 1800000 }],
-                jar_switch: [{ nama: "Tanpa Switch (Langsung dari Router)", harga: 0 }, { nama: "Switch Gigabit 8 Port", harga: 600000 }, { nama: "Switch 8 Port PoE", harga: 1600000 }],
-                jar_ap: [{ nama: "Tanpa Access Point", harga: 0 }, { nama: "Ruijie Reyee Ceiling AP (WiFi 6)", harga: 1200000 }],
-                jar_jasa: [{ nama: "Jasa Konfigurasi & Tarik Kabel Standar", harga: 750000 }, { nama: "Setup Lengkap: Integrasi Bandwidth & Mikhmon (Hotspot)", harga: 1500000 }, { nama: "Proyek Skala Gedung / Pabrik", harga: 3500000 }]
-            }
-        };
-
-        let DB_HARGA = FALLBACK_DB.harga;
-        let WA_ADMIN_NUMBER = FALLBACK_DB.wa_admin;
+        const WA_ADMIN_NUMBER = "6285711779993";
+        let DB_HARGA = {};
         let ACTIVE_TAB = 'pc';
         let CURRENT_ORDER_TEXT = "";
         let CURRENT_TOTAL = 0;
@@ -650,13 +599,18 @@
             buildDropdown('pc-psu', DB_HARGA.pc_psu, 'Pilih PSU & Casing');
             
             const elCctv = document.getElementById('cctv-paket');
-            if(elCctv && DB_HARGA.cctv_paket_analog) {
-                let h = `<option value="0" data-name="-">-- Pilih Paket & Teknologi Kamera --</option>
-                         <optgroup label="Sistem Analog HD">`;
-                DB_HARGA.cctv_paket_analog.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
-                h += `</optgroup><optgroup label="Sistem Digital IP Camera">`;
-                DB_HARGA.cctv_paket_digital.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
-                h += `</optgroup>`;
+            if(elCctv && (DB_HARGA.cctv_paket_analog || DB_HARGA.cctv_paket_digital)) {
+                let h = `<option value="0" data-name="-">-- Pilih Paket & Teknologi Kamera --</option>`;
+                if(DB_HARGA.cctv_paket_analog) {
+                    h += `<optgroup label="Sistem Analog HD">`;
+                    DB_HARGA.cctv_paket_analog.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
+                    h += `</optgroup>`;
+                }
+                if(DB_HARGA.cctv_paket_digital) {
+                    h += `<optgroup label="Sistem Digital IP Camera">`;
+                    DB_HARGA.cctv_paket_digital.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
+                    h += `</optgroup>`;
+                }
                 elCctv.innerHTML = h;
             }
             buildDropdown('cctv-hdd', DB_HARGA.cctv_hdd, 'Pilih Kapasitas HDD');
@@ -675,7 +629,18 @@
             ['pc', 'cctv', 'akses', 'jaringan'].forEach(kat => hitungTotal(kat, true));
         }
 
-        window.onload = initDropdowns;
+        // Fetch Data CMS
+        async function muatDataHarga() {
+            try {
+                const response = await fetch('data.json');
+                if(!response.ok) throw new Error("JSON tidak ditemukan");
+                DB_HARGA = await response.json();
+            } catch (error) {
+                console.error("Gagal memuat database harga dari CMS, periksa file data.json");
+            }
+            initDropdowns();
+        }
+        window.onload = muatDataHarga;
 
         function hitungTotal(kategori, isInit = false) {
             let total = 0; let orderText = ""; let dataIds = [];
@@ -685,7 +650,6 @@
             else if(kategori === 'akses') dataIds = ['mesin', 'kunci', 'jasa'];
             else if(kategori === 'jaringan') dataIds = ['router', 'switch', 'ap', 'jasa'];
 
-            // PENYESUAIAN: Gunakan awalan 'jar' khusus untuk kategori jaringan agar sesuai dengan ID HTML
             const prefix = kategori === 'jaringan' ? 'jar' : kategori;
 
             dataIds.forEach(id => {
@@ -698,10 +662,10 @@
                 if(lbl) lbl.innerText = name !== '-' ? name : '-';
                 
                 total += price;
-                if (name !== '-' && price > 0) orderText += `- ${name}\n`;
+                if (name !== '-' && price > 0) orderText += `- ${name}
+`;
             });
 
-            // Update DOM element total (tetap menggunakan parameter 'kategori' untuk ID 'total-jaringan')
             const totalEl = document.getElementById(`total-${kategori}`);
             if(totalEl) totalEl.innerText = formatRp(total);
 
@@ -723,7 +687,6 @@
                 }
             }
 
-            // Sync ke Active Tab / Mobile Sticky
             if(kategori === ACTIVE_TAB || isInit) {
                 CURRENT_TOTAL = total;
                 CURRENT_ORDER_TEXT = orderText;
@@ -748,7 +711,6 @@
             activeBtn.classList.add('active', 'bg-orange-500', 'text-white', 'border-orange-500');
             activeBtn.classList.remove('bg-transparent', 'text-gray-500', 'border-gray-200');
 
-            // Force recalculate saat buka tab agar state WA ter-update
             hitungTotal(tabName);
         }
 
@@ -771,7 +733,6 @@ Mohon informasi lebih lanjut mengenai teknis dan ketersediaan teknisi.`;
         }
 
         function kirimWhatsApp(kategori) {
-            // Hitung ulang sblm kirim untuk memastikan data akurat
             hitungTotal(kategori);
             const wa_url = buildWA_Url(kategori, CURRENT_TOTAL, CURRENT_ORDER_TEXT);
             window.open(wa_url, '_blank');
@@ -781,10 +742,8 @@ Mohon informasi lebih lanjut mengenai teknis dan ketersediaan teknisi.`;
             kirimWhatsApp(ACTIVE_TAB);
         }
 
-        // LOGIKA PENGAJUAN SURVEI LOKASI
         function submitFormSurvei(event) {
             event.preventDefault();
-            
             const nama = document.getElementById('sv-nama').value.trim();
             const instansi = document.getElementById('sv-instansi').value.trim();
             const layanan = document.getElementById('sv-layanan').value;
@@ -806,10 +765,22 @@ ${catatan ? `
 - *Keluhan/Catatan Khusus*: ${catatan}` : ""}
 
 Mohon konfirmasi ketersediaan jadwal tim survei. Terima kasih.`;
-
             const wa_url = `https://wa.me/${WA_ADMIN_NUMBER}?text=${encodeURIComponent(waMsg)}`;
             window.open(wa_url, '_blank');
         }
+    </script>
+    
+    <!-- Routing Login Admin -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
     </script>
 </body>
 </html>
