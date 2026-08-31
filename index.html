@@ -256,7 +256,8 @@
                                 <div><label class="block text-sm font-bold text-slate-700 mb-2">VGA Card</label><select id="pc-vga" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                                 <div><label class="block text-sm font-bold text-slate-700 mb-2">Mouse & Keyboard</label><select id="pc-peripheral" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                                 <div><label class="block text-sm font-bold text-slate-700 mb-2">Kartu Jaringan (WiFi/BT)</label><select id="pc-network" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
-                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Power Supply & Casing</label><select id="pc-psu" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Power Supply (PSU)</label><select id="pc-psu" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                                <div><label class="block text-sm font-bold text-slate-700 mb-2">Casing PC</label><select id="pc-casing" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                             </div>
                         </form>
                     </div>
@@ -277,6 +278,7 @@
                                 <div class="flex justify-between border-b border-slate-800 pb-2"><span>Storage</span> <span id="lbl-pc-storage" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
                                 <div class="flex justify-between border-b border-slate-800 pb-2"><span>VGA</span> <span id="lbl-pc-vga" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
                                 <div class="flex justify-between border-b border-slate-800 pb-2"><span>PSU</span> <span id="lbl-pc-psu" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
+                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>Casing</span> <span id="lbl-pc-casing" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
                                 <div class="flex justify-between border-b border-slate-800 pb-2"><span>Aksesoris</span> <span id="lbl-pc-peripheral" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
                                 <div class="flex justify-between pb-2"><span>Koneksi</span> <span id="lbl-pc-network" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
                             </div>
@@ -672,7 +674,8 @@
             buildDropdown('pc-ram', DB_HARGA.pc_ram, 'Pilih Kapasitas RAM');
             buildDropdown('pc-storage', DB_HARGA.pc_storage, 'Pilih Storage SSD');
             buildDropdown('pc-vga', DB_HARGA.pc_vga, 'Pilih Kartu Grafis');
-            buildDropdown('pc-psu', DB_HARGA.pc_psu, 'Pilih PSU & Casing');
+            buildDropdown('pc-psu', DB_HARGA.pc_psu, 'Pilih Power Supply');
+            buildDropdown('pc-casing', DB_HARGA.pc_casing, 'Pilih Casing PC');
             buildDropdown('pc-peripheral', DB_HARGA.pc_peripheral, 'Pilih Aksesoris');
             buildDropdown('pc-network', DB_HARGA.pc_network, 'Pilih Network Card');
             
@@ -725,7 +728,7 @@
         function hitungTotal(kategori, isInit = false) {
             let total = 0; let orderText = ""; let dataIds = [];
             
-            if(kategori === 'pc') dataIds = ['cpu', 'mobo', 'ram', 'storage', 'vga', 'psu', 'peripheral', 'network'];
+            if(kategori === 'pc') dataIds = ['cpu', 'mobo', 'ram', 'storage', 'vga', 'psu', 'casing', 'peripheral', 'network'];
             else if(kategori === 'cctv') dataIds = ['paket', 'hdd', 'jasa'];
             else if(kategori === 'akses') dataIds = ['mesin', 'kunci', 'jasa'];
             else if(kategori === 'jaringan') dataIds = ['router', 'switch', 'ap', 'jasa'];
