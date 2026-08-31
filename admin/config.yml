@@ -21,6 +21,13 @@ collections:
               - {label: "Nama Komponen", name: "nama", widget: "string"}
               - {label: "Harga (Rp)", name: "harga", widget: "number"}
               - {label: "Socket", name: "socket", widget: "string", required: false}
+          - label: "Motherboard"
+            name: "pc-mobo"
+            widget: "list"
+            fields:
+              - {label: "Nama Komponen", name: "nama", widget: "string"}
+              - {label: "Harga (Rp)", name: "harga", widget: "number"}
+              - {label: "Socket", name: "socket", widget: "string", required: false}
           
           # Skema untuk CCTV
           - label: "Paket CCTV Analog"
