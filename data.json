@@ -49,6 +49,16 @@
       "harga": 2600000
     }
   ],
+  "pc_peripheral": [
+    { "nama": "Tanpa Mouse & Keyboard", "harga": 0 },
+    { "nama": "Mouse & Keyboard Kabel Standard", "harga": 150000 },
+    { "nama": "Mouse & Keyboard Wireless / Bluetooth", "harga": 350000 }
+  ],
+  "pc_network": [
+    { "nama": "Tanpa Network PCI (Gunakan LAN Mobo)", "harga": 0 },
+    { "nama": "PCIe WiFi Card", "harga": 250000 },
+    { "nama": "PCIe WiFi + Bluetooth Card", "harga": 450000 }
+  ],
   "pc_psu": [
     {
       "nama": "PSU 500W + Case Std",
