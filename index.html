@@ -710,38 +710,83 @@
             ['pc', 'cctv', 'akses', 'jaringan'].forEach(kat => hitungTotal(kat, true));
         }
 
-        // Fetch Data Eksklusif dari Google Sheets (CSV)
+        // Fetch Data Terpusat dari Banyak Google Sheets Per Kategori
         function muatDataHarga() {
-            const urlGSheets = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRqLHlKmOIYTvZrAZ6cfLDgARDz2Wf6FVtiB2mYEDRJCYO81EX0Iz0pVu7gXXx1FA/pub?gid=67932072&single=true&output=csv";
-            
-            Papa.parse(urlGSheets, {
-                download: true,
-                header: true,
-                skipEmptyLines: true,
-                complete: function(results) {
-                    DB_HARGA = {};
-                    
-                    results.data.forEach(row => {
-                        const kat = row.kategori ? row.kategori.trim() : null;
-                        if (!kat) return; 
-                        
-                        if (!DB_HARGA[kat]) {
-                            DB_HARGA[kat] = [];
-                        }
-                        
-                        DB_HARGA[kat].push({
-                            nama: row.nama || "-",
-                            harga: parseInt(row.harga) || 0,
-                            socket: row.socket ? row.socket.trim() : "",
-                            tipe_ram: row.tipe_ram ? row.tipe_ram.trim() : ""
-                        });
-                    });
-                    
-                    initDropdowns();
-                },
-                error: function() {
-                    console.error("Gagal memuat database harga dari Google Sheets.");
+            // Masukkan link CSV publik dari masing-masing Google Sheets
+            const sheetsConfig = {
+                // Rakit PC
+                pc_cpu: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRXbml7OktAZ2hD0yH8mfKV-_MRDMOBbinySYCyEQfIMDAe89O9zwZM0pa0rRfk1EdZ2hwFawCcPPU8/pub?gid=0&single=true&output=csv",
+                pc_mobo: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTZJx2jIY4N1p0RWPWnVr3nU8AEOvfuR0rA7t-qnGQr9IhmIF8tnEzFeNiSywJXyE0OTfW38_bbfV0K/pub?gid=0&single=true&output=csv",
+                pc_ram: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS5le8uPj8Tu6ALPzzTe-HgGBflwWB3yzfLiZ-1XgA7yZ4D4rDTeERBGY7X-gbXnVWXU56CuZvv_JSB/pub?gid=0&single=true&output=csv",
+                pc_storage: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQM2zDzibqJb_QqCbUtKSie4l5viR12Y_8Gv3YLw54t4JFTHfEA4IeOdA4PfSobQV-OsxYxi4Kd-bOB/pub?gid=0&single=true&output=csv",
+                pc_vga: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqLthsrGOTPOloACTeTTqv2Wjx5xACTWq25TTPOTZ8G3MOxKvHpYe8stsFptsymc2-VRyr6uz5ssFD/pub?gid=0&single=true&output=csv",
+                pc_peripheral: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQpuji4LYQ6hqBFlfy4MKbWUrsd7B-hPKwXUVjRLbN6HBv5n3m1BfYZac4gNysOjh_ihTP2x5SqOkX7/pub?gid=0&single=true&output=csv",
+                pc_network: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQz6tOkEF04QkZT1o1Q36gpFJP13CW6xGmyS0hGqQdEgHAYfp3ZWDJ0_WdbZhCnzqBDoqyoEg31VXLN/pub?gid=0&single=true&output=csv",
+                pc_psu: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSV4VkzMRZq4tgmTqjqY8i_urynMecalmAK9cEJxfUfybEV241T-O1spvUz57EMsGN096aitfTYlXqW/pub?gid=0&single=true&output=csv",
+                pc_casing: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTlFybZPIks-t7L4XYq8qTtxHCSjDEtPGZSvfhrcuptV9f4DlWOJffckwZoIFVNH7cXa1uQ3LMAnzIT/pub?gid=0&single=true&output=csv",
+                
+                // CCTV
+                cctv_paket_analog: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRyrIbkVWi30H8gYurSxIzayPd0ENPO-yXQrXF0wJUAlFjOspeXdoigJy1hJt6wYst2tQldiai4H9X2/pub?gid=0&single=true&output=csv",
+                cctv_paket_digital: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRgzlNvrrD4qSJI6624p1csv5Nwlp64m8G0uYvsZ17Y6NrCcfMuPXokC9dMWQOiUBUhQZBYoOw9p9wA/pub?gid=0&single=true&output=csv",
+                cctv_paket_wireless: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhI-4CSOe7WH79FfJr-OnI-F8hYOA1VkKrjDZlw7Yv-hzWwV55kytJ49sQWbyEptLpY3wc9ugrf1DH/pub?gid=0&single=true&output=csv",
+                cctv_hdd: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdpi8rc0qLgI7JLDu4IxtXQSw3y7am2KtnQUqxXlGpuaoUbILnRzQ-bS6-ZsB0TLtn3sWz7gPwXrjp/pub?gid=0&single=true&output=csv",
+                cctv_jasa: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCvmy8gH8NOUZzT5ZWXbml2DWD3p0y0fYAYbN3wTOE9O1L9EiYp06MtR43jMnuBf4r5SXI5sXbZtGy/pub?gid=0&single=true&output=csv",
+                
+                // Akses & Absensi
+                akses_mesin: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT-kA8RZddOWSjhUA8w30SaAn2hQ-pB96XVl7oJ3ZxgL7CoudABTJFVNOtyizP6-4r0pcw9KkRK3jpM/pub?gid=0&single=true&output=csv",
+                akses_kunci: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQbDYMJBkauID7hHDrkQcJwgmf3Ye7bW8ja8BhiZz-JUUZmm9w-22yuNOWsezCRe5izhneROCL4qY1V/pub?gid=0&single=true&output=csv",
+                akses_jasa: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTqVfap9Y8sFA1O3Ji_U0leUh9wojHg8rVEzvnkKLLachZoZeH96G61C32n8K9OwCIuJ8LFe-eSp0Wb/pub?gid=0&single=true&output=csv",
+                
+                // Jaringan
+                jar_router: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRLNv4aqa1fqNko3XNmmPzNc3lyCt8_8wfD6bZK_1oYvyAaA4vdr1cWWYauEkubKZVeuriN7qEs7CKB/pub?gid=0&single=true&output=csv",
+                jar_switch: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhUlTRMudHCReI6pxhPwrFwetbOVLVMBQS7NOIaiP5CUcCPdfz5U8TChuDVY_wqIIOUTvl99EcUIO4/pub?gid=0&single=true&output=csv",
+                jar_ap: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR68VdIHQXrLkgeEQQp9sSEomugku3VeUxFr7Vprduiu17HDjCeRqClUXrvPRB1FDEV_dgc6i23p4l_/pub?gid=0&single=true&output=csv",
+                jar_jasa: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUk-SX0J6LWH_bca6XZk1ro2c4p-4E9MckVIAXhlMDgN3_G5GJT74hkBQ9yEeP8zwVhDmZJ-HSdP_E/pub?gid=0&single=true&output=csv"
+            };
+
+            DB_HARGA = {};
+            let totalSheets = Object.keys(sheetsConfig).length;
+            let loadedCount = 0;
+
+            // Loop untuk menarik data dari setiap file CSV secara independen
+            Object.keys(sheetsConfig).forEach(katKey => {
+                const sheetUrl = sheetsConfig[katKey];
+                
+                // Jika URL belum diisi/masih placeholder, lewati agar tidak error
+                if (!sheetUrl || !sheetUrl.startsWith("http")) {
+                    loadedCount++;
+                    if (loadedCount === totalSheets) initDropdowns();
+                    return;
                 }
+
+                Papa.parse(sheetUrl, {
+                    download: true,
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: function(results) {
+                        DB_HARGA[katKey] = [];
+                        
+                        results.data.forEach(row => {
+                            DB_HARGA[katKey].push({
+                                nama: row.nama ? row.nama.trim() : "-",
+                                harga: parseInt(row.harga) || 0,
+                                socket: row.socket ? row.socket.trim() : "",
+                                tipe_ram: row.tipe_ram ? row.tipe_ram.trim() : ""
+                            });
+                        });
+
+                        loadedCount++;
+                        // Inisialisasi dropdown setelah seluruh file Google Sheets selesai dimuat
+                        if (loadedCount === totalSheets) {
+                            initDropdowns();
+                        }
+                    },
+                    error: function() {
+                        console.error(`Gagal memuat data untuk kategori: ${katKey}`);
+                        loadedCount++;
+                        if (loadedCount === totalSheets) initDropdowns();
+                    }
+                });
             });
         }
         
