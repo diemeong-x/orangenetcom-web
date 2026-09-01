@@ -424,45 +424,49 @@
             
             <div class="bg-white text-gray-800 rounded-3xl p-8 md:p-10 shadow-2xl">
                 <form id="formSurvei" onsubmit="submitFormSurvei(event)" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap PIC</label>
-                            <input type="text" id="sv-nama" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Masukkan nama Anda">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">Instansi / Perusahaan</label>
-                            <input type="text" id="sv-instansi" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Nama perusahaan / lembaga">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">Jenis Layanan yang Dibutuhkan</label>
-                            <select id="sv-layanan" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none cursor-pointer">
-                                <option value="" disabled selected>-- Pilih Layanan Utama --</option>
-                                <option value="Infrastruktur Jaringan & Server">Infrastruktur Jaringan & Server</option>
-                                <option value="Instalasi CCTV & Keamanan">Instalasi CCTV & Keamanan</option>
-                                <option value="Akses Pintu & Absensi">Akses Pintu & Absensi</option>
-                                <option value="Pengadaan PC Workstation">Pengadaan PC / Workstation Lab</option>
-                                <option value="Lainnya (Tulis di Catatan)">Lainnya (Custom)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">Rencana Tanggal Survei</label>
-                            <input type="date" id="sv-tanggal" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Alamat Lengkap Lokasi</label>
-                        <textarea id="sv-alamat" rows="3" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Sertakan detail lantai, gedung, atau patokan lokasi..."></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Catatan Tambahan Kebutuhan (Opsional)</label>
-                        <textarea id="sv-catatan" rows="3" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Misal: Kendala jaringan lambat, butuh setting mikhmon, atau titik cctv gelap..."></textarea>
-                    </div>
-                    <div class="pt-4 text-center">
-                        <button type="submit" class="bg-slate-900 text-white font-bold py-4 px-10 rounded-full hover:bg-orange-500 transition-all duration-300 shadow-lg transform hover:-translate-y-1 flex items-center justify-center mx-auto w-full md:w-auto">
-                            <i class="fa-solid fa-paper-plane mr-3"></i> Ajukan Permintaan Survei (via WA)
-                        </button>
-                    </div>
-                </form>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+						<div>
+							<label class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap PIC</label>
+							<!-- Tambahkan maxlength="100" -->
+							<input type="text" id="sv-nama" maxlength="100" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Masukkan nama Anda">
+						</div>
+						<div>
+							<label class="block text-sm font-bold text-slate-700 mb-2">Instansi / Perusahaan</label>
+							<!-- Tambahkan maxlength="100" -->
+							<input type="text" id="sv-instansi" maxlength="100" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Nama perusahaan / lembaga">
+						</div>
+						<div>
+							<label class="block text-sm font-bold text-slate-700 mb-2">Jenis Layanan yang Dibutuhkan</label>
+							<select id="sv-layanan" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none cursor-pointer">
+								<option value="" disabled selected>-- Pilih Layanan Utama --</option>
+								<option value="Infrastruktur Jaringan & Server">Infrastruktur Jaringan & Server</option>
+								<option value="Instalasi CCTV & Keamanan">Instalasi CCTV & Keamanan</option>
+								<option value="Akses Pintu & Absensi">Akses Pintu & Absensi</option>
+								<option value="Pengadaan PC Workstation">Pengadaan PC / Workstation Lab</option>
+								<option value="Lainnya (Tulis di Catatan)">Lainnya (Custom)</option>
+							</select>
+						</div>
+						<div>
+							<label class="block text-sm font-bold text-slate-700 mb-2">Rencana Tanggal Survei</label>
+							<input type="date" id="sv-tanggal" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none">
+						</div>
+					</div>
+					<div>
+						<label class="block text-sm font-bold text-slate-700 mb-2">Alamat Lengkap Lokasi</label>
+						<!-- Tambahkan maxlength="250" -->
+						<textarea id="sv-alamat" rows="3" maxlength="250" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Sertakan detail lantai, gedung, atau patokan lokasi..."></textarea>
+					</div>
+					<div>
+						<label class="block text-sm font-bold text-slate-700 mb-2">Catatan Tambahan Kebutuhan (Opsional)</label>
+						<!-- Tambahkan maxlength="300" -->
+						<textarea id="sv-catatan" rows="3" maxlength="300" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Misal: Kendala jaringan lambat, butuh setting mikhmon, atau titik cctv gelap..."></textarea>
+					</div>
+					<div class="pt-4 text-center">
+						<button type="submit" class="bg-slate-900 text-white font-bold py-4 px-10 rounded-full hover:bg-orange-500 transition-all duration-300 shadow-lg transform hover:-translate-y-1 flex items-center justify-center mx-auto w-full md:w-auto">
+							<i class="fa-solid fa-paper-plane mr-3"></i> Ajukan Permintaan Survei (via WA)
+						</button>
+					</div>
+				</form>
             </div>
         </div>
     </section>
@@ -923,14 +927,21 @@ Mohon informasi lebih lanjut mengenai teknis dan ketersediaan teknisi.`;
             kirimWhatsApp(ACTIVE_TAB);
         }
 
+		// Fungsi untuk membersihkan karakter khusus/tag HTML berbahaya
+        function sanitizeInput(str) {
+            return str.replace(/[<>]/g, ''); // Menghapus karakter pembuka/penutup tag HTML < dan >
+        }
+
         function submitFormSurvei(event) {
             event.preventDefault();
-            const nama = document.getElementById('sv-nama').value.trim();
-            const instansi = document.getElementById('sv-instansi').value.trim();
+            
+            // Ambil nilai dan langsung sanitasi / bersihkan karakternya
+            const nama = sanitizeInput(document.getElementById('sv-nama').value.trim());
+            const instansi = sanitizeInput(document.getElementById('sv-instansi').value.trim());
             const layanan = document.getElementById('sv-layanan').value;
             const tanggal = document.getElementById('sv-tanggal').value;
-            const alamat = document.getElementById('sv-alamat').value.trim();
-            const catatan = document.getElementById('sv-catatan').value.trim();
+            const alamat = sanitizeInput(document.getElementById('sv-alamat').value.trim());
+            const catatan = sanitizeInput(document.getElementById('sv-catatan').value.trim());
 
             const waMsg = `*PENGAJUAN JADWAL SURVEI LOKASI*
 
@@ -946,6 +957,7 @@ ${catatan ? `
 - *Keluhan/Catatan Khusus*: ${catatan}` : ""}
 
 Mohon konfirmasi ketersediaan jadwal tim survei. Terima kasih.`;
+
             const wa_url = `https://wa.me/${WA_ADMIN_NUMBER}?text=${encodeURIComponent(waMsg)}`;
             window.open(wa_url, '_blank');
         }
