@@ -24,6 +24,9 @@
     <!-- Tailwind CSS & FontAwesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Script Parser untuk Google Sheets CSV -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     
     <style>
         tailwind.config = {
@@ -723,17 +726,55 @@
             ['pc', 'cctv', 'akses', 'jaringan'].forEach(kat => hitungTotal(kat, true));
         }
 
-        // Fetch Data CMS
-        async function muatDataHarga() {
-            try {
-                const response = await fetch('data.json');
-                if(!response.ok) throw new Error("JSON tidak ditemukan");
-                DB_HARGA = await response.json();
-            } catch (error) {
-                console.error("Gagal memuat database harga dari CMS, periksa file data.json");
-            }
-            initDropdowns();
+        // Fetch Data dari Google Sheets
+        function muatDataHarga() {
+            // GANTI dengan URL CSV dari langkah 2
+            const urlGSheets = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRqLHlKmOIYTvZrAZ6cfLDgARDz2Wf6FVtiB2mYEDRJCYO81EX0Iz0pVu7gXXx1FA/pub?gid=67932072&single=true&output=csv";
+            
+            Papa.parse(urlGSheets, {
+                download: true,
+                header: true, // Otomatis membaca baris pertama sebagai nama kolom
+                skipEmptyLines: true,
+                complete: function(results) {
+                    DB_HARGA = {};
+                    
+                    // Rekonstruksi CSV flat menjadi objek JSON yang dikenali kalkulator
+                    results.data.forEach(row => {
+                        const kat = row.kategori ? row.kategori.trim() : null;
+                        if (!kat) return; 
+                        
+                        if (!DB_HARGA[kat]) {
+                            DB_HARGA[kat] = [];
+                        }
+                        
+                        DB_HARGA[kat].push({
+                            nama: row.nama || "-",
+                            harga: parseInt(row.harga) || 0,
+                            socket: row.socket ? row.socket.trim() : "",
+                            tipe_ram: row.tipe_ram ? row.tipe_ram.trim() : ""
+                        });
+                    });
+                    
+                    // Setelah data terkonstruksi, inisiasi dropdown
+                    initDropdowns();
+                },
+                error: function() {
+                    console.error("Gagal memuat database harga dari Google Sheets.");
+                }
+            });
         }
+        
+        # // Fetch Data CMS
+        # async function muatDataHarga() {
+        #    try {
+        #        const response = await fetch('data.json');
+        #        if(!response.ok) throw new Error("JSON tidak ditemukan");
+        #        DB_HARGA = await response.json();
+        #    } catch (error) {
+        #        console.error("Gagal memuat database harga dari CMS, periksa file data.json");
+        #    }
+        #    initDropdowns();
+        # }
         window.onload = muatDataHarga;
 
         function hitungTotal(kategori, isInit = false) {
