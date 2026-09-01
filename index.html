@@ -17,9 +17,6 @@
     
     <link rel="icon" type="image/png" href="3339.png">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Netlify Identity Widget untuk Login Admin -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <!-- Tailwind CSS & FontAwesome -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -579,7 +576,7 @@
         </div>
     </footer>
 
-    <!-- LOGIKA JAVASCRIPT & FETCH CMS -->
+    <!-- LOGIKA JAVASCRIPT & GOOGLE SHEETS PARSER -->
     <script>
         // Menu Mobile Toggle
         const btnMobile = document.getElementById('btn-mobile-menu');
@@ -619,28 +616,24 @@
             el.innerHTML = html;
         }
 
-        // Fungsi Baru: Menerapkan Filter Brand & Socket Dinamis
+        // Fungsi Filter Brand & Socket Dinamis
         function applyPCFilter() {
             const brand = document.getElementById('filter-brand').value.toLowerCase();
             const socketEl = document.getElementById('filter-socket');
-            let selectedSocket = socketEl.value; // Simpan pilihan socket saat ini
+            let selectedSocket = socketEl.value;
 
-            // 1. Saring daftar CPU berdasarkan Brand yang dipilih
             let cpuByBrand = DB_HARGA.pc_cpu || [];
             if (brand !== 'semua') {
                 cpuByBrand = cpuByBrand.filter(item => item.nama.toLowerCase().includes(brand));
             }
 
-            // 2. Ekstrak daftar socket yang tersedia khusus untuk Brand tersebut
             const availableSockets = new Set();
             cpuByBrand.forEach(c => { if(c.socket && c.socket !== '-') availableSockets.add(c.socket) });
             
-            // Fitur Auto-Reset: Jika socket yang dipilih sebelumnya tidak cocok dengan brand baru (misal: dari AM4 ganti ke Intel)
             if (selectedSocket !== 'semua' && !availableSockets.has(selectedSocket)) {
                 selectedSocket = 'semua'; 
             }
 
-            // 3. Render ulang opsi dropdown Tipe Socket
             let htmlSock = `<option value="semua">-- Semua Socket --</option>`;
             availableSockets.forEach(s => {
                 const isSelected = (s === selectedSocket) ? 'selected' : '';
@@ -648,20 +641,16 @@
             });
             socketEl.innerHTML = htmlSock;
 
-            // 4. Terapkan saringan akhir CPU (Berdasarkan Brand & Socket)
             let finalCPU = cpuByBrand;
             if (selectedSocket !== 'semua') {
                 finalCPU = finalCPU.filter(item => item.socket === selectedSocket);
             }
             buildDropdown('pc-cpu', finalCPU, 'Pilih Processor');
 
-            // 5. Terapkan saringan Motherboard
             let filteredMobo = DB_HARGA.pc_mobo || [];
             if (selectedSocket !== 'semua') {
-                // Jika ada socket spesifik yang dipilih, tampilkan mobo dengan socket tersebut
                 filteredMobo = filteredMobo.filter(item => item.socket === selectedSocket);
             } else {
-                // Jika 'semua' socket, sembunyikan mobo dari brand lawan (tampilkan mobo dari socket yang available saja)
                 filteredMobo = filteredMobo.filter(item => availableSockets.has(item.socket));
             }
             buildDropdown('pc-mobo', filteredMobo, 'Pilih Motherboard');
@@ -670,10 +659,8 @@
         }
 
         function initDropdowns() {
-            // Panggil filter untuk mencetak CPU, Mobo, dan Socket secara dinamis untuk pertama kalinya
             applyPCFilter();
             
-            // Render sisa dropdown PC (termasuk periferal dan network)
             buildDropdown('pc-ram', DB_HARGA.pc_ram, 'Pilih Kapasitas RAM');
             buildDropdown('pc-storage', DB_HARGA.pc_storage, 'Pilih Storage SSD');
             buildDropdown('pc-vga', DB_HARGA.pc_vga, 'Pilih Kartu Grafis');
@@ -699,7 +686,6 @@
                     h += `</optgroup>`;
                 }
 
-                // --- TAMBAHAN UNTUK KATEGORI WIRELESS ---
                 if(DB_HARGA.cctv_paket_wireless) {
                     h += `<optgroup label="Sistem Wireless (WiFi / Smart Cam)">`;
                     DB_HARGA.cctv_paket_wireless.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
@@ -712,7 +698,6 @@
             buildDropdown('cctv-hdd', DB_HARGA.cctv_hdd, 'Pilih Kapasitas HDD');
             buildDropdown('cctv-jasa', DB_HARGA.cctv_jasa, 'Pilih Titik Instalasi');
             
-            // Render dropdown Akses & Jaringan
             buildDropdown('akses-mesin', DB_HARGA.akses_mesin, 'Pilih Perangkat Akses/Absen');
             buildDropdown('akses-kunci', DB_HARGA.akses_kunci, 'Pilih Hardware Kunci');
             buildDropdown('akses-jasa', DB_HARGA.akses_jasa, 'Pilih Jasa Pemasangan');
@@ -722,23 +707,20 @@
             buildDropdown('jar-ap', DB_HARGA.jar_ap, 'Pilih Pemancar (Access Point)');
             buildDropdown('jar-jasa', DB_HARGA.jar_jasa, 'Pilih Tingkat Kompleksitas Jasa');
 
-            // Kalkulasi awal state ke semua Tab
             ['pc', 'cctv', 'akses', 'jaringan'].forEach(kat => hitungTotal(kat, true));
         }
 
-        // Fetch Data dari Google Sheets
+        // Fetch Data Eksklusif dari Google Sheets (CSV)
         function muatDataHarga() {
-            // GANTI dengan URL CSV dari langkah 2
             const urlGSheets = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRqLHlKmOIYTvZrAZ6cfLDgARDz2Wf6FVtiB2mYEDRJCYO81EX0Iz0pVu7gXXx1FA/pub?gid=67932072&single=true&output=csv";
             
             Papa.parse(urlGSheets, {
                 download: true,
-                header: true, // Otomatis membaca baris pertama sebagai nama kolom
+                header: true,
                 skipEmptyLines: true,
                 complete: function(results) {
                     DB_HARGA = {};
                     
-                    // Rekonstruksi CSV flat menjadi objek JSON yang dikenali kalkulator
                     results.data.forEach(row => {
                         const kat = row.kategori ? row.kategori.trim() : null;
                         if (!kat) return; 
@@ -755,7 +737,6 @@
                         });
                     });
                     
-                    // Setelah data terkonstruksi, inisiasi dropdown
                     initDropdowns();
                 },
                 error: function() {
@@ -764,17 +745,6 @@
             });
         }
         
-        # // Fetch Data CMS
-        # async function muatDataHarga() {
-        #    try {
-        #        const response = await fetch('data.json');
-        #        if(!response.ok) throw new Error("JSON tidak ditemukan");
-        #        DB_HARGA = await response.json();
-        #    } catch (error) {
-        #        console.error("Gagal memuat database harga dari CMS, periksa file data.json");
-        #    }
-        #    initDropdowns();
-        # }
         window.onload = muatDataHarga;
 
         function hitungTotal(kategori, isInit = false) {
@@ -815,25 +785,20 @@
                 let errorMsgs = [];
 
                 if (cpuOpt && moboOpt) {
-                    // 1. Cek Kompatibilitas Socket
                     const cSock = cpuOpt.getAttribute('data-socket');
                     const mSock = moboOpt.getAttribute('data-socket');
                     if (cSock && mSock && cSock !== mSock && cSock !== '-' && mSock !== '-') {
                         errorMsgs.push(`- <strong>Socket:</strong> CPU (${cSock}) tidak cocok dengan Motherboard (${mSock}).`);
                     }
 
-                    // 2. Cek Kewajiban VGA Card
                     const cpuName = cpuOpt.getAttribute('data-name');
                     const vgaName = vgaOpt ? vgaOpt.getAttribute('data-name') : '';
                     const nameLow = cpuName.toLowerCase();
                     let requiresVGA = false;
                     
-                    // Aturan Intel: Wajib VGA jika nama prosesor mengandung akhiran "F"
                     if (nameLow.includes('intel') && /f(\s|$|\()/.test(nameLow)) {
                         requiresVGA = true;
-                    }
-                    // Aturan AMD: Wajib VGA jika nama prosesor TIDAK mengandung akhiran "G"
-                    else if (nameLow.includes('amd') && !/g(\s|$|\()/.test(nameLow) && cpuName !== '-') {
+                    } else if (nameLow.includes('amd') && !/g(\s|$|\()/.test(nameLow) && cpuName !== '-') {
                         requiresVGA = true;
                     }
 
@@ -843,7 +808,6 @@
                 }
 
                 if (moboOpt && ramOpt) {
-                    // 3. Cek Kompatibilitas Tipe RAM
                     const mRam = moboOpt.getAttribute('data-ram');
                     const rRam = ramOpt.getAttribute('data-ram');
                     if (mRam && rRam && mRam !== rRam && mRam !== '-' && rRam !== '-') {
@@ -851,7 +815,6 @@
                     }
                 }
 
-                // Tampilkan Peringatan jika ada Error
                 if (errorMsgs.length > 0) {
                     alertMsg.innerHTML = `<strong>Peringatan Kompatibilitas Sistem:</strong><br>` + errorMsgs.join('<br>');
                     alertBox.classList.remove('hidden');
@@ -941,19 +904,6 @@ Mohon konfirmasi ketersediaan jadwal tim survei. Terima kasih.`;
             const wa_url = `https://wa.me/${WA_ADMIN_NUMBER}?text=${encodeURIComponent(waMsg)}`;
             window.open(wa_url, '_blank');
         }
-    </script>
-    
-    <!-- Routing Login Admin -->
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
     </script>
 </body>
 </html>
