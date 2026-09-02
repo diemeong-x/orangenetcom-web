@@ -72,11 +72,12 @@
     <!-- Navigasi -->
     <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <!-- Tombol Menu (Garis 3) Dipindah ke Kiri pada Mobile -->
-                <div class="md:hidden flex items-center">
-                    <button id="btn-mobile-menu" class="text-slate-800 hover:text-orange-500 focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+            <div class="flex h-20 items-center">
+                
+                <!-- Tombol Menu Hamburger (Universal Mobile & Desktop) -->
+                <div class="flex items-center">
+                    <button id="btn-mobile-menu" class="text-slate-800 hover:text-orange-500 hover:bg-orange-50 focus:outline-none p-2 w-12 h-12 flex items-center justify-center rounded-xl transition-colors duration-300">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl transition-transform duration-300"></i>
                     </button>
                 </div>
 				
@@ -99,14 +100,27 @@
                     </a>
                 </div>
 				
-				<!-- Menu Desktop -->
-                <div id="nav-menu" class="hidden md:flex space-x-8 items-center">
-                    <a href="#beranda" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Beranda</a>
-                    <a href="#layanan" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Layanan</a>
-                    <a href="#simulasi" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Simulasi Harga</a>
-                    <a href="#portfolio" class="text-slate-800 hover:text-orange-500 font-semibold transition duration-300">Portofolio</a>
-                    <a href="#survei" class="bg-orange-500 text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 transition duration-300 shadow-md">Jadwal Survei</a>
-                </div>
+			</div>
+        </div>
+
+        <!-- Dropdown Menu App-Style Tersembunyi (Rata Kiri, Memakai Ikon) -->
+        <div id="nav-menu" class="hidden absolute top-20 left-0 w-full bg-white/95 backdrop-blur-md shadow-xl border-b border-gray-200 p-6 space-y-6 text-left z-40">
+            <a href="#beranda" class="flex items-center text-slate-800 hover:text-orange-500 font-bold text-lg transition duration-300">
+                <div class="w-10 text-orange-500"><i class="fa-solid fa-house text-xl"></i></div> Beranda
+            </a>
+            <a href="#layanan" class="flex items-center text-slate-800 hover:text-orange-500 font-bold text-lg transition duration-300">
+                <div class="w-10 text-orange-500"><i class="fa-solid fa-briefcase text-xl"></i></div> Layanan
+            </a>
+            <a href="#simulasi" class="flex items-center text-slate-800 hover:text-orange-500 font-bold text-lg transition duration-300">
+                <div class="w-10 text-orange-500"><i class="fa-solid fa-calculator text-xl"></i></div> Simulasi Harga
+            </a>
+            <a href="#portfolio" class="flex items-center text-slate-800 hover:text-orange-500 font-bold text-lg transition duration-300">
+                <div class="w-10 text-orange-500"><i class="fa-solid fa-star text-xl"></i></div> Portofolio
+            </a>
+            <div class="pt-4 border-t border-gray-100">
+                <a href="#survei" class="inline-flex items-center bg-orange-500 text-white px-6 py-3 rounded-full font-bold hover:bg-orange-600 transition duration-300 shadow-md">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Jadwal Survei
+                </a>
             </div>
         </div>
     </nav>
@@ -594,28 +608,33 @@
 
     <!-- LOGIKA JAVASCRIPT & GOOGLE SHEETS PARSER -->
     <script>
-        // Menu Mobile Toggle
+        // Menu Hamburger Universal (Desktop & Mobile)
         const btnMobile = document.getElementById('btn-mobile-menu');
         const navMenu = document.getElementById('nav-menu');
+        const menuIcon = document.getElementById('menu-icon');
         
         btnMobile.addEventListener('click', () => {
+            // Tampilkan atau sembunyikan dropdown
             navMenu.classList.toggle('hidden');
-            navMenu.classList.toggle('flex');
-            navMenu.classList.toggle('flex-col');
-            navMenu.classList.toggle('absolute');
-            navMenu.classList.toggle('top-20');
-            navMenu.classList.toggle('left-0');
-            navMenu.classList.toggle('w-full');
-            navMenu.classList.toggle('bg-white');
-            navMenu.classList.toggle('p-6');
-            navMenu.classList.toggle('space-y-4'); // Jarak vertikal antar menu
             
-            // Perbaikan Rata Kiri
-            navMenu.classList.toggle('items-center'); // Mematikan rata tengah (center) bawaan desktop
-            navMenu.classList.toggle('items-start');  // Memaksa susunan menu merapat ke kiri (start)
-            
-            navMenu.classList.toggle('shadow-lg');
-            navMenu.classList.toggle('border-b');
+            // Animasi ikon berubah menjadi "X"
+            if (navMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Menutup menu dan mengembalikan ikon secara otomatis jika link diklik
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
         });
 
         const WA_ADMIN_NUMBER = "6285711779993";
