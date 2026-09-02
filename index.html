@@ -755,6 +755,13 @@
 
         // Fetch Data Terpusat dari Banyak Google Sheets Per Kategori
         function muatDataHarga() {
+            // Kunci semua tombol saat sedang loading
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => {
+                btn.disabled = true;
+                btn.innerHTML += ' <i class="fa-solid fa-spinner fa-spin text-xs"></i>';
+            });
+			
             // Masukkan link CSV publik dari masing-masing Google Sheets
             const sheetsConfig = {
                 // Rakit PC
@@ -791,14 +798,12 @@
             let totalSheets = Object.keys(sheetsConfig).length;
             let loadedCount = 0;
 
-            // Loop untuk menarik data dari setiap file CSV secara independen
             Object.keys(sheetsConfig).forEach(katKey => {
                 const sheetUrl = sheetsConfig[katKey];
                 
-                // Jika URL belum diisi/masih placeholder, lewati agar tidak error
                 if (!sheetUrl || !sheetUrl.startsWith("http")) {
                     loadedCount++;
-                    if (loadedCount === totalSheets) initDropdowns();
+                    if (loadedCount === totalSheets) selesaiLoading();
                     return;
                 }
 
@@ -808,7 +813,6 @@
                     skipEmptyLines: true,
                     complete: function(results) {
                         DB_HARGA[katKey] = [];
-                        
                         results.data.forEach(row => {
                             DB_HARGA[katKey].push({
                                 nama: row.nama ? row.nama.trim() : "-",
@@ -817,20 +821,26 @@
                                 tipe_ram: row.tipe_ram ? row.tipe_ram.trim() : ""
                             });
                         });
-
                         loadedCount++;
-                        // Inisialisasi dropdown setelah seluruh file Google Sheets selesai dimuat
-                        if (loadedCount === totalSheets) {
-                            initDropdowns();
-                        }
+                        if (loadedCount === totalSheets) selesaiLoading();
                     },
                     error: function() {
-                        console.error(`Gagal memuat data untuk kategori: ${katKey}`);
                         loadedCount++;
-                        if (loadedCount === totalSheets) initDropdowns();
+                        if (loadedCount === totalSheets) selesaiLoading();
                     }
                 });
             });
+
+            // Fungsi baru untuk membuka kunci setelah data beres
+            function selesaiLoading() {
+                initDropdowns();
+                tabButtons.forEach(btn => {
+                    btn.disabled = false;
+                    // Hapus ikon spinner dari tombol
+                    const spinner = btn.querySelector('.fa-spinner');
+                    if(spinner) spinner.remove();
+                });
+            }
         }
         
         window.onload = muatDataHarga;
@@ -1001,5 +1011,10 @@ Mohon konfirmasi ketersediaan jadwal tim survei. Terima kasih.`;
             window.open(wa_url, '_blank');
         }
     </script>
+
+	<!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6285711779993" target="_blank" class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_15px_0_rgba(34,197,94,0.5)] hover:bg-green-600 hover:scale-110 transition-all duration-300 z-50 animate-bounce">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 </body>
 </html>
