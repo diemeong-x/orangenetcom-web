@@ -608,8 +608,12 @@
             navMenu.classList.toggle('w-full');
             navMenu.classList.toggle('bg-white');
             navMenu.classList.toggle('p-6');
-            navMenu.classList.toggle('space-y-4'); // Memberikan jarak antar menu vertikal
-            navMenu.classList.toggle('text-left'); // Membuat tulisan rata kiri
+            navMenu.classList.toggle('space-y-4'); // Jarak vertikal antar menu
+            
+            // Perbaikan Rata Kiri
+            navMenu.classList.toggle('items-center'); // Mematikan rata tengah (center) bawaan desktop
+            navMenu.classList.toggle('items-start');  // Memaksa susunan menu merapat ke kiri (start)
+            
             navMenu.classList.toggle('shadow-lg');
             navMenu.classList.toggle('border-b');
         });
