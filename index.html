@@ -1019,5 +1019,24 @@ Mohon konfirmasi ketersediaan jadwal tim survei. Terima kasih.`;
     <a href="https://wa.me/6285711779993" target="_blank" class="fixed bottom-24 right-6 lg:bottom-10 lg:right-10 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_15px_0_rgba(34,197,94,0.5)] hover:bg-green-600 hover:scale-110 transition-all duration-300 z-50 animate-bounce">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+	// Memblokir Klik Kanan (Context Menu)
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Memblokir Pintasan Keyboard Khusus Developer
+        document.onkeydown = function(e) {
+            // Blokir F12
+            if (e.keyCode === 123) { 
+                return false;
+            }
+            // Blokir Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+                return false;
+            }
+            // Blokir Ctrl+U (View Source) dan Ctrl+S (Save Page)
+            if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
+                return false;
+            }
+        };
 </body>
 </html>
