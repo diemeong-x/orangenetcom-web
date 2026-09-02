@@ -1012,6 +1012,26 @@ Mohon konfirmasi ketersediaan jadwal tim survei. Terima kasih.`;
             const wa_url = `https://wa.me/${WA_ADMIN_NUMBER}?text=${encodeURIComponent(waMsg)}`;
             window.open(wa_url, '_blank');
         }
+		
+		// Memblokir Klik Kanan (Context Menu)
+		document.addEventListener('contextmenu', event => event.preventDefault());
+
+		// Memblokir Pintasan Keyboard Khusus Developer
+		document.onkeydown = function(e) {
+			// Blokir F12
+			if (e.keyCode === 123) { 
+				return false;
+			}
+			// Blokir Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+			if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+				return false;
+			}
+			// Blokir Ctrl+U (View Source) dan Ctrl+S (Save Page)
+			if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
+				return false;
+			}
+		};
+		
     </script>
 
 	<!-- Floating WhatsApp Button -->
@@ -1020,23 +1040,5 @@ Mohon konfirmasi ketersediaan jadwal tim survei. Terima kasih.`;
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-	// Memblokir Klik Kanan (Context Menu)
-        document.addEventListener('contextmenu', event => event.preventDefault());
-
-        // Memblokir Pintasan Keyboard Khusus Developer
-        document.onkeydown = function(e) {
-            // Blokir F12
-            if (e.keyCode === 123) { 
-                return false;
-            }
-            // Blokir Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
-            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
-                return false;
-            }
-            // Blokir Ctrl+U (View Source) dan Ctrl+S (Save Page)
-            if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
-                return false;
-            }
-        };
 </body>
 </html>
