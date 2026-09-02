@@ -84,16 +84,13 @@
 				<!-- Logo Perusahaan (Tepat di Tengah) -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#beranda" class="flex items-center">
-                        <!-- Ukuran logo sedikit disesuaikan agar tidak menabrak tombol hamburger di layar HP yang sangat kecil -->
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 120" class="w-full max-w-[200px] sm:max-w-[260px] md:max-w-[340px] h-auto object-contain transition-transform hover:scale-105 duration-300" aria-label="Logo Orange Netcom">
-							<!-- Bagian Ikon Lingkaran (Huruf O) -->
 							<g transform="translate(0, 15)">
                                 <circle cx="40" cy="40" r="28" fill="none" stroke="#f97316" stroke-width="10" />
                                 <circle cx="40" cy="40" r="10" fill="#f97316" />
                                 <line x1="40" y1="40" x2="58" y2="22" stroke="#f97316" stroke-width="5" stroke-linecap="round" />
                                 <path d="M 54 12 Q 65 0 75 10 Q 65 22 54 12 Z" fill="#22c55e" />
                             </g>
-							<!-- Teks RANGE dan NETCOM yang sudah dirapatkan posisinya ke kiri -->
 							<text x="82" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#f97316" letter-spacing="1">RANGE</text>
 							<text x="305" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#1e293b" letter-spacing="1">NETCOM</text>
 							<text x="82" y="100" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="15" fill="#64748b" textLength="480" lengthAdjust="spacing">SOLUSI KONEKTIVITAS MODERN</text>
@@ -327,8 +324,18 @@
                             </div>
                         </div>
                         <form class="space-y-6">
-                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Tipe Teknologi & Paket DVR/NVR</label><select id="cctv-paket" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
-                            <div><label class="block text-sm font-bold text-slate-700 mb-2">Kapasitas Penyimpanan (HDD Khusus CCTV)</label><select id="cctv-hdd" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Tipe Teknologi & Paket Kamera</label>
+                                <select id="cctv-paket" onchange="onCctvPaketChange(); hitungTotal('cctv');" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2" id="label-cctv-power">Perangkat Daya (Power Supply / PoE Switch)</label>
+                                <select id="cctv-power" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2" id="label-cctv-storage">Media Penyimpanan (HDD / MicroSD)</label>
+                                <select id="cctv-storage" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select>
+                            </div>
                             <div>
                                 <label class="block text-sm font-bold text-slate-700 mb-2">Jasa Pemasangan & Konfigurasi Online</label>
                                 <select id="cctv-jasa" onchange="hitungTotal('cctv')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select>
@@ -342,7 +349,8 @@
                             <h3 class="text-lg font-bold mb-4 text-orange-500 border-b border-slate-700 pb-3">Ringkasan CCTV</h3>
                             <div class="space-y-4 mb-6 text-sm text-gray-400 min-h-[140px]">
                                 <div><span class="block text-xs uppercase tracking-wider mb-1">Paket Kamera</span> <span id="lbl-cctv-paket" class="font-semibold text-white block truncate">-</span></div>
-                                <div><span class="block text-xs uppercase tracking-wider mb-1">Penyimpanan</span> <span id="lbl-cctv-hdd" class="font-semibold text-white block truncate">-</span></div>
+                                <div><span class="block text-xs uppercase tracking-wider mb-1">Perangkat Daya</span> <span id="lbl-cctv-power" class="font-semibold text-white block truncate">-</span></div>
+                                <div><span class="block text-xs uppercase tracking-wider mb-1">Penyimpanan</span> <span id="lbl-cctv-storage" class="font-semibold text-white block truncate">-</span></div>
                                 <div><span class="block text-xs uppercase tracking-wider mb-1">Jasa Instalasi</span> <span id="lbl-cctv-jasa" class="font-semibold text-white block truncate">-</span></div>
                             </div>
                             <p class="text-gray-400 text-sm mb-1">Estimasi Total</p>
@@ -452,12 +460,10 @@
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 						<div>
 							<label class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap PIC</label>
-							<!-- Tambahkan maxlength="100" -->
 							<input type="text" id="sv-nama" maxlength="100" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Masukkan nama Anda">
 						</div>
 						<div>
 							<label class="block text-sm font-bold text-slate-700 mb-2">Instansi / Perusahaan</label>
-							<!-- Tambahkan maxlength="100" -->
 							<input type="text" id="sv-instansi" maxlength="100" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Nama perusahaan / lembaga">
 						</div>
 						<div>
@@ -478,12 +484,10 @@
 					</div>
 					<div>
 						<label class="block text-sm font-bold text-slate-700 mb-2">Alamat Lengkap Lokasi</label>
-						<!-- Tambahkan maxlength="250" -->
 						<textarea id="sv-alamat" rows="3" maxlength="250" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Sertakan detail lantai, gedung, atau patokan lokasi..."></textarea>
 					</div>
 					<div>
 						<label class="block text-sm font-bold text-slate-700 mb-2">Catatan Tambahan Kebutuhan (Opsional)</label>
-						<!-- Tambahkan maxlength="300" -->
 						<textarea id="sv-catatan" rows="3" maxlength="300" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Misal: Kendala jaringan lambat, butuh setting mikhmon, atau titik cctv gelap..."></textarea>
 					</div>
 					<div class="pt-4 text-center">
@@ -541,7 +545,6 @@
                         <div class="flex items-start">
                             <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500 flex-shrink-0 mr-4 border border-blue-100"><i class="fa-solid fa-shield-halved"></i></div>
                             <div class="w-full">
-                                <!-- Menambahkan kelas 'block' dan memperbesar margin bawah menjadi 'mb-2' -->
                                 <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wide mb-2 block">Tindakan Solutif</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed">Migrasi total ke sistem digital menggunakan titik <b>IP Camera Hikvision (DarkFighter)</b> yang handal di area minim cahaya, dikonfigurasi penyimpanan khusus agar rekaman aman termonitor real-time dari aplikasi mobile pemilik pabrik.</p>
                             </div>
@@ -559,14 +562,12 @@
                 <div>
                     <div class="bg-white inline-block p-2 rounded-xl mb-6 shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 120" class="h-12 w-auto object-contain transition-transform hover:scale-105 duration-300" aria-label="Logo Orange Netcom">
-							<!-- Bagian Ikon Lingkaran (Huruf O) -->
 							<g transform="translate(0, 15)">
 								<circle cx="40" cy="40" r="28" fill="none" stroke="#f97316" stroke-width="10" />
 								<circle cx="40" cy="40" r="10" fill="#f97316" />
 								<line x1="40" y1="40" x2="58" y2="22" stroke="#f97316" stroke-width="5" stroke-linecap="round" />
 								<path d="M 54 12 Q 65 0 75 10 Q 65 22 54 12 Z" fill="#22c55e" />
 							</g>
-							<!-- Teks RANGE dan NETCOM yang sudah dirapatkan posisinya ke kiri -->
 							<text x="82" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#f97316" letter-spacing="1">RANGE</text>
 							<text x="305" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#1e293b" letter-spacing="1">NETCOM</text>
 							<text x="82" y="100" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="15" fill="#64748b" textLength="480" lengthAdjust="spacing">SOLUSI KONEKTIVITAS MODERN</text>
@@ -616,10 +617,7 @@
         const menuIcon = document.getElementById('menu-icon');
         
         btnMobile.addEventListener('click', () => {
-            // Tampilkan atau sembunyikan dropdown
             navMenu.classList.toggle('hidden');
-            
-            // Animasi ikon berubah menjadi "X"
             if (navMenu.classList.contains('hidden')) {
                 menuIcon.classList.remove('fa-xmark');
                 menuIcon.classList.add('fa-bars');
@@ -629,7 +627,6 @@
             }
         });
 
-        // Menutup menu dan mengembalikan ikon secara otomatis jika link diklik
         const navLinks = navMenu.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -702,6 +699,44 @@
             hitungTotal('pc');
         }
 
+        // Logika Dinamis Pemilihan Daya & Penyimpanan CCTV berdasarkan jenis kamera (Analog, Digital, Wireless)
+        function onCctvPaketChange() {
+            const selectPaket = document.getElementById('cctv-paket');
+            if(!selectPaket || selectPaket.selectedIndex < 0) return;
+            const selectedOptGroup = selectPaket.options[selectPaket.selectedIndex].parentNode;
+            const groupLabel = selectedOptGroup.tagName === 'OPTGROUP' ? selectedOptGroup.label : '';
+            
+            const labelPower = document.getElementById('label-cctv-power');
+            const labelStorage = document.getElementById('label-cctv-storage');
+            
+            let dataPowerToLoad = [];
+            let dataStorageToLoad = [];
+            
+            if (groupLabel.toLowerCase().includes('analog')) {
+                if(labelPower) labelPower.innerHTML = '<i class="fa-solid fa-bolt mr-1 text-orange-500"></i> Power Supply (PSU Jaringan / Box Panel)';
+                dataPowerToLoad = DB_HARGA.cctv_psu || [];
+                
+                if(labelStorage) labelStorage.innerHTML = '<i class="fa-solid fa-hard-drive mr-1 text-orange-500"></i> Kapasitas Penyimpanan (HDD DVR)';
+                dataStorageToLoad = DB_HARGA.cctv_hdd || [];
+            } else if (groupLabel.toLowerCase().includes('digital')) {
+                if(labelPower) labelPower.innerHTML = '<i class="fa-solid fa-network-wired mr-1 text-orange-500"></i> PoE Switch / Injector';
+                dataPowerToLoad = DB_HARGA.cctv_poe || [];
+                
+                if(labelStorage) labelStorage.innerHTML = '<i class="fa-solid fa-hard-drive mr-1 text-orange-500"></i> Kapasitas Penyimpanan (HDD NVR)';
+                dataStorageToLoad = DB_HARGA.cctv_hdd || [];
+            } else {
+                // Wireless / Smart Cam
+                if(labelPower) labelPower.innerHTML = '<i class="fa-solid fa-network-wired mr-1 text-orange-500"></i> PoE Switch / Adaptor Wireless';
+                dataPowerToLoad = DB_HARGA.cctv_poe || [];
+                
+                if(labelStorage) labelStorage.innerHTML = '<i class="fa-solid fa-sd-card mr-1 text-orange-500"></i> Media Penyimpanan (MicroSD Card)';
+                dataStorageToLoad = DB_HARGA.cctv_microsd || [];
+            }
+            
+            buildDropdown('cctv-power', dataPowerToLoad, 'Pilih Perangkat Daya');
+            buildDropdown('cctv-storage', dataStorageToLoad, 'Pilih Media Penyimpanan');
+        }
+
         function initDropdowns() {
             applyPCFilter();
             
@@ -713,7 +748,7 @@
             buildDropdown('pc-peripheral', DB_HARGA.pc_peripheral, 'Pilih Aksesoris');
             buildDropdown('pc-network', DB_HARGA.pc_network, 'Pilih Network Card');
             
-            // Render dropdown CCTV
+            // Render dropdown CCTV Paket
             const elCctv = document.getElementById('cctv-paket');
             if(elCctv && (DB_HARGA.cctv_paket_analog || DB_HARGA.cctv_paket_digital || DB_HARGA.cctv_paket_wireless)) {
                 let h = `<option value="0" data-name="-">-- Pilih Paket & Teknologi Kamera --</option>`;
@@ -739,7 +774,9 @@
                 elCctv.innerHTML = h;
             }
             
-            buildDropdown('cctv-hdd', DB_HARGA.cctv_hdd, 'Pilih Kapasitas HDD');
+            // Panggil inisialisasi daya & penyimpanan default
+            onCctvPaketChange();
+            
             buildDropdown('cctv-jasa', DB_HARGA.cctv_jasa, 'Pilih Titik Instalasi');
             
             buildDropdown('akses-mesin', DB_HARGA.akses_mesin, 'Pilih Perangkat Akses/Absen');
@@ -756,14 +793,12 @@
 
         // Fetch Data Terpusat dari Banyak Google Sheets Per Kategori
         function muatDataHarga() {
-            // Kunci semua tombol saat sedang loading
             const tabButtons = document.querySelectorAll('.tab-btn');
             tabButtons.forEach(btn => {
                 btn.disabled = true;
                 btn.innerHTML += ' <i class="fa-solid fa-spinner fa-spin text-xs"></i>';
             });
 			
-            // Masukkan link CSV publik dari masing-masing Google Sheets
             const sheetsConfig = {
                 // Rakit PC
                 pc_cpu: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRXbml7OktAZ2hD0yH8mfKV-_MRDMOBbinySYCyEQfIMDAe89O9zwZM0pa0rRfk1EdZ2hwFawCcPPU8/pub?gid=0&single=true&output=csv",
@@ -780,7 +815,10 @@
                 cctv_paket_analog: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRyrIbkVWi30H8gYurSxIzayPd0ENPO-yXQrXF0wJUAlFjOspeXdoigJy1hJt6wYst2tQldiai4H9X2/pub?gid=0&single=true&output=csv",
                 cctv_paket_digital: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRgzlNvrrD4qSJI6624p1csv5Nwlp64m8G0uYvsZ17Y6NrCcfMuPXokC9dMWQOiUBUhQZBYoOw9p9wA/pub?gid=0&single=true&output=csv",
                 cctv_paket_wireless: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhI-4CSOe7WH79FfJr-OnI-F8hYOA1VkKrjDZlw7Yv-hzWwV55kytJ49sQWbyEptLpY3wc9ugrf1DH/pub?gid=0&single=true&output=csv",
+                cctv_psu: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdpi8rc0qLgI7JLDu4IxtXQSw3y7am2KtnQUqxXlGpuaoUbILnRzQ-bS6-ZsB0TLtn3sWz7gPwXrjp/pub?gid=0&single=true&output=csv",
+                cctv_poe: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdpi8rc0qLgI7JLDu4IxtXQSw3y7am2KtnQUqxXlGpuaoUbILnRzQ-bS6-ZsB0TLtn3sWz7gPwXrjp/pub?gid=0&single=true&output=csv",
                 cctv_hdd: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdpi8rc0qLgI7JLDu4IxtXQSw3y7am2KtnQUqxXlGpuaoUbILnRzQ-bS6-ZsB0TLtn3sWz7gPwXrjp/pub?gid=0&single=true&output=csv",
+                cctv_microsd: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdpi8rc0qLgI7JLDu4IxtXQSw3y7am2KtnQUqxXlGpuaoUbILnRzQ-bS6-ZsB0TLtn3sWz7gPwXrjp/pub?gid=0&single=true&output=csv",
                 cctv_jasa: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCvmy8gH8NOUZzT5ZWXbml2DWD3p0y0fYAYbN3wTOE9O1L9EiYp06MtR43jMnuBf4r5SXI5sXbZtGy/pub?gid=0&single=true&output=csv",
                 
                 // Akses & Absensi
@@ -832,12 +870,10 @@
                 });
             });
 
-            // Fungsi baru untuk membuka kunci setelah data beres
             function selesaiLoading() {
                 initDropdowns();
                 tabButtons.forEach(btn => {
                     btn.disabled = false;
-                    // Hapus ikon spinner dari tombol
                     const spinner = btn.querySelector('.fa-spinner');
                     if(spinner) spinner.remove();
                 });
@@ -850,7 +886,7 @@
             let total = 0; let orderText = ""; let dataIds = [];
             
             if(kategori === 'pc') dataIds = ['cpu', 'mobo', 'ram', 'storage', 'vga', 'psu', 'casing', 'peripheral', 'network'];
-            else if(kategori === 'cctv') dataIds = ['paket', 'hdd', 'jasa'];
+            else if(kategori === 'cctv') dataIds = ['paket', 'power', 'storage', 'jasa'];
             else if(kategori === 'akses') dataIds = ['mesin', 'kunci', 'jasa'];
             else if(kategori === 'jaringan') dataIds = ['router', 'switch', 'ap', 'jasa'];
 
@@ -977,15 +1013,13 @@ Mohon informasi lebih lanjut mengenai teknis dan ketersediaan teknisi.`;
             kirimWhatsApp(ACTIVE_TAB);
         }
 
-		// Fungsi untuk membersihkan karakter khusus/tag HTML berbahaya
         function sanitizeInput(str) {
-            return str.replace(/[<>]/g, ''); // Menghapus karakter pembuka/penutup tag HTML < dan >
+            return str.replace(/[<>]/g, '');
         }
 
         function submitFormSurvei(event) {
             event.preventDefault();
             
-            // Ambil nilai dan langsung sanitasi / bersihkan karakternya
             const nama = sanitizeInput(document.getElementById('sv-nama').value.trim());
             const instansi = sanitizeInput(document.getElementById('sv-instansi').value.trim());
             const layanan = document.getElementById('sv-layanan').value;
@@ -1012,29 +1046,22 @@ Mohon konfirmasi ketersediaan jadwal tim survei. Terima kasih.`;
             window.open(wa_url, '_blank');
         }
 		
-		// Memblokir Klik Kanan (Context Menu)
 		document.addEventListener('contextmenu', event => event.preventDefault());
 
-		// Memblokir Pintasan Keyboard Khusus Developer
 		document.onkeydown = function(e) {
-			// Blokir F12
 			if (e.keyCode === 123) { 
 				return false;
 			}
-			// Blokir Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
 			if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
 				return false;
 			}
-			// Blokir Ctrl+U (View Source) dan Ctrl+S (Save Page)
 			if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
 				return false;
 			}
 		};
-		
     </script>
 
-	<!-- Floating WhatsApp Button -->
-    <!-- Perubahan: Mengganti bottom-6 menjadi bottom-24 agar berada di atas mobile-bottom-bar -->
+    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/6285711779993" target="_blank" class="fixed bottom-24 right-6 lg:bottom-10 lg:right-10 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_15px_0_rgba(34,197,94,0.5)] hover:bg-green-600 hover:scale-110 transition-all duration-300 z-50 animate-bounce">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
