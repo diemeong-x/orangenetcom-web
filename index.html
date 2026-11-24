@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Pengaman Protokol: Content Security Policy (CSP) -->
+    <!-- Pengaman Protokol: Content Security Policy (CSP) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:;">
 	
     <!-- SEO Meta Tags Teroptimasi -->
@@ -20,13 +20,11 @@
     
     <link rel="icon" type="image/png" href="3339.png">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://orangenetcom.mamaiting.my.id">
 
     <!-- Tailwind CSS & FontAwesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Script Parser untuk Google Sheets CSV -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     
     <style>
         tailwind.config = {
@@ -81,24 +79,24 @@
                     </button>
                 </div>
 				
-				<!-- Logo Perusahaan (Tepat di Tengah) -->
+                <!-- Logo Perusahaan (Tepat di Tengah) -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#beranda" class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 120" class="w-full max-w-[200px] sm:max-w-[260px] md:max-w-[340px] h-auto object-contain transition-transform hover:scale-105 duration-300" aria-label="Logo Orange Netcom">
-							<g transform="translate(0, 15)">
+                            <g transform="translate(0, 15)">
                                 <circle cx="40" cy="40" r="28" fill="none" stroke="#f97316" stroke-width="10" />
                                 <circle cx="40" cy="40" r="10" fill="#f97316" />
                                 <line x1="40" y1="40" x2="58" y2="22" stroke="#f97316" stroke-width="5" stroke-linecap="round" />
                                 <path d="M 54 12 Q 65 0 75 10 Q 65 22 54 12 Z" fill="#22c55e" />
                             </g>
-							<text x="82" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#f97316" letter-spacing="1">RANGE</text>
-							<text x="305" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#1e293b" letter-spacing="1">NETCOM</text>
-							<text x="82" y="100" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="15" fill="#64748b" textLength="480" lengthAdjust="spacing">SOLUSI KONEKTIVITAS MODERN</text>
-						</svg>
+                            <text x="82" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#f97316" letter-spacing="1">RANGE</text>
+                            <text x="305" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#1e293b" letter-spacing="1">NETCOM</text>
+                            <text x="82" y="100" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="15" fill="#64748b" textLength="480" lengthAdjust="spacing">SOLUSI KONEKTIVITAS MODERN</text>
+                        </svg>
                     </a>
                 </div>
 				
-			</div>
+            </div>
         </div>
 
         <!-- Dropdown Menu App-Style Tersembunyi -->
@@ -183,28 +181,24 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Card 1 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2 relative overflow-hidden" onclick="openTab('pc')">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-orange-500 transition-colors"></div>
                     <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white group-hover:rotate-6 transition-all duration-300 shadow-sm"><i class="fa-solid fa-desktop"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-800">Perakitan PC & Server</h3>
                     <p class="text-gray-500 text-sm leading-relaxed">Workstation custom & server handal (termasuk instalasi OS dan sistem berbasis Linux/Windows) untuk operasional perkantoran.</p>
                 </div>
-                <!-- Card 2 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2 relative overflow-hidden" onclick="openTab('cctv')">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-orange-500 transition-colors"></div>
                     <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white group-hover:rotate-6 transition-all duration-300 shadow-sm"><i class="fa-solid fa-video"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-800">Keamanan CCTV</h3>
                     <p class="text-gray-500 text-sm leading-relaxed">Sistem pemantauan digital 24/7 dengan resolusi tinggi. Eksklusif merk terpercaya seperti Dahua & Hikvision.</p>
                 </div>
-                <!-- Card 3 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2 relative overflow-hidden" onclick="openTab('akses')">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-orange-500 transition-colors"></div>
                     <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white group-hover:rotate-6 transition-all duration-300 shadow-sm"><i class="fa-solid fa-fingerprint"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-800">Akses & Absensi</h3>
                     <p class="text-gray-500 text-sm leading-relaxed">Implementasi kontrol akses pintu biometrik (door lock) & mesin absensi terintegrasi untuk keamanan ruangan.</p>
                 </div>
-                <!-- Card 4 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 text-center group cursor-pointer transform hover:-translate-y-2 relative overflow-hidden" onclick="openTab('jaringan')">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-orange-500 transition-colors"></div>
                     <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-orange-500 text-3xl group-hover:bg-orange-500 group-hover:text-white group-hover:rotate-6 transition-all duration-300 shadow-sm"><i class="fa-solid fa-network-wired"></i></div>
@@ -251,7 +245,6 @@
                             <h3 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-microchip text-orange-500 mr-2"></i>Konfigurasi Komponen PC</h3>
                         </div>
                         <form class="space-y-5">
-                            <!-- Panel Filter Cerdas -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-orange-50/50 p-5 rounded-2xl border border-orange-100 mb-4 shadow-sm">
                                 <div>
                                     <label class="block text-sm font-bold text-orange-700 mb-2"><i class="fa-solid fa-filter mr-1"></i> Brand Prosesor</label>
@@ -269,7 +262,6 @@
                                 </div>
                             </div>
 
-                            <!-- Pilihan Komponen Utama -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div><label class="block text-sm font-bold text-slate-700 mb-2">Processor (CPU)</label><select id="pc-cpu" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                                 <div><label class="block text-sm font-bold text-slate-700 mb-2">Motherboard</label><select id="pc-mobo" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
@@ -457,45 +449,45 @@
             
             <div class="bg-white text-gray-800 rounded-3xl p-8 md:p-10 shadow-2xl">
                 <form id="formSurvei" onsubmit="submitFormSurvei(event)" class="space-y-6">
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-						<div>
-							<label class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap PIC</label>
-							<input type="text" id="sv-nama" maxlength="100" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Masukkan nama Anda">
-						</div>
-						<div>
-							<label class="block text-sm font-bold text-slate-700 mb-2">Instansi / Perusahaan</label>
-							<input type="text" id="sv-instansi" maxlength="100" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Nama perusahaan / lembaga">
-						</div>
-						<div>
-							<label class="block text-sm font-bold text-slate-700 mb-2">Jenis Layanan yang Dibutuhkan</label>
-							<select id="sv-layanan" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none cursor-pointer">
-								<option value="" disabled selected>-- Pilih Layanan Utama --</option>
-								<option value="Infrastruktur Jaringan & Server">Infrastruktur Jaringan & Server</option>
-								<option value="Instalasi CCTV & Keamanan">Instalasi CCTV & Keamanan</option>
-								<option value="Akses Pintu & Absensi">Akses Pintu & Absensi</option>
-								<option value="Pengadaan PC Workstation">Pengadaan PC / Workstation Lab</option>
-								<option value="Lainnya (Tulis di Catatan)">Lainnya (Custom)</option>
-							</select>
-						</div>
-						<div>
-							<label class="block text-sm font-bold text-slate-700 mb-2">Rencana Tanggal Survei</label>
-							<input type="date" id="sv-tanggal" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none">
-						</div>
-					</div>
-					<div>
-						<label class="block text-sm font-bold text-slate-700 mb-2">Alamat Lengkap Lokasi</label>
-						<textarea id="sv-alamat" rows="3" maxlength="250" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Sertakan detail lantai, gedung, atau patokan lokasi..."></textarea>
-					</div>
-					<div>
-						<label class="block text-sm font-bold text-slate-700 mb-2">Catatan Tambahan Kebutuhan (Opsional)</label>
-						<textarea id="sv-catatan" rows="3" maxlength="300" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Misal: Kendala jaringan lambat, butuh setting mikhmon, atau titik cctv gelap..."></textarea>
-					</div>
-					<div class="pt-4 text-center">
-						<button type="submit" class="bg-slate-900 text-white font-bold py-4 px-10 rounded-full hover:bg-orange-500 transition-all duration-300 shadow-lg transform hover:-translate-y-1 flex items-center justify-center mx-auto w-full md:w-auto">
-							<i class="fa-solid fa-paper-plane mr-3"></i> Ajukan Permintaan Survei (via WA)
-						</button>
-					</div>
-				</form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap PIC</label>
+                            <input type="text" id="sv-nama" maxlength="100" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Masukkan nama Anda">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Instansi / Perusahaan</label>
+                            <input type="text" id="sv-instansi" maxlength="100" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none" placeholder="Nama perusahaan / lembaga">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Jenis Layanan yang Dibutuhkan</label>
+                            <select id="sv-layanan" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none cursor-pointer">
+                                <option value="" disabled selected>-- Pilih Layanan Utama --</option>
+                                <option value="Infrastruktur Jaringan & Server">Infrastruktur Jaringan & Server</option>
+                                <option value="Instalasi CCTV & Keamanan">Instalasi CCTV & Keamanan</option>
+                                <option value="Akses Pintu & Absensi">Akses Pintu & Absensi</option>
+                                <option value="Pengadaan PC Workstation">Pengadaan PC / Workstation Lab</option>
+                                <option value="Lainnya (Tulis di Catatan)">Lainnya (Custom)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Rencana Tanggal Survei</label>
+                            <input type="date" id="sv-tanggal" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Alamat Lengkap Lokasi</label>
+                        <textarea id="sv-alamat" rows="3" maxlength="250" required class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Sertakan detail lantai, gedung, atau patokan lokasi..."></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Catatan Tambahan Kebutuhan (Opsional)</label>
+                        <textarea id="sv-catatan" rows="3" maxlength="300" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-gray-50 outline-none resize-none" placeholder="Misal: Kendala jaringan lambat, butuh setting mikhmon, atau titik cctv gelap..."></textarea>
+                    </div>
+                    <div class="pt-4 text-center">
+                        <button type="submit" class="bg-slate-900 text-white font-bold py-4 px-10 rounded-full hover:bg-orange-500 transition-all duration-300 shadow-lg transform hover:-translate-y-1 flex items-center justify-center mx-auto w-full md:w-auto">
+                            <i class="fa-solid fa-paper-plane mr-3"></i> Ajukan Permintaan Survei (via WA)
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -562,16 +554,16 @@
                 <div>
                     <div class="bg-white inline-block p-2 rounded-xl mb-6 shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 120" class="h-12 w-auto object-contain transition-transform hover:scale-105 duration-300" aria-label="Logo Orange Netcom">
-							<g transform="translate(0, 15)">
-								<circle cx="40" cy="40" r="28" fill="none" stroke="#f97316" stroke-width="10" />
-								<circle cx="40" cy="40" r="10" fill="#f97316" />
-								<line x1="40" y1="40" x2="58" y2="22" stroke="#f97316" stroke-width="5" stroke-linecap="round" />
-								<path d="M 54 12 Q 65 0 75 10 Q 65 22 54 12 Z" fill="#22c55e" />
-							</g>
-							<text x="82" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#f97316" letter-spacing="1">RANGE</text>
-							<text x="305" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#1e293b" letter-spacing="1">NETCOM</text>
-							<text x="82" y="100" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="15" fill="#64748b" textLength="480" lengthAdjust="spacing">SOLUSI KONEKTIVITAS MODERN</text>
-						</svg>
+                            <g transform="translate(0, 15)">
+                                <circle cx="40" cy="40" r="28" fill="none" stroke="#f97316" stroke-width="10" />
+                                <circle cx="40" cy="40" r="10" fill="#f97316" />
+                                <line x1="40" y1="40" x2="58" y2="22" stroke="#f97316" stroke-width="5" stroke-linecap="round" />
+                                <path d="M 54 12 Q 65 0 75 10 Q 65 22 54 12 Z" fill="#22c55e" />
+                            </g>
+                            <text x="82" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#f97316" letter-spacing="1">RANGE</text>
+                            <text x="305" y="70" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="#1e293b" letter-spacing="1">NETCOM</text>
+                            <text x="82" y="100" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="15" fill="#64748b" textLength="480" lengthAdjust="spacing">SOLUSI KONEKTIVITAS MODERN</text>
+                        </svg>
                     </div>
                     <p class="text-sm text-gray-400 leading-relaxed pr-4 mb-6">Membantu ratusan bisnis terhubung secara aman dan efisien dengan standar topologi dan keamanan yang teruji.</p>
                 </div>
@@ -588,7 +580,7 @@
                             <a href="mailto:info@orangenetcom.my.id" class="pt-1 text-gray-300 hover:text-white transition">info@orangenetcom.my.id</a>
                         </li>
                         <li class="flex items-start group">
-                             <div class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center mr-3 group-hover:bg-orange-500 transition-colors text-orange-500 group-hover:text-white flex-shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center mr-3 group-hover:bg-orange-500 transition-colors text-orange-500 group-hover:text-white flex-shrink-0"><i class="fa-solid fa-location-dot"></i></div>
                             <span class="leading-relaxed pt-1 text-gray-300">Jl. Cabe IV Terusan No 45, RT.01 RW.06,<br>Pondok Cabe Ilir, Pamulang,<br>Tangerang Selatan, Banten 15418</span>
                         </li>
                     </ul>
@@ -609,8 +601,11 @@
         </div>
     </footer>
 
-    <!-- LOGIKA JAVASCRIPT & GOOGLE SHEETS PARSER -->
+    <!-- LOGIKA JAVASCRIPT & FETCH API DARI SUBDOMAIN ADMIN -->
     <script>
+        const API_KATALOG_URL = "https://orangenetcom.mamaiting.my.id/api.php";
+        const WA_ADMIN_NUMBER = "6285711779993";
+
         // Menu Hamburger Universal (Desktop & Mobile)
         const btnMobile = document.getElementById('btn-mobile-menu');
         const navMenu = document.getElementById('nav-menu');
@@ -636,7 +631,6 @@
             });
         });
 
-        const WA_ADMIN_NUMBER = "6285711779993";
         let DB_HARGA = {};
         let ACTIVE_TAB = 'pc';
         let CURRENT_ORDER_TEXT = "";
@@ -644,16 +638,22 @@
 
         const formatRp = (angka) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
 
+        function escapeAttr(str) {
+            return String(str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
         function buildDropdown(id, data, placeholder) {
             const el = document.getElementById(id);
-            if(!el || !data) return;
+            if (!el) return;
             let html = `<option value="0" data-name="-" data-socket="" data-ram="">-- ${placeholder} --</option>`;
-            data.forEach(item => {
-                const prcTxt = item.harga > 0 ? ` (+${formatRp(item.harga)})` : "";
-                const sckAttr = item.socket ? ` data-socket="${item.socket}"` : "";
-                const ramAttr = item.tipe_ram ? ` data-ram="${item.tipe_ram}"` : "";
-                html += `<option value="${item.harga}" data-name="${item.nama}"${sckAttr}${ramAttr}>${item.nama}${prcTxt}</option>`;
-            });
+            if (Array.isArray(data)) {
+                data.forEach(item => {
+                    const prcTxt = item.harga > 0 ? ` (+${formatRp(item.harga)})` : "";
+                    const sckAttr = item.socket ? ` data-socket="${escapeAttr(item.socket)}"` : "";
+                    const ramAttr = item.tipe_ram ? ` data-ram="${escapeAttr(item.tipe_ram)}"` : "";
+                    html += `<option value="${item.harga}" data-name="${escapeAttr(item.nama)}"${sckAttr}${ramAttr}>${escapeAttr(item.nama)}${prcTxt}</option>`;
+                });
+            }
             el.innerHTML = html;
         }
 
@@ -669,7 +669,7 @@
             }
 
             const availableSockets = new Set();
-            cpuByBrand.forEach(c => { if(c.socket && c.socket !== '-') availableSockets.add(c.socket) });
+            cpuByBrand.forEach(c => { if (c.socket && c.socket !== '-') availableSockets.add(c.socket); });
             
             if (selectedSocket !== 'semua' && !availableSockets.has(selectedSocket)) {
                 selectedSocket = 'semua'; 
@@ -678,7 +678,7 @@
             let htmlSock = `<option value="semua">-- Semua Socket --</option>`;
             availableSockets.forEach(s => {
                 const isSelected = (s === selectedSocket) ? 'selected' : '';
-                htmlSock += `<option value="${s}" ${isSelected}>${s}</option>`;
+                htmlSock += `<option value="${escapeAttr(s)}" ${isSelected}>${escapeAttr(s)}</option>`;
             });
             socketEl.innerHTML = htmlSock;
 
@@ -691,7 +691,7 @@
             let filteredMobo = DB_HARGA.pc_mobo || [];
             if (selectedSocket !== 'semua') {
                 filteredMobo = filteredMobo.filter(item => item.socket === selectedSocket);
-            } else {
+            } else if (availableSockets.size > 0) {
                 filteredMobo = filteredMobo.filter(item => availableSockets.has(item.socket));
             }
             buildDropdown('pc-mobo', filteredMobo, 'Pilih Motherboard');
@@ -699,10 +699,10 @@
             hitungTotal('pc');
         }
 
-        // Logika Dinamis Pemilihan Daya & Penyimpanan CCTV berdasarkan jenis kamera (Analog, Digital, Wireless)
+        // Logika Dinamis Pemilihan Daya & Penyimpanan CCTV
         function onCctvPaketChange() {
             const selectPaket = document.getElementById('cctv-paket');
-            if(!selectPaket || selectPaket.selectedIndex < 0) return;
+            if (!selectPaket || selectPaket.selectedIndex < 0) return;
             const selectedOptGroup = selectPaket.options[selectPaket.selectedIndex].parentNode;
             const groupLabel = selectedOptGroup.tagName === 'OPTGROUP' ? selectedOptGroup.label : '';
             
@@ -713,23 +713,22 @@
             let dataStorageToLoad = [];
             
             if (groupLabel.toLowerCase().includes('analog')) {
-                if(labelPower) labelPower.innerHTML = '<i class="fa-solid fa-bolt mr-1 text-orange-500"></i> Power Supply (PSU Jaringan / Box Panel)';
+                if (labelPower) labelPower.innerHTML = '<i class="fa-solid fa-bolt mr-1 text-orange-500"></i> Power Supply (PSU Jaringan / Box Panel)';
                 dataPowerToLoad = DB_HARGA.cctv_psu || [];
                 
-                if(labelStorage) labelStorage.innerHTML = '<i class="fa-solid fa-hard-drive mr-1 text-orange-500"></i> Kapasitas Penyimpanan (HDD DVR)';
+                if (labelStorage) labelStorage.innerHTML = '<i class="fa-solid fa-hard-drive mr-1 text-orange-500"></i> Kapasitas Penyimpanan (HDD DVR)';
                 dataStorageToLoad = DB_HARGA.cctv_hdd || [];
             } else if (groupLabel.toLowerCase().includes('digital')) {
-                if(labelPower) labelPower.innerHTML = '<i class="fa-solid fa-network-wired mr-1 text-orange-500"></i> PoE Switch / Injector';
+                if (labelPower) labelPower.innerHTML = '<i class="fa-solid fa-network-wired mr-1 text-orange-500"></i> PoE Switch / Injector';
                 dataPowerToLoad = DB_HARGA.cctv_poe || [];
                 
-                if(labelStorage) labelStorage.innerHTML = '<i class="fa-solid fa-hard-drive mr-1 text-orange-500"></i> Kapasitas Penyimpanan (HDD NVR)';
+                if (labelStorage) labelStorage.innerHTML = '<i class="fa-solid fa-hard-drive mr-1 text-orange-500"></i> Kapasitas Penyimpanan (HDD NVR)';
                 dataStorageToLoad = DB_HARGA.cctv_hdd || [];
             } else {
-                // Wireless / Smart Cam
-                if(labelPower) labelPower.innerHTML = '<i class="fa-solid fa-network-wired mr-1 text-orange-500"></i> PoE Switch / Adaptor Wireless';
+                if (labelPower) labelPower.innerHTML = '<i class="fa-solid fa-network-wired mr-1 text-orange-500"></i> PoE Switch / Adaptor Wireless';
                 dataPowerToLoad = DB_HARGA.cctv_poe || [];
                 
-                if(labelStorage) labelStorage.innerHTML = '<i class="fa-solid fa-sd-card mr-1 text-orange-500"></i> Media Penyimpanan (MicroSD Card)';
+                if (labelStorage) labelStorage.innerHTML = '<i class="fa-solid fa-sd-card mr-1 text-orange-500"></i> Media Penyimpanan (MicroSD Card)';
                 dataStorageToLoad = DB_HARGA.cctv_microsd || [];
             }
             
@@ -750,31 +749,30 @@
             
             // Render dropdown CCTV Paket
             const elCctv = document.getElementById('cctv-paket');
-            if(elCctv && (DB_HARGA.cctv_paket_analog || DB_HARGA.cctv_paket_digital || DB_HARGA.cctv_paket_wireless)) {
+            if (elCctv) {
                 let h = `<option value="0" data-name="-">-- Pilih Paket & Teknologi Kamera --</option>`;
                 
-                if(DB_HARGA.cctv_paket_analog) {
+                if (Array.isArray(DB_HARGA.cctv_paket_analog)) {
                     h += `<optgroup label="Sistem Analog HD">`;
-                    DB_HARGA.cctv_paket_analog.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
+                    DB_HARGA.cctv_paket_analog.forEach(i => h += `<option value="${i.harga}" data-name="${escapeAttr(i.nama)}">${escapeAttr(i.nama)} (+${formatRp(i.harga)})</option>`);
                     h += `</optgroup>`;
                 }
                 
-                if(DB_HARGA.cctv_paket_digital) {
+                if (Array.isArray(DB_HARGA.cctv_paket_digital)) {
                     h += `<optgroup label="Sistem Digital IP Camera">`;
-                    DB_HARGA.cctv_paket_digital.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
+                    DB_HARGA.cctv_paket_digital.forEach(i => h += `<option value="${i.harga}" data-name="${escapeAttr(i.nama)}">${escapeAttr(i.nama)} (+${formatRp(i.harga)})</option>`);
                     h += `</optgroup>`;
                 }
 
-                if(DB_HARGA.cctv_paket_wireless) {
+                if (Array.isArray(DB_HARGA.cctv_paket_wireless)) {
                     h += `<optgroup label="Sistem Wireless (WiFi / Smart Cam)">`;
-                    DB_HARGA.cctv_paket_wireless.forEach(i => h += `<option value="${i.harga}" data-name="${i.nama}">${i.nama} (+${formatRp(i.harga)})</option>`);
+                    DB_HARGA.cctv_paket_wireless.forEach(i => h += `<option value="${i.harga}" data-name="${escapeAttr(i.nama)}">${escapeAttr(i.nama)} (+${formatRp(i.harga)})</option>`);
                     h += `</optgroup>`;
                 }
 
                 elCctv.innerHTML = h;
             }
             
-            // Panggil inisialisasi daya & penyimpanan default
             onCctvPaketChange();
             
             buildDropdown('cctv-jasa', DB_HARGA.cctv_jasa, 'Pilih Titik Instalasi');
@@ -791,91 +789,28 @@
             ['pc', 'cctv', 'akses', 'jaringan'].forEach(kat => hitungTotal(kat, true));
         }
 
-        // Fetch Data Terpusat dari Banyak Google Sheets Per Kategori
-        function muatDataHarga() {
+        // Fetch Data Terpusat dari JSON API Subdomain Admin
+        async function muatDataHarga() {
             const tabButtons = document.querySelectorAll('.tab-btn');
             tabButtons.forEach(btn => {
                 btn.disabled = true;
                 btn.innerHTML += ' <i class="fa-solid fa-spinner fa-spin text-xs"></i>';
             });
-			
-            const sheetsConfig = {
-                // Rakit PC
-                pc_cpu: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRXbml7OktAZ2hD0yH8mfKV-_MRDMOBbinySYCyEQfIMDAe89O9zwZM0pa0rRfk1EdZ2hwFawCcPPU8/pub?gid=0&single=true&output=csv",
-                pc_mobo: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTZJx2jIY4N1p0RWPWnVr3nU8AEOvfuR0rA7t-qnGQr9IhmIF8tnEzFeNiSywJXyE0OTfW38_bbfV0K/pub?gid=0&single=true&output=csv",
-                pc_ram: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS5le8uPj8Tu6ALPzzTe-HgGBflwWB3yzfLiZ-1XgA7yZ4D4rDTeERBGY7X-gbXnVWXU56CuZvv_JSB/pub?gid=0&single=true&output=csv",
-                pc_storage: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQM2zDzibqJb_QqCbUtKSie4l5viR12Y_8Gv3YLw54t4JFTHfEA4IeOdA4PfSobQV-OsxYxi4Kd-bOB/pub?gid=0&single=true&output=csv",
-                pc_vga: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqLthsrGOTPOloACTeTTqv2Wjx5xACTWq25TTPOTZ8G3MOxKvHpYe8stsFptsymc2-VRyr6uz5ssFD/pub?gid=0&single=true&output=csv",
-                pc_peripheral: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQpuji4LYQ6hqBFlfy4MKbWUrsd7B-hPKwXUVjRLbN6HBv5n3m1BfYZac4gNysOjh_ihTP2x5SqOkX7/pub?gid=0&single=true&output=csv",
-                pc_network: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQz6tOkEF04QkZT1o1Q36gpFJP13CW6xGmyS0hGqQdEgHAYfp3ZWDJ0_WdbZhCnzqBDoqyoEg31VXLN/pub?gid=0&single=true&output=csv",
-                pc_psu: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSV4VkzMRZq4tgmTqjqY8i_urynMecalmAK9cEJxfUfybEV241T-O1spvUz57EMsGN096aitfTYlXqW/pub?gid=0&single=true&output=csv",
-                pc_casing: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTlFybZPIks-t7L4XYq8qTtxHCSjDEtPGZSvfhrcuptV9f4DlWOJffckwZoIFVNH7cXa1uQ3LMAnzIT/pub?gid=0&single=true&output=csv",
-                
-                // CCTV
-                cctv_paket_analog: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRyrIbkVWi30H8gYurSxIzayPd0ENPO-yXQrXF0wJUAlFjOspeXdoigJy1hJt6wYst2tQldiai4H9X2/pub?gid=0&single=true&output=csv",
-                cctv_paket_digital: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRgzlNvrrD4qSJI6624p1csv5Nwlp64m8G0uYvsZ17Y6NrCcfMuPXokC9dMWQOiUBUhQZBYoOw9p9wA/pub?gid=0&single=true&output=csv",
-                cctv_paket_wireless: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhI-4CSOe7WH79FfJr-OnI-F8hYOA1VkKrjDZlw7Yv-hzWwV55kytJ49sQWbyEptLpY3wc9ugrf1DH/pub?gid=0&single=true&output=csv",
-                cctv_psu: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdpi8rc0qLgI7JLDu4IxtXQSw3y7am2KtnQUqxXlGpuaoUbILnRzQ-bS6-ZsB0TLtn3sWz7gPwXrjp/pub?gid=0&single=true&output=csv",
-                cctv_poe: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdpi8rc0qLgI7JLDu4IxtXQSw3y7am2KtnQUqxXlGpuaoUbILnRzQ-bS6-ZsB0TLtn3sWz7gPwXrjp/pub?gid=0&single=true&output=csv",
-                cctv_hdd: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdpi8rc0qLgI7JLDu4IxtXQSw3y7am2KtnQUqxXlGpuaoUbILnRzQ-bS6-ZsB0TLtn3sWz7gPwXrjp/pub?gid=0&single=true&output=csv",
-                cctv_microsd: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdpi8rc0qLgI7JLDu4IxtXQSw3y7am2KtnQUqxXlGpuaoUbILnRzQ-bS6-ZsB0TLtn3sWz7gPwXrjp/pub?gid=0&single=true&output=csv",
-                cctv_jasa: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCvmy8gH8NOUZzT5ZWXbml2DWD3p0y0fYAYbN3wTOE9O1L9EiYp06MtR43jMnuBf4r5SXI5sXbZtGy/pub?gid=0&single=true&output=csv",
-                
-                // Akses & Absensi
-                akses_mesin: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT-kA8RZddOWSjhUA8w30SaAn2hQ-pB96XVl7oJ3ZxgL7CoudABTJFVNOtyizP6-4r0pcw9KkRK3jpM/pub?gid=0&single=true&output=csv",
-                akses_kunci: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQbDYMJBkauID7hHDrkQcJwgmf3Ye7bW8ja8BhiZz-JUUZmm9w-22yuNOWsezCRe5izhneROCL4qY1V/pub?gid=0&single=true&output=csv",
-                akses_jasa: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTqVfap9Y8sFA1O3Ji_U0leUh9wojHg8rVEzvnkKLLachZoZeH96G61C32n8K9OwCIuJ8LFe-eSp0Wb/pub?gid=0&single=true&output=csv",
-                
-                // Jaringan
-                jar_router: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRLNv4aqa1fqNko3XNmmPzNc3lyCt8_8wfD6bZK_1oYvyAaA4vdr1cWWYauEkubKZVeuriN7qEs7CKB/pub?gid=0&single=true&output=csv",
-                jar_switch: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhUlTRMudHCReI6pxhPwrFwetbOVLVMBQS7NOIaiP5CUcCPdfz5U8TChuDVY_wqIIOUTvl99EcUIO4/pub?gid=0&single=true&output=csv",
-                jar_ap: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR68VdIHQXrLkgeEQQp9sSEomugku3VeUxFr7Vprduiu17HDjCeRqClUXrvPRB1FDEV_dgc6i23p4l_/pub?gid=0&single=true&output=csv",
-                jar_jasa: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUk-SX0J6LWH_bca6XZk1ro2c4p-4E9MckVIAXhlMDgN3_G5GJT74hkBQ9yEeP8zwVhDmZJ-HSdP_E/pub?gid=0&single=true&output=csv"
-            };
 
-            DB_HARGA = {};
-            let totalSheets = Object.keys(sheetsConfig).length;
-            let loadedCount = 0;
-
-            Object.keys(sheetsConfig).forEach(katKey => {
-                const sheetUrl = sheetsConfig[katKey];
-                
-                if (!sheetUrl || !sheetUrl.startsWith("http")) {
-                    loadedCount++;
-                    if (loadedCount === totalSheets) selesaiLoading();
-                    return;
-                }
-
-                Papa.parse(sheetUrl, {
-                    download: true,
-                    header: true,
-                    skipEmptyLines: true,
-                    complete: function(results) {
-                        DB_HARGA[katKey] = [];
-                        results.data.forEach(row => {
-                            DB_HARGA[katKey].push({
-                                nama: row.nama ? row.nama.trim() : "-",
-                                harga: parseInt(row.harga) || 0,
-                                socket: row.socket ? row.socket.trim() : "",
-                                tipe_ram: row.tipe_ram ? row.tipe_ram.trim() : ""
-                            });
-                        });
-                        loadedCount++;
-                        if (loadedCount === totalSheets) selesaiLoading();
-                    },
-                    error: function() {
-                        loadedCount++;
-                        if (loadedCount === totalSheets) selesaiLoading();
-                    }
-                });
-            });
-
-            function selesaiLoading() {
+            try {
+                const response = await fetch(API_KATALOG_URL, { method: 'GET' });
+                if (!response.ok) throw new Error('Gagal terhubung ke server katalog');
+                const result = await response.json();
+                DB_HARGA = (result && result.data) ? result.data : {};
+            } catch (err) {
+                console.error('Error memuat katalog:', err);
+                DB_HARGA = {};
+            } finally {
                 initDropdowns();
                 tabButtons.forEach(btn => {
                     btn.disabled = false;
                     const spinner = btn.querySelector('.fa-spinner');
-                    if(spinner) spinner.remove();
+                    if (spinner) spinner.remove();
                 });
             }
         }
@@ -885,31 +820,31 @@
         function hitungTotal(kategori, isInit = false) {
             let total = 0; let orderText = ""; let dataIds = [];
             
-            if(kategori === 'pc') dataIds = ['cpu', 'mobo', 'ram', 'storage', 'vga', 'psu', 'casing', 'peripheral', 'network'];
-            else if(kategori === 'cctv') dataIds = ['paket', 'power', 'storage', 'jasa'];
-            else if(kategori === 'akses') dataIds = ['mesin', 'kunci', 'jasa'];
-            else if(kategori === 'jaringan') dataIds = ['router', 'switch', 'ap', 'jasa'];
+            if (kategori === 'pc') dataIds = ['cpu', 'mobo', 'ram', 'storage', 'vga', 'psu', 'casing', 'peripheral', 'network'];
+            else if (kategori === 'cctv') dataIds = ['paket', 'power', 'storage', 'jasa'];
+            else if (kategori === 'akses') dataIds = ['mesin', 'kunci', 'jasa'];
+            else if (kategori === 'jaringan') dataIds = ['router', 'switch', 'ap', 'jasa'];
 
             const prefix = kategori === 'jaringan' ? 'jar' : kategori;
 
             dataIds.forEach(id => {
                 const el = document.getElementById(`${prefix}-${id}`);
-                if(!el) return;
+                if (!el) return;
                 const price = parseInt(el.value) || 0;
                 const name = (el.options[el.selectedIndex]) ? el.options[el.selectedIndex].getAttribute('data-name') : '-';
                 
                 const lbl = document.getElementById(`lbl-${prefix}-${id}`);
-                if(lbl) lbl.innerText = name !== '-' ? name : '-';
+                if (lbl) lbl.innerText = name !== '-' ? name : '-';
                 
                 total += price;
                 if (name !== '-' && price > 0) orderText += `- ${name}\n`;
             });
 
             const totalEl = document.getElementById(`total-${kategori}`);
-            if(totalEl) totalEl.innerText = formatRp(total);
+            if (totalEl) totalEl.innerText = formatRp(total);
 
             // Validasi Khusus Perakitan PC
-            if(kategori === 'pc') {
+            if (kategori === 'pc') {
                 const cpuOpt = document.getElementById('pc-cpu').options[document.getElementById('pc-cpu').selectedIndex];
                 const moboOpt = document.getElementById('pc-mobo').options[document.getElementById('pc-mobo').selectedIndex];
                 const ramOpt = document.getElementById('pc-ram').options[document.getElementById('pc-ram').selectedIndex];
@@ -953,12 +888,12 @@
                 if (errorMsgs.length > 0) {
                     alertMsg.innerHTML = `<strong>Peringatan Kompatibilitas Sistem:</strong><br>` + errorMsgs.join('<br>');
                     alertBox.classList.remove('hidden');
-                } else if(alertBox) {
+                } else if (alertBox) {
                     alertBox.classList.add('hidden');
                 }
             }
 
-            if(kategori === ACTIVE_TAB || isInit) {
+            if (kategori === ACTIVE_TAB || isInit) {
                 CURRENT_TOTAL = total;
                 CURRENT_ORDER_TEXT = orderText;
                 document.getElementById('mobile-total').innerText = formatRp(total);
@@ -987,10 +922,10 @@
 
         function buildWA_Url(kategori, total, textRincian) {
             let katNama = "";
-            if(kategori === 'pc') katNama = "Perakitan PC / Server";
-            else if(kategori === 'cctv') katNama = "Instalasi CCTV";
-            else if(kategori === 'akses') katNama = "Keamanan Akses Pintu";
-            else if(kategori === 'jaringan') katNama = "Infrastruktur Jaringan Bisnis";
+            if (kategori === 'pc') katNama = "Perakitan PC / Server";
+            else if (kategori === 'cctv') katNama = "Instalasi CCTV";
+            else if (kategori === 'akses') katNama = "Keamanan Akses Pintu";
+            else if (kategori === 'jaringan') katNama = "Infrastruktur Jaringan Bisnis";
 
             const msg = total === 0 
                 ? `Halo Orange Netcom, saya ingin konsultasi lebih detail mengenai layanan *${katNama}*.` 
@@ -1046,19 +981,19 @@ Mohon konfirmasi ketersediaan jadwal tim survei. Terima kasih.`;
             window.open(wa_url, '_blank');
         }
 		
-		document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('contextmenu', event => event.preventDefault());
 
-		document.onkeydown = function(e) {
-			if (e.keyCode === 123) { 
-				return false;
-			}
-			if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
-				return false;
-			}
-			if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
-				return false;
-			}
-		};
+        document.onkeydown = function(e) {
+            if (e.keyCode === 123) { 
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+                return false;
+            }
+            if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) {
+                return false;
+            }
+        };
     </script>
 
     <!-- Floating WhatsApp Button -->
