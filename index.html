@@ -262,7 +262,7 @@
                                 </div>
                             </div>
 
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div id="pc-components-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div><label class="block text-sm font-bold text-slate-700 mb-2">Processor (CPU)</label><select id="pc-cpu" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                                 <div><label class="block text-sm font-bold text-slate-700 mb-2">Motherboard</label><select id="pc-mobo" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                                 <div><label class="block text-sm font-bold text-slate-700 mb-2">Memory (RAM)</label><select id="pc-ram" onchange="hitungTotal('pc')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
@@ -285,7 +285,7 @@
                                 <span id="pc-alert-msg"></span>
                             </div>
 
-                            <div class="space-y-3 mb-6 text-sm text-gray-400 min-h-[140px]">
+                            <div id="pc-summary-list" class="space-y-3 mb-6 text-sm text-gray-400 min-h-[140px]">
                                 <div class="flex justify-between border-b border-slate-800 pb-2"><span>CPU</span> <span id="lbl-pc-cpu" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
                                 <div class="flex justify-between border-b border-slate-800 pb-2"><span>Mobo</span> <span id="lbl-pc-mobo" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
                                 <div class="flex justify-between border-b border-slate-800 pb-2"><span>RAM</span> <span id="lbl-pc-ram" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
@@ -294,7 +294,7 @@
                                 <div class="flex justify-between border-b border-slate-800 pb-2"><span>PSU</span> <span id="lbl-pc-psu" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
                                 <div class="flex justify-between border-b border-slate-800 pb-2"><span>Casing</span> <span id="lbl-pc-casing" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
                                 <div class="flex justify-between border-b border-slate-800 pb-2"><span>Aksesoris</span> <span id="lbl-pc-peripheral" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
-                                <div class="flex justify-between pb-2"><span>Koneksi</span> <span id="lbl-pc-network" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
+                                <div class="flex justify-between border-b border-slate-800 pb-2"><span>Koneksi</span> <span id="lbl-pc-network" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span></div>
                             </div>
                             
                             <p class="text-gray-400 text-sm mb-1">Estimasi Total</p>
@@ -315,7 +315,7 @@
                                 <i class="fa-solid fa-award mr-1"></i> Partner: Hikvision & Dahua
                             </div>
                         </div>
-                        <form class="space-y-6">
+                        <form id="cctv-form" class="space-y-6">
                             <div>
                                 <label class="block text-sm font-bold text-slate-700 mb-2">Tipe Teknologi & Paket Kamera</label>
                                 <select id="cctv-paket" onchange="onCctvPaketChange(); hitungTotal('cctv');" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select>
@@ -339,7 +339,7 @@
                     <div class="w-full lg:w-1/3 relative">
                         <div class="bg-slate-900 rounded-3xl p-6 md:p-8 text-white sticky top-28 shadow-2xl border border-slate-800">
                             <h3 class="text-lg font-bold mb-4 text-orange-500 border-b border-slate-700 pb-3">Ringkasan CCTV</h3>
-                            <div class="space-y-4 mb-6 text-sm text-gray-400 min-h-[140px]">
+                            <div id="cctv-summary-list" class="space-y-4 mb-6 text-sm text-gray-400 min-h-[140px]">
                                 <div><span class="block text-xs uppercase tracking-wider mb-1">Paket Kamera</span> <span id="lbl-cctv-paket" class="font-semibold text-white block truncate">-</span></div>
                                 <div><span class="block text-xs uppercase tracking-wider mb-1">Perangkat Daya</span> <span id="lbl-cctv-power" class="font-semibold text-white block truncate">-</span></div>
                                 <div><span class="block text-xs uppercase tracking-wider mb-1">Penyimpanan</span> <span id="lbl-cctv-storage" class="font-semibold text-white block truncate">-</span></div>
@@ -360,7 +360,7 @@
                     
                     <div class="flex flex-col lg:flex-row gap-8">
                         <div class="w-full lg:w-2/3">
-                            <form class="space-y-6">
+                            <form id="akses-form" class="space-y-6">
                                 <div><label class="block text-sm font-bold text-slate-700 mb-2">Pilih Mesin Absensi / Akses Biometrik</label><select id="akses-mesin" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                                 <div><label class="block text-sm font-bold text-slate-700 mb-2">Tipe Pengunci Pintu (Magnetic Door Lock)</label><select id="akses-kunci" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                                 <div><label class="block text-sm font-bold text-slate-700 mb-2">Jasa Instalasi & Setup Perangkat Lunak</label><select id="akses-jasa" onchange="hitungTotal('akses')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
@@ -370,7 +370,7 @@
                         <div class="w-full lg:w-1/3 relative">
                             <div class="bg-slate-900 rounded-3xl p-6 md:p-8 text-white sticky top-28 shadow-2xl border border-slate-800">
                                 <h3 class="text-lg font-bold mb-4 text-orange-500 border-b border-slate-700 pb-3">Ringkasan Akses</h3>
-                                <div class="space-y-4 mb-6 text-sm text-gray-400 min-h-[140px]">
+                                <div id="akses-summary-list" class="space-y-4 mb-6 text-sm text-gray-400 min-h-[140px]">
                                     <div><span class="block text-xs uppercase tracking-wider mb-1">Mesin</span> <span id="lbl-akses-mesin" class="font-semibold text-white block truncate">-</span></div>
                                     <div><span class="block text-xs uppercase tracking-wider mb-1">Door Lock</span> <span id="lbl-akses-kunci" class="font-semibold text-white block truncate">-</span></div>
                                     <div><span class="block text-xs uppercase tracking-wider mb-1">Instalasi</span> <span id="lbl-akses-jasa" class="font-semibold text-white block truncate">-</span></div>
@@ -392,7 +392,7 @@
                                 <i class="fa-solid fa-gears mr-1"></i> Mikrotik, Ruijie & Custom Dashboards
                             </div>
                         </div>
-                        <form class="space-y-6">
+                        <form id="jaringan-form" class="space-y-6">
                             <div><label class="block text-sm font-bold text-slate-700 mb-2">Router Utama (Manajemen Bandwidth/Hotspot)</label><select id="jar-router" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                             <div><label class="block text-sm font-bold text-slate-700 mb-2">Switch Distribution / PoE</label><select id="jar-switch" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
                             <div><label class="block text-sm font-bold text-slate-700 mb-2">Access Point (Penyebar Sinyal WiFi)</label><select id="jar-ap" onchange="hitungTotal('jaringan')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select></div>
@@ -407,7 +407,7 @@
                     <div class="w-full lg:w-1/3 relative">
                         <div class="bg-slate-900 rounded-3xl p-6 md:p-8 text-white sticky top-28 shadow-2xl border border-slate-800">
                             <h3 class="text-lg font-bold mb-4 text-orange-500 border-b border-slate-700 pb-3">Ringkasan Jaringan</h3>
-                            <div class="space-y-4 mb-6 text-sm text-gray-400 min-h-[140px]">
+                            <div id="jaringan-summary-list" class="space-y-4 mb-6 text-sm text-gray-400 min-h-[140px]">
                                 <div><span class="block text-xs uppercase tracking-wider mb-1">Router</span> <span id="lbl-jar-router" class="font-semibold text-white block truncate">-</span></div>
                                 <div><span class="block text-xs uppercase tracking-wider mb-1">Switch</span> <span id="lbl-jar-switch" class="font-semibold text-white block truncate">-</span></div>
                                 <div><span class="block text-xs uppercase tracking-wider mb-1">Access Point</span> <span id="lbl-jar-ap" class="font-semibold text-white block truncate">-</span></div>
@@ -699,6 +699,7 @@
         }
 
         let DB_HARGA = {};
+        let CUSTOM_CATEGORIES = { pc: [], cctv: [], akses: [], jaringan: [] };
         let ACTIVE_TAB = 'pc';
         let CURRENT_ORDER_TEXT = "";
         let CURRENT_TOTAL = 0;
@@ -722,6 +723,53 @@
                 });
             }
             el.innerHTML = html;
+        }
+
+        // Render sub-kategori kustom untuk keempat divisi dari Admin CMS
+        function renderAllCustomCategories() {
+            const formContainers = {
+                pc:       document.getElementById('pc-components-grid'),
+                cctv:     document.getElementById('cctv-form'),
+                akses:    document.getElementById('akses-form'),
+                jaringan: document.getElementById('jaringan-form')
+            };
+            const summaryContainers = {
+                pc:       document.getElementById('pc-summary-list'),
+                cctv:     document.getElementById('cctv-summary-list'),
+                akses:    document.getElementById('akses-summary-list'),
+                jaringan: document.getElementById('jaringan-summary-list')
+            };
+
+            document.querySelectorAll('.custom-cat-field, .custom-cat-summary').forEach(el => el.remove());
+
+            ['pc', 'cctv', 'akses', 'jaringan'].forEach(divKey => {
+                const cats = CUSTOM_CATEGORIES[divKey] || [];
+                const fWrap = formContainers[divKey];
+                const sWrap = summaryContainers[divKey];
+                if (!fWrap || !sWrap) return;
+
+                cats.forEach(cat => {
+                    if (!cat.key || !cat.label) return;
+
+                    const fieldDiv = document.createElement('div');
+                    fieldDiv.className = 'custom-cat-field';
+                    fieldDiv.innerHTML = `
+                        <label class="block text-sm font-bold text-slate-700 mb-2">${escapeAttr(cat.label)}</label>
+                        <select id="select-${escapeAttr(cat.key)}" onchange="hitungTotal('${divKey}')" class="w-full border border-gray-300 rounded-xl py-3 px-4 focus:ring-2 focus:ring-orange-500 bg-white shadow-sm cursor-pointer hover:border-orange-300 transition-colors"></select>
+                    `;
+                    fWrap.appendChild(fieldDiv);
+
+                    const sumDiv = document.createElement('div');
+                    if (divKey === 'pc') {
+                        sumDiv.className = 'custom-cat-summary flex justify-between border-b border-slate-800 pb-2';
+                        sumDiv.innerHTML = `<span>${escapeAttr(cat.label)}</span> <span id="lbl-${escapeAttr(cat.key)}" class="font-semibold text-white text-right w-1/2 line-clamp-1 truncate">-</span>`;
+                    } else {
+                        sumDiv.className = 'custom-cat-summary';
+                        sumDiv.innerHTML = `<span class="block text-xs uppercase tracking-wider mb-1">${escapeAttr(cat.label)}</span> <span id="lbl-${escapeAttr(cat.key)}" class="font-semibold text-white block truncate">-</span>`;
+                    }
+                    sWrap.appendChild(sumDiv);
+                });
+            });
         }
 
         // Fungsi Filter Brand & Socket Dinamis
@@ -804,6 +852,7 @@
         }
 
         function initDropdowns() {
+            renderAllCustomCategories();
             applyPCFilter();
             
             buildDropdown('pc-ram', DB_HARGA.pc_ram, 'Pilih Kapasitas RAM');
@@ -853,6 +902,13 @@
             buildDropdown('jar-ap', DB_HARGA.jar_ap, 'Pilih Pemancar (Access Point)');
             buildDropdown('jar-jasa', DB_HARGA.jar_jasa, 'Pilih Tingkat Kompleksitas Jasa');
 
+            // Isi data untuk seluruh sub-kategori kustom di semua divisi
+            ['pc', 'cctv', 'akses', 'jaringan'].forEach(divKey => {
+                (CUSTOM_CATEGORIES[divKey] || []).forEach(cat => {
+                    buildDropdown(`select-${cat.key}`, DB_HARGA[cat.key] || [], `Pilih ${cat.label}`);
+                });
+            });
+
             ['pc', 'cctv', 'akses', 'jaringan'].forEach(kat => hitungTotal(kat, true));
         }
 
@@ -869,9 +925,18 @@
                 if (!response.ok) throw new Error('Gagal terhubung ke server katalog');
                 const result = await response.json();
                 DB_HARGA = (result && result.data) ? result.data : {};
+                if (result && result.custom_categories) {
+                    CUSTOM_CATEGORIES = {
+                        pc:       Array.isArray(result.custom_categories.pc) ? result.custom_categories.pc : [],
+                        cctv:     Array.isArray(result.custom_categories.cctv) ? result.custom_categories.cctv : [],
+                        akses:    Array.isArray(result.custom_categories.akses) ? result.custom_categories.akses : [],
+                        jaringan: Array.isArray(result.custom_categories.jaringan) ? result.custom_categories.jaringan : []
+                    };
+                }
             } catch (err) {
                 console.error('Error memuat katalog:', err);
                 DB_HARGA = {};
+                CUSTOM_CATEGORIES = { pc: [], cctv: [], akses: [], jaringan: [] };
             } finally {
                 initDropdowns();
                 tabButtons.forEach(btn => {
@@ -903,6 +968,20 @@
                 const lbl = document.getElementById(`lbl-${prefix}-${id}`);
                 if (lbl) lbl.innerText = name !== '-' ? name : '-';
                 
+                total += price;
+                if (name !== '-' && price > 0) orderText += `- ${name}\n`;
+            });
+
+            // Hitung item dari sub-kategori kustom pada divisi yang aktif
+            (CUSTOM_CATEGORIES[kategori] || []).forEach(cat => {
+                const el = document.getElementById(`select-${cat.key}`);
+                if (!el) return;
+                const price = parseInt(el.value) || 0;
+                const name = (el.options[el.selectedIndex]) ? el.options[el.selectedIndex].getAttribute('data-name') : '-';
+
+                const lbl = document.getElementById(`lbl-${cat.key}`);
+                if (lbl) lbl.innerText = name !== '-' ? name : '-';
+
                 total += price;
                 if (name !== '-' && price > 0) orderText += `- ${name}\n`;
             });
